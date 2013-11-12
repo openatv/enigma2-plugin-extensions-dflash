@@ -1,0 +1,363 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: gutemine <gutemine@unknown.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+
+msgid "no"
+msgstr "Nee"
+
+msgid "yes"
+msgstr "Ja"
+
+msgid "lzo"
+msgstr "lzo"
+
+msgid "zlib"
+msgstr "zlib"
+
+msgid "none"
+msgstr "geen"
+
+msgid "writenfi"
+msgstr "writenfi"
+
+msgid "nfidump"
+msgstr "nfidump"
+
+msgid "nandwrite"
+msgstr "nandwrite"
+
+msgid "rambo"
+msgstr "rambo"
+
+msgid "mkfs.jffs2"
+msgstr "mkfs.jffs2"
+
+msgid "nanddump"
+msgstr "nanddump"
+
+msgid "Select nfi image for flashing"
+msgstr "Kies nfi image om te flashen"
+
+msgid "Disclaimer"
+msgstr "Ontkenning"
+
+msgid ""
+"This way of flashing your Dreambox is potentially\n"
+"dangerous and not supported in any way from DMM.\n"
+"\n"
+"You are using it completely at you own risk!\n"
+"If you want to flash your Dreambox safely use the Webinterface or DreamUP!\n"
+"\n"
+"May the Null modem cable be with you!"
+msgstr ""
+"Op deze manier uw Dreambox flashen is mogelijk\n"
+"gevaarlijk en wordt niet door DMM ondersteund.\n"
+"\n"
+"U gebruikt dflash op EIGEN RISICO!\n"
+"Indien u uw Dreambox velig wilt flashen gebruik dan de webinterface of DreamUP!\n"
+"\n"
+"Moge de Nullmodemkabel u ter zijde staan!"
+
+msgid "direct Flashing Plugin by gutemine Version %s"
+msgstr "direct Flashing Plugin door gutemine versie %s"
+
+msgid "%i MB Swapspace OK"
+msgstr "%i MB Swapruimte OK"
+
+msgid "Flashing"
+msgstr "Flashen"
+
+msgid "Backup"
+msgstr "Backup"
+
+msgid "Configuring"
+msgstr "Instellingen"
+
+msgid "Checking"
+msgstr "Controle"
+
+msgid "Backup is running..."
+msgstr "Backup is bezig..."
+
+msgid "Enter Backup Imagename"
+msgstr "Geef backup imagenaam op"
+
+msgid "Enter Backup Path"
+msgstr "Geef backup pad op"
+
+msgid "Sorry, currently not supported on this Dreambox type"
+msgstr "Sorry, momenteel geen ondersteuning voor dit type dreambox"
+
+msgid "Sorry, no correct nfi file selected"
+msgstr "Sorry, onjuist nfi bestand geselecteerd"
+
+msgid "Sorry, bad blocks in %s Flash, better try DreamUP with recover bad sectors"
+msgstr "Sorry, foute blokken in %s flash, je kunt beter DreamUp met 'recover bad sectors' gebruiken"
+
+msgid "Refresh"
+msgstr "Vernieuwen"
+
+msgid "Nothing mounted at %s"
+msgstr "Niets gemount via %s"
+
+msgid "Sorry, use Barry Allen for Backup"
+msgstr "Gebruik Barry Allen voor backup"
+
+msgid "Sorry, use LowFAT for Backup"
+msgstr "Gebruik LowFAT voor backup"
+
+msgid "Sorry, use Dumbo for Backup"
+msgstr "Gebruik Dumbo voor backup"
+
+msgid "use back button in browser and try again!"
+msgstr "gebruik de TERUG-toets in uw browser en probeer het opnieuw!"
+
+msgid "Cancel"
+msgstr "Annuleer"
+
+msgid "choose rambo device"
+msgstr "Kies Rambo opslagmedium"
+
+msgid "Are you sure that you want to flash now %s ?"
+msgstr "Weet u zeker dat u nu %s wilt flashen ?"
+
+msgid "Sorry, Flashing of %s was canceled!"
+msgstr "Sorry, flashen van %s is geannuleerd!"
+
+msgid ""
+"Press OK now for flashing\n"
+"\n"
+"%s\n"
+"\n"
+"Box will reboot automatically when finished!\n"
+msgstr ""
+"Druk op OK nu om te flashen\n"
+"\n"
+"%s\n"
+"\n"
+"Ontvanger zal aan het einde automatisch opstarten!\n"
+
+msgid "Sorry, no device choosen"
+msgstr "Sorry, geen opslagmedium gekozen"
+
+msgid "Sorry, no device found"
+msgstr "Sory, geen opslagmedium gevonden"
+
+msgid "Sorry, %s device not mounted"
+msgstr "Sorry, %s opslagmedium is niet gemount"
+
+msgid ""
+"Copied %s.nfi to %s,\n"
+"reboot for activating it ?"
+msgstr ""
+"%s nfi gekopieerd naar %s,\n"
+"Herstart om het te activeren?"
+
+msgid ""
+"Flash Backup to %s finished with imagename:\n"
+"\n"
+"%s.nfi"
+msgstr ""
+"Flash backup naar %s is gereed met als imagenaam:\n"
+"\n"
+"%s.nfi"
+
+msgid "nothing entered"
+msgstr "niets ingevuld"
+
+msgid "already exists,"
+msgstr "bestaat reeds,"
+
+msgid "overwrite ?"
+msgstr "overschrijven ?"
+
+msgid ""
+"\n"
+"\n"
+"Using temporary swapspace."
+msgstr ""
+"\n"
+"\n"
+"Gebruik tijdelijke swapruimte."
+
+msgid ""
+"\n"
+"\n"
+"Enigma2 will restart due to lack of swapspace,\n"
+"check result with Backup in Plugin afterwards."
+msgstr ""
+"\n"
+"\n"
+"Enigma2 wordt vanwege ontbrekende swapruimte opnieuw gestart\n"
+"Controleer daarna het resultaat via deze plugin via de functie Backup."
+
+msgid ""
+"\n"
+"\n"
+"Without swapspace."
+msgstr ""
+"\n"
+"\n"
+"Zonder swapruimte."
+
+msgid ""
+"\n"
+"\n"
+"Using existing swapspace."
+msgstr ""
+"\n"
+"\n"
+"Gebruik beschikbare swapruimte."
+
+msgid ""
+"Press OK for starting backup to\n"
+"\n"
+"%s.nfi\n"
+"\n"
+"Be patient, this takes 3-5min ... "
+msgstr ""
+"Druk op OK om backup te starten. Backup bestandsnaam:\n"
+"\n"
+"%s.nfi\n"
+"\n"
+"Heb geduld, dit duurt ong. 3-5 min ... "
+
+msgid "not confirmed"
+msgstr "niet bevestigd"
+
+msgid "Info"
+msgstr "Info"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "About"
+msgstr "Over"
+
+msgid "check /dev/mtd0 = entire Flash"
+msgstr "controleer /dev/mtd0 = hele Flash"
+
+msgid "check /dev/mtd/0 = entire Flash"
+msgstr "controleer /dev/mtd/0 = hele Flash"
+
+msgid "check /dev/mtd1 = secondstage loader"
+msgstr "controleer /dev/mtd1 = Secondstage Lader"
+
+msgid "check /dev/mtd/1 = secondstage loader"
+msgstr "controleer /dev/mtd/1 = Secondstage Lader"
+
+msgid "check /dev/mtd2 = boot"
+msgstr "controleer /dev/mtd2 = boot"
+
+msgid "check /dev/mtd/2 = boot"
+msgstr "controleer /dev/mtd/2 = boot"
+
+msgid "check /dev/mtd3 = root"
+msgstr "controleer /dev/mtd3 = root"
+
+msgid "check /dev/mtd/3 = root"
+msgstr "controleer /dev/mtd/3 = root"
+
+msgid "check /dev/mtd4 = home"
+msgstr "controleer /dev/mtd4 = home"
+
+msgid "check /dev/mtd/4 = home"
+msgstr "controleer /dev/mtd/4 = home"
+
+msgid "check /dev/mtd5 = unused"
+msgstr "controleer /dev/mtd5 = ongebruikt"
+
+msgid "check /dev/mtd/5 = unused"
+msgstr "controleer /dev/mtd/5 = ongebruikt"
+
+msgid "check /dev/mtd6 = unused"
+msgstr "controleer /dev/mtd6 = ongebruikt"
+
+msgid "check /dev/mtd/6 = unused"
+msgstr "controleer /dev/mtd/6 = ongebruikt"
+
+msgid "checking %s - be patient (up to 1 min)"
+msgstr "Controleren %s - heb geduld (ong. 1 min)"
+
+msgid ""
+"B Bad block\n"
+". Empty block\n"
+"- Partially filled block\n"
+"= Full block, no summary node\n"
+"S Full block, summary node\n"
+"Ignore B at the end of Flash"
+msgstr ""
+"B Slecht block\n"
+". Blok leeg\n"
+"- Gedeeltelijk gevuld blok\n"
+"= Blok vol, geen Summary node\n"
+"S Block vol, Summary node\n"
+"Negeer de B aan het einde van de flash"
+
+msgid "Swapsize [MB]"
+msgstr "Swapgrootte [MB]"
+
+msgid "sort alphabetic"
+msgstr "sorteer alfabetisch"
+
+msgid "show in Extensions Menu"
+msgstr "toon in Uitbreidingsmenu"
+
+msgid "Flashtool"
+msgstr "Flash gereedschap"
+
+msgid "Backuptool"
+msgstr "Backup gereedschap"
+
+msgid "jffs2 erase block summary"
+msgstr "'jffs2 erase block' samenvatting"
+
+msgid "use ramfs for flashing"
+msgstr "gebruik ramfs voor flashen"
+
+msgid "loop swap over network"
+msgstr "Swappen over netwerk met een lus"
+
+msgid "keep temporary files"
+msgstr "behoud tijdelijke bestanden"
+
+msgid "restart enigma2"
+msgstr "herstart enigma2"
+
+msgid "include /usr mount in backup"
+msgstr "/usr mount in backup meenemen"
+
+msgid ""
+"Root Filesystem\n"
+"\n"
+"total: %s MB\n"
+"used:  %s MB\n"
+"free:  %s"
+msgstr ""
+"Root bestandssyteem\n"
+"\n"
+"totaal: %s MB\n"
+"gebruikt: %s MB\n"
+"vrij: %s MB"
+
+msgid ""
+"Memory\n"
+"\n"
+"total: %i MB\n"
+"used: %i MB\n"
+"free: %i MB"
+msgstr ""
+"Geheugen\n"
+"\n"
+"totaal: %i MB\n"
+"gebruikt: %i MB\n"
+"vrij: MB"
+

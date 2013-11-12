@@ -1,0 +1,207 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: unknown <unknown@unknown.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#
+# enigma2 python messages
+#
+msgid "Flashing"
+msgstr "Flashage"
+
+msgid "Disclaimer"
+msgstr "Responsabilité limitée"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "About"
+msgstr "A propos de"
+
+msgid "Select nfi image for flashing"
+msgstr "Selectionner image nfi pour flashage"
+
+msgid "Sorry, no /lib/libc-2.10.2.so - Image maybe too old"
+msgstr "Désolé, /lib/libc-2.10.2.so introuvable - firmware trop vieux"
+
+msgid "Sorry, no correct nfi file selected"
+msgstr "Désolé, aucun correct fichier nfi sélectionné"
+
+msgid "Nothing mounted at %s"
+msgstr "Nothing mounted at %s"
+
+msgid ""
+"Sorry, nfi file is smaller then 20MB\n"
+"probably incompletely copied!"
+msgstr ""
+"Désolé, taille du fichier nfi inférieur 20MB\n"
+"probablement incomplète !"
+
+msgid "Are you sure that you want to flash now %s ?"
+msgstr "Etes-vous sûr de vouloir flasher maintenant %s ?"
+
+msgid "Sorry, Flashing of %s was canceled!"
+msgstr "Désolé, flashage de %s annulé !"
+
+msgid ""
+"Press OK now for flashing\n"
+"\n"
+"%s\n"
+"\n"
+"Box will reboot automatically when finished!\n"
+msgstr ""
+"Tapez OK maintenant pour flashage\n"
+"\n"
+"%s\n"
+"\n"
+"Le démodulateur va redémarrer automatiquement à la fin !\n"
+
+msgid "Sorry, currently not supported on the dm7025"
+msgstr "Sorry, currently not supported on the dm7025"
+
+msgid ""
+"This way of flashing your Dreambox is potentially\n"
+"dangerous and not supported in any way from DMM.\n"
+"\n"
+"You are using it completely at you own risk!\n"
+"If you want to flash your Dreambox safely use the Webinterface or DreamUP!\n"
+"\n"
+"May the Null modem cable be with you!"
+msgstr ""
+"Cette manière de flasher votre Dreambox est potentiellement\n"
+"dangereuse et n'est pas  supportée par DMM.\n"
+"\n"
+"Utilisation à  votre propre risque et péril !\n"
+"Si vous voulez flasher votre Dreambox en toute sécurité, utilisez l'interface Web ou DreamUP !\n"
+"\n"
+"Que le câble modem croisé  soit avec vous !"
+
+msgid "direct Flash by gutemine Version %s"
+msgstr "direct Flashage plugin par gutemine version %s"
+
+msgid "Backup"
+msgstr "Backup"
+
+msgid "Enter Backup Imagename"
+msgstr "Enter Backup Imagename"
+
+msgid "Enter Backup Path"
+msgstr "Enter Backup Path"
+
+msgid "nothing entered"
+msgstr "nothing entered"
+
+msgid "already exists,"
+msgstr "already exists,"
+
+msgid "overwrite ?"
+msgstr "overwrite ?"
+
+msgid "Refresh"
+msgstr "Refresh"
+
+msgid "Backup is running..."
+msgstr "Backup is running..."
+
+msgid "use back button in browser and try again!"
+msgstr "use back button in browser and try again!"
+
+msgid ""
+"Press OK for starting backup to\n"
+"\n"
+"%s.nfi\n"
+"\n"
+"Be patient, this takes 3-5min ... "
+msgstr ""
+"Press OK for starting backup to\n"
+"\n"
+"%s.nfi\n"
+"\n"
+"Be patient, this takes 3-5min ... "
+
+msgid "not confirmed"
+msgstr "not confirmed"
+
+msgid "Swap activation failed"
+msgstr "Swap activation failed"
+
+msgid ""
+"Flash Backup to %s finished with imagename:\n"
+"\n"
+"%s.nfi"
+msgstr ""
+"Flash Backup to %s finished with imagename:\n"
+"\n"
+"%s.nfi"
+
+msgid ""
+"\n"
+"\n"
+"Using temporary swapspace."
+msgstr ""
+"\n"
+"\n"
+"Using temporary swapspace."
+
+msgid ""
+"\n"
+"\n"
+"Enigma2 will restart due to lack of swapspace,\n"
+"check result with Backup in Plugin afterwards."
+msgstr ""
+"\n"
+"\n"
+"Enigma2 will restart due to lack of swapspace,\n"
+"check result with Backup in Plugin afterwards."
+
+msgid ""
+"\n"
+"\n"
+"Using existing swapspace."
+msgstr ""
+"\n"
+"\n"
+"Using existing swapspace."
+
+msgid "Configuring"
+msgstr "Configuring"
+
+msgid "Swapsize [MB]"
+msgstr "Swapsize [MB]"
+
+msgid "show in Extensions Menu"
+msgstr "show in Extensions Menu"
+
+msgid "overwrite only image "
+msgstr "overwrite only image "
+
+msgid "sort alphabetic"
+msgstr "sort alphabetic"
+
+msgid "keep temporary files"
+msgstr "keep temporary files"
+
+msgid "restart enigma2"
+msgstr "restart enigma2"
+
+msgid "synchronous script execution"
+msgstr "synchronous script execution"
+
+msgid "Flashtool"
+msgstr "Flashtool"
+
+msgid "ignore /usr mount for backup"
+msgstr "ignore /usr mount for backup"
+
+msgid "Checking"
+msgstr "Checking"
+
+msgid "loop swap over network"
+msgstr "loop swap over network"
+

@@ -1,0 +1,370 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: dFlash\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-03 17:59+0100\n"
+"PO-Revision-Date: 2012-09-23 16:53+0100\n"
+"Last-Translator: gutemine <gutemine@unknown.com>\n"
+"Language-Team: blu8@user\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\\\\n\\n;\n"
+"X-Poedit-SourceCharset: iso-8859-1\n"
+"Language: en_GB\n"
+"X-Generator: Poedit 1.5.3\n"
+
+msgid "no"
+msgstr "no"
+
+msgid "yes"
+msgstr "yes"
+
+msgid "lzo"
+msgstr "lzo"
+
+msgid "zlib"
+msgstr "zlib"
+
+msgid "none"
+msgstr "none"
+
+msgid "writenfi"
+msgstr "writenfi"
+
+msgid "nfidump"
+msgstr "nfidump"
+
+msgid "nandwrite"
+msgstr "nandwrite"
+
+msgid "rambo"
+msgstr "rambo"
+
+msgid "mkfs.jffs2"
+msgstr "mkfs.jffs2"
+
+msgid "nanddump"
+msgstr "nanddump"
+
+msgid "Select nfi image for flashing"
+msgstr "Select nfi image for flashing"
+
+msgid "Disclaimer"
+msgstr "Disclaimer"
+
+msgid ""
+"This way of flashing your Dreambox is potentially\n"
+"dangerous and not supported in any way from DMM.\n"
+"\n"
+"You are using it completely at you own risk!\n"
+"If you want to flash your Dreambox safely use the Webinterface or DreamUP!\n"
+"\n"
+"May the Null modem cable be with you!"
+msgstr ""
+"This way of flashing your Dreambox is potentially\n"
+"dangerous and not supported in any way from DMM.\n"
+"\n"
+"You are using it completely at you own risk!\n"
+"If you want to flash your Dreambox safely use the Webinterface or DreamUP!\n"
+"\n"
+"May the Null modem cable be with you!"
+
+msgid "direct Flash Plugin by gutemine Version %s"
+msgstr "direct Flash Plugin by gutemine Version %s"
+
+msgid "%i MB Swapspace OK"
+msgstr "%i MB Swapspace OK"
+
+msgid "Flashing"
+msgstr "Flashing"
+
+msgid "Backup"
+msgstr "Backup"
+
+msgid "Configuring"
+msgstr "Configuring"
+
+msgid "Checking"
+msgstr "Checking"
+
+msgid "Backup is running..."
+msgstr "Backup is running..."
+
+msgid "Enter Backup Imagename"
+msgstr "Enter Backup Imagename"
+
+msgid "Enter Backup Path"
+msgstr "Enter Backup Path"
+
+msgid "Sorry, currently not supported on this Dreambox type"
+msgstr "Sorry, currently not supported on this Dreambox type"
+
+msgid "Sorry, no correct nfi file selected"
+msgstr "Sorry, no correct nfi file selected"
+
+msgid "Sorry, bad blocks in %s Flash, better try DreamUP with recover bad sectors"
+msgstr "Sorry, bad blocks in %s Flash, better try DreamUP with recover bad sectors"
+
+msgid "Refresh"
+msgstr "Refresh"
+
+msgid "Nothing mounted at %s"
+msgstr "Nothing mounted at %s"
+
+msgid "Sorry, use Barry Allen for Backup"
+msgstr "Sorry, use Barry Allen for Backup"
+
+msgid "Sorry, use LowFAT for Backup"
+msgstr "Sorry, use LowFAT for Backup"
+
+msgid "Sorry, use Dumbo for Backup"
+msgstr "Sorry, use Dumbo for Backup"
+
+msgid "use back button in browser and try again!"
+msgstr "use back button in browser and try again!"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "choose rambo device"
+msgstr "choose rambo device"
+
+msgid "Are you sure that you want to flash now %s ?"
+msgstr "Are you sure that you want to flash now %s ?"
+
+msgid "Sorry, Flashing of %s was canceled!"
+msgstr "Sorry, Flashing of %s was canceled!"
+
+msgid ""
+"Press OK now for flashing\n"
+"\n"
+"%s\n"
+"\n"
+"Box will reboot automatically when finished!"
+msgstr ""
+"Press OK now for flashing\n"
+"\n"
+"%s\n"
+"\n"
+"Box will reboot automatically when finished!"
+
+msgid "Sorry, no device choosen"
+msgstr "Sorry, no device choosen"
+
+msgid "Sorry, no device found"
+msgstr "Sorry, no device found"
+
+msgid "Sorry, %s device not mounted"
+msgstr "Sorry, %s device not mounted"
+
+msgid ""
+"Copied %s.nfi to %s,\n"
+"reboot for activating it ?"
+msgstr ""
+"Copied %s.nfi to %s,\n"
+"reboot for activating it ?"
+
+msgid ""
+"Flash Backup to %s finished with imagename:\n"
+"\n"
+"%s.nfi"
+msgstr ""
+"Flash Backup to %s finished with imagename:\n"
+"\n"
+"%s.nfi"
+
+msgid "nothing entered"
+msgstr "nothing entered"
+
+msgid "already exists,"
+msgstr "already exists,"
+
+msgid "overwrite ?"
+msgstr "overwrite ?"
+
+msgid ""
+"\n"
+"\n"
+"Using temporary swapspace."
+msgstr ""
+"\n"
+"\n"
+"Using temporary swapspace."
+
+msgid ""
+"\n"
+"\n"
+"Enigma2 will restart due to lack of swapspace,\n"
+"check result with Backup in Plugin afterwards."
+msgstr ""
+"\n"
+"\n"
+"Enigma2 will restart due to lack of swapspace,\n"
+"check result with Backup in Plugin afterwards."
+
+msgid ""
+"\n"
+"\n"
+"Without swapspace."
+msgstr ""
+"\n"
+"\n"
+"Without swapspace."
+
+msgid ""
+"\n"
+"\n"
+"Using existing swapspace."
+msgstr ""
+"\n"
+"\n"
+"Using existing swapspace."
+
+msgid ""
+"Press OK for starting backup to\n"
+"\n"
+"%s.nfi\n"
+"\n"
+"Be patient, this takes 3-5min ... "
+msgstr ""
+"Press OK for starting backup to\n"
+"\n"
+"%s.nfi\n"
+"\n"
+"Be patient, this takes 3-5min ... "
+
+msgid "not confirmed"
+msgstr "not confirmed"
+
+msgid "Info"
+msgstr "Info"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "About"
+msgstr "About"
+
+msgid "check /dev/mtd0 = entire Flash"
+msgstr "check /dev/mtd0 = entire Flash"
+
+msgid "check /dev/mtd/0 = entire Flash"
+msgstr "check /dev/mtd/0 = entire Flash"
+
+msgid "check /dev/mtd1 = secondstage loader"
+msgstr "check /dev/mtd1 = secondstage loader"
+
+msgid "check /dev/mtd/1 = secondstage loader"
+msgstr "check /dev/mtd/1 = secondstage loader"
+
+msgid "check /dev/mtd2 = boot"
+msgstr "check /dev/mtd2 = boot"
+
+msgid "check /dev/mtd/2 = boot"
+msgstr "check /dev/mtd/2 = boot"
+
+msgid "check /dev/mtd3 = root"
+msgstr "check /dev/mtd3 = root"
+
+msgid "check /dev/mtd/3 = root"
+msgstr "check /dev/mtd/3 = root"
+
+msgid "check /dev/mtd4 = home"
+msgstr "check /dev/mtd4 = home"
+
+msgid "check /dev/mtd/4 = home"
+msgstr "check /dev/mtd/4 = home"
+
+msgid "check /dev/mtd5 = unused"
+msgstr "check /dev/mtd5 = unused"
+
+msgid "check /dev/mtd/5 = unused"
+msgstr "check /dev/mtd/5 = unused"
+
+msgid "check /dev/mtd6 = unused"
+msgstr "check /dev/mtd6 = unused"
+
+msgid "check /dev/mtd/6 = unused"
+msgstr "check /dev/mtd/6 = unused"
+
+#, python-format
+msgid "checking %s - be patient (up to 1 min)"
+msgstr "checking %s - be patient (up to 1 min)"
+
+msgid ""
+"B Bad block\n"
+". Empty block\n"
+"- Partially filled block\n"
+"= Full block, no summary node\n"
+"S Full block, summary node\n"
+"Ignore B at the end of Flash"
+msgstr ""
+"B Bad block\n"
+". Empty block\n"
+"- Partially filled block\n"
+"= Full block, no summary node\n"
+"S Full block, summary node\n"
+"Ignore B at the end of Flash"
+
+msgid "Swapsize [MB]"
+msgstr "Swapsize [MB]"
+
+msgid "sort alphabetic"
+msgstr "sort alphabetic"
+
+msgid "show in Extensions Menu"
+msgstr "show in Extensions Menu"
+
+msgid "Flashtool"
+msgstr "Flashtool"
+
+msgid "Backuptool"
+msgstr "Backuptool"
+
+msgid "jffs2 erase block summary"
+msgstr "jffs2 erase block summary"
+
+msgid "use ramfs for flashing"
+msgstr "use ramfs for flashing"
+
+msgid "loop swap over network"
+msgstr "loop swap over network"
+
+msgid "keep temporary files"
+msgstr "keep temporary files"
+
+msgid "restart enigma2"
+msgstr "restart enigma2"
+
+msgid "include /usr mount in backup"
+msgstr "include /usr mount in backup"
+
+msgid ""
+"Root Filesystem\n"
+"\n"
+"total: %s MB\n"
+"used:  %s MB\n"
+"free:  %s"
+msgstr ""
+"Root Filesystem\n"
+"\n"
+"total: %s MB\n"
+"used:  %s MB\n"
+"free:  %s"
+
+msgid ""
+"Memory\n"
+"\n"
+"total: %i MB\n"
+"used: %i MB\n"
+"free: %i MB"
+msgstr ""
+"Memory\n"
+"\n"
+"total: %i MB\n"
+"used: %i MB\n"
+"free: %i MB"
+

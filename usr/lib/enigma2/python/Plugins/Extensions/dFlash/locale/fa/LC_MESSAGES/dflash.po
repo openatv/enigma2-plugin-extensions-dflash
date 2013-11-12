@@ -1,0 +1,210 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: dflash persian tranlation\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: unknown <unknown@unknown.com>\n"
+"Language-Team: Ali Khavari <yekseda@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Persian\n"
+"X-Poedit-Country: IRAN, ISLAMIC REPUBLIC OF\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#
+# enigma2 python messages
+#
+msgid "Flashing"
+msgstr "در حال فلش"
+
+msgid "Disclaimer"
+msgstr "رفع ادعا"
+
+msgid "Cancel"
+msgstr "لغو"
+
+msgid "About"
+msgstr "در مورد"
+
+msgid "Select nfi image for flashing"
+msgstr "ايميج ان‌اف‌آي را براي فلش انتخاب كنيد"
+
+msgid "Sorry, no /lib/libc-2.10.2.so - Image maybe too old"
+msgstr " ايميچج خيلي قديمي است- /lib/libc-2.10.2.so متاسفيم-بدون"
+
+msgid "Sorry, no correct nfi file selected"
+msgstr "متاسفيم فايل ان‌اف‌آي اشتباهي انتخاب شده است"
+
+msgid "Nothing mounted at %s"
+msgstr "نصب نشده است %s چيزي در"
+
+msgid ""
+"Sorry, nfi file is smaller then 20MB\n"
+"probably incompletely copied!"
+msgstr ""
+"متاسفيم فايل ان‌اف‌آي كوچكتر از20مگ ‌است\n"
+"!احتمالا درست كپي نشده"
+
+msgid "Are you sure that you want to flash now %s ?"
+msgstr " %s مطمئنيدكه حالا ميخواهيد فلش كنيد؟"
+
+msgid "Sorry, Flashing of %s was canceled!"
+msgstr "!لغو شد %s متاسفانه فلش"
+
+msgid ""
+"Press OK now for flashing\n"
+"\n"
+"%s\n"
+"\n"
+"Box will reboot automatically when finished!\n"
+msgstr ""
+"براي فلش كردن اوكي را حالا بزنيد\n"
+"\n"
+"%s\n"
+"\n"
+"پس از پايان دستگاه خودبه‌خود ريست ميشود\n"
+
+msgid "Sorry, currently not supported on the dm7025"
+msgstr "ساپورت نميشود dm7025 متاسفانه فعلا"
+
+msgid ""
+"This way of flashing your Dreambox is potentially\n"
+"dangerous and not supported in any way from DMM.\n"
+"\n"
+"You are using it completely at you own risk!\n"
+"If you want to flash your Dreambox safely use the Webinterface or DreamUP!\n"
+"\n"
+"May the Null modem cable be with you!"
+msgstr ""
+"اين نوع فلش كردن دريمباكس بطور بالقوه\n"
+"ميتواند خطرناك باشد و توسط شركت مذكور حمايت نميشود\n"
+"\n"
+"!خطر استفاده از اين پلاگين را خود مي پذيريد\n"
+"اگر ميخواهيد دريمباكس را بطور ايمن فلش كنيد از دريم‌آپ يا واسط وب استفاده كنيد\n"
+"\n"
+"!بايد كابل آپگريد را بهمراه داشته باشيد"
+
+msgid "direct Flashing Plugin by gutemine Version %s"
+msgstr "%s پلاگين فلاش مستقيم نويسنده گتماين نسخه"
+
+msgid "Backup"
+msgstr "پشتيبان"
+
+msgid "Enter Backup Imagename"
+msgstr "نام ايميج پشتيبان را وارد كنيد"
+
+msgid "Enter Backup Path"
+msgstr "مسير پشتيبان را وارد كنيد"
+
+msgid "nothing entered"
+msgstr "چيزي وارد نشد"
+
+msgid "already exists,"
+msgstr "قبلا وجود دارد,"
+
+msgid "overwrite ?"
+msgstr "رونويسي؟"
+
+msgid "Refresh"
+msgstr "به‌روزآوري"
+
+msgid "Backup is running..."
+msgstr "...در حال پشتيبان‌گيري"
+
+msgid "use back button in browser and try again!"
+msgstr "!دكمه بازگشت مرورگر را زده و مجددا تلاش كنيد"
+
+msgid ""
+"Press OK for starting backup to\n"
+"\n"
+"%s.nfi\n"
+"\n"
+"Be patient, this takes 3-5min ... "
+msgstr ""
+"دكمه اوكي را براي پشتيان‌گيري فشاردهيد در\n"
+"\n"
+"%s.nfi\n"
+"\n"
+"...صبور باشيد. 3-5 دقيقه زمان ميبرد"
+
+msgid "not confirmed"
+msgstr "تاييد نشده"
+
+msgid "Swap activation failed"
+msgstr "انجام نشد Swap فعالسازي"
+
+msgid ""
+"Flash Backup to %s finished with imagename:\n"
+"\n"
+"%s.nfi"
+msgstr ""
+":انجام شد با نام زير %s پشتيبان گيري از فلش\n"
+"\n"
+"%s.nfi"
+
+msgid ""
+"\n"
+"\n"
+"Using temporary swapspace."
+msgstr ""
+"\n"
+"\n"
+".در حال استفاده از فضاي موقتي انتقال"
+
+msgid ""
+"\n"
+"\n"
+"Enigma2 will restart due to lack of swapspace,\n"
+"check result with Backup in Plugin afterwards."
+msgstr ""
+"\n"
+"\n"
+"بدليل فقدان فضاي انتقال انيگما2 ري استارت ميكند\n"
+". سپس نتيجه را در قسمت پشتيباني در منوي پلاگين بررسي نماييد"
+
+msgid ""
+"\n"
+"\n"
+"Using existing swapspace."
+msgstr ""
+"\n"
+"\n"
+".درحال استفاده از فضاي انتقال موجود"
+
+msgid "Configuring"
+msgstr "Configuring"
+
+msgid "Swapsize [MB]"
+msgstr "Swapsize [MB]"
+
+msgid "show in Extensions Menu"
+msgstr "show in Extensions Menu"
+
+msgid "overwrite only image "
+msgstr "overwrite only image "
+
+msgid "sort alphabetic"
+msgstr "sort alphabetic"
+
+msgid "keep temporary files"
+msgstr "keep temporary files"
+
+msgid "restart enigma2"
+msgstr "restart enigma2"
+
+msgid "synchronous script execution"
+msgstr "synchronous script execution"
+
+msgid "Flashtool"
+msgstr "Flashtool"
+
+msgid "ignore /usr mount for backup"
+msgstr "ignore /usr mount for backup"
+
+msgid "Checking"
+msgstr "Checking"
+
+msgid "loop swap over network"
+msgstr "loop swap over network"
+

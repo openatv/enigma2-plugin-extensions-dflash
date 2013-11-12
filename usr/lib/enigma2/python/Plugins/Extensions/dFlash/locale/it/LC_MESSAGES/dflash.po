@@ -1,0 +1,378 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: dFlash\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-03 17:59+0100\n"
+"PO-Revision-Date: 2012-09-23 17:29+0100\n"
+"Last-Translator: gutemine <gutemine@unknown.com>\n"
+"Language-Team: blu8@user\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\\\\n\\n;\n"
+"X-Poedit-SourceCharset: iso-8859-1\n"
+"Language: it_IT\n"
+"X-Generator: Poedit 1.5.3\n"
+
+msgid "no"
+msgstr "No"
+
+msgid "yes"
+msgstr "Si"
+
+msgid "lzo"
+msgstr "lzo"
+
+msgid "zlib"
+msgstr "zlib"
+
+msgid "none"
+msgstr "niente"
+
+msgid "writenfi"
+msgstr "writenfi"
+
+msgid "nfidump"
+msgstr "nfidump"
+
+msgid "nandwrite"
+msgstr "nandwrite"
+
+msgid "rambo"
+msgstr "rambo"
+
+msgid "mkfs.jffs2"
+msgstr "mkfs.jffs2"
+
+msgid "nanddump"
+msgstr "nanddump"
+
+msgid "Select nfi image for flashing"
+msgstr "Selezionare la immagine .nfi da installare"
+
+msgid "Disclaimer"
+msgstr "AVVISO!!"
+
+msgid ""
+"This way of flashing your Dreambox is potentially\n"
+"dangerous and not supported in any way from DMM.\n"
+"\n"
+"You are using it completely at you own risk!\n"
+"If you want to flash your Dreambox safely use the Webinterface or DreamUP!\n"
+"\n"
+"May the Null modem cable be with you!"
+msgstr ""
+"Questa soluzione per installare il software nel Dreambox potrebbe \n"
+"essere rischiosa e in ogni caso non è supportata da DMM's.\n"
+"\n"
+"L'uso di dFlash è a vostro rischio e pericolo!\n"
+"Per flashare, usare la Interfaccia Web o DreamUP!\n"
+"\n"
+"Che il cavo null modem sia con voi!\n"
+"Buona fortuna :-)  blu8"
+
+msgid "direct Flash Plugin by gutemine Version %s"
+msgstr ""
+"Flash Plugin by gutemine versione %s\n"
+"Meglio lontano con qualcuno,\n"
+"che da nessuna parte con tutti.\n"
+"==blu8== "
+
+msgid "%i MB Swapspace OK"
+msgstr "%i MB file Swap OK"
+
+msgid "Flashing"
+msgstr "Flashen"
+
+msgid "Backup"
+msgstr "Copia"
+
+msgid "Configuring"
+msgstr "Settaggi"
+
+msgid "Checking"
+msgstr "Controllo"
+
+msgid "Backup is running..."
+msgstr "Copia in corso..."
+
+msgid "Enter Backup Imagename"
+msgstr "Inserire il nome della copia"
+
+msgid "Enter Backup Path"
+msgstr "Inserire la destinazione della copia"
+
+msgid "Sorry, currently not supported on this Dreambox type"
+msgstr "Non supportato su questo tipo di Dreambox"
+
+msgid "Sorry, no correct nfi file selected"
+msgstr "Spiacente , nessun file .NFI corretto selezionato"
+
+msgid "Sorry, bad blocks in %s Flash, better try DreamUP with recover bad sectors"
+msgstr "Bad Blocks presenti in %s Flash, meglio usare  DreamUP con ripristino settori"
+
+msgid "Refresh"
+msgstr "Aggiornare"
+
+msgid "Nothing mounted at %s"
+msgstr "Niente collegato in %s"
+
+msgid "Sorry, use Barry Allen for Backup"
+msgstr "Usare Barry Allen per la copia"
+
+msgid "Sorry, use LowFAT for Backup"
+msgstr "Usare LowFAT per la copia"
+
+msgid "Sorry, use Dumbo for Backup"
+msgstr "Usare Dumbo per la copia"
+
+msgid "use back button in browser and try again!"
+msgstr "Usare il tasto indietro del browser e riprovare!"
+
+msgid "Cancel"
+msgstr "Indietro"
+
+msgid "choose rambo device"
+msgstr "Selezionare il dispositivo Rambo"
+
+msgid "Are you sure that you want to flash now %s ?"
+msgstr ""
+"Sei sicuro di voler installare la immagine da:\n"
+"%s?"
+
+msgid "Sorry, Flashing of %s was canceled!"
+msgstr ""
+"Annullata la installazione della immagine da:\n"
+"%s"
+
+msgid ""
+"Press OK now for flashing\n"
+"\n"
+"%s\n"
+"\n"
+"Box will reboot automatically when finished!"
+msgstr ""
+"Premere <<OK>> per installare da:\n"
+"\n"
+"%s\n"
+"\n"
+"Il box si riavvierà automaticamente a operazione conclusa!"
+
+msgid "Sorry, no device choosen"
+msgstr "Nessun dispositivo selezionato"
+
+msgid "Sorry, no device found"
+msgstr "Nessun dispositivo trovato"
+
+msgid "Sorry, %s device not mounted"
+msgstr "Dispositivo %s non collegato"
+
+msgid ""
+"Copied %s.nfi to %s,\n"
+"reboot for activating it ?"
+msgstr ""
+"%s copiata in %s,\n"
+"riavviare per attivarla ?"
+
+msgid ""
+"Flash Backup to %s finished with imagename:\n"
+"\n"
+"%s.nfi"
+msgstr ""
+"Copia della flash eseguita in %s con nome immagine:\n"
+"\n"
+"%s.nfi"
+
+msgid "nothing entered"
+msgstr "Nessun inserimento"
+
+msgid "already exists,"
+msgstr "già esistente,"
+
+msgid "overwrite ?"
+msgstr "sovrascrivere?"
+
+msgid ""
+"\n"
+"\n"
+"Using temporary swapspace."
+msgstr ""
+"\n"
+"\n"
+"Uso file di swap temporaneo."
+
+msgid ""
+"\n"
+"\n"
+"Enigma2 will restart due to lack of swapspace,\n"
+"check result with Backup in Plugin afterwards."
+msgstr ""
+"\n"
+"\n"
+"Enigma2 verrà riavviata a causa della mancanza di Swap,\n"
+"controllare con Copia -Plugin il risultato in seguito."
+
+msgid ""
+"\n"
+"\n"
+"Without swapspace."
+msgstr ""
+"\n"
+"\n"
+"Senza Swap."
+
+msgid ""
+"\n"
+"\n"
+"Using existing swapspace."
+msgstr ""
+"\n"
+"\n"
+"Utilizzo lo Swap"
+
+msgid ""
+"Press OK for starting backup to\n"
+"\n"
+"%s.nfi\n"
+"\n"
+"Be patient, this takes 3-5min ... "
+msgstr ""
+"Premere <<OK>> per avviare la copia di\n"
+"\n"
+"%s.nfi\n"
+"\n"
+"Attendere, impiego 3-5 min ... "
+
+msgid "not confirmed"
+msgstr "Non confermato"
+
+msgid "Info"
+msgstr "Info"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "About"
+msgstr "Riguardo a"
+
+msgid "check /dev/mtd0 = entire Flash"
+msgstr "controllare/dev/mtd0 = Flash intera"
+
+msgid "check /dev/mtd/0 = entire Flash"
+msgstr "controllare /dev/mtd/0 = Flash intera"
+
+msgid "check /dev/mtd1 = secondstage loader"
+msgstr "controllare /dev/mtd1 = secondstage loader"
+
+msgid "check /dev/mtd/1 = secondstage loader"
+msgstr "controllare /dev/mtd1 = secondstage loader"
+
+msgid "check /dev/mtd2 = boot"
+msgstr "controllare /dev/mtd2 = boot"
+
+msgid "check /dev/mtd/2 = boot"
+msgstr "controllare /dev/mtd/2 = boot"
+
+msgid "check /dev/mtd3 = root"
+msgstr "controllare /dev/mtd3 = root"
+
+msgid "check /dev/mtd/3 = root"
+msgstr "controllare /dev/mtd/3 = root"
+
+msgid "check /dev/mtd4 = home"
+msgstr "controllare /dev/mtd4 = home"
+
+msgid "check /dev/mtd/4 = home"
+msgstr "controllare /dev/mtd/4 = home"
+
+msgid "check /dev/mtd5 = unused"
+msgstr "controllare /dev/mtd5 = non usato"
+
+msgid "check /dev/mtd/5 = unused"
+msgstr "controllare /dev/mtd/5 = non usato"
+
+msgid "check /dev/mtd6 = unused"
+msgstr "controllare /dev/mtd6 = non usato"
+
+msgid "check /dev/mtd/6 = unused"
+msgstr "controllare /dev/mtd/6 = non usato"
+
+msgid "checking %s - be patient (up to 1 min)"
+msgstr "controllo %s - attendere (1 min)"
+
+msgid ""
+"B Bad block\n"
+". Empty block\n"
+"- Partially filled block\n"
+"= Full block, no summary node\n"
+"S Full block, summary node\n"
+"Ignore B at the end of Flash"
+msgstr ""
+"B Blocco danneggiato\n"
+". Blocco vuoto\n"
+"- Blocco scritto solo in parte\n"
+"= Blocco completo, nessun nodo\n"
+"S Blocco completo, nodo\n"
+"Ignorare B al termine della Flash"
+
+msgid "Swapsize [MB]"
+msgstr "Dimensioni Swap [MB]"
+
+msgid "sort alphabetic"
+msgstr "Ordinamento alfabetico"
+
+msgid "show in Extensions Menu"
+msgstr "Visualizzare nel menu estensioni"
+
+msgid "Flashtool"
+msgstr "Strumenti per flash"
+
+msgid "Backuptool"
+msgstr "Strumenti per copia"
+
+msgid "jffs2 erase block summary"
+msgstr "jffs2 cancellazione sintesi blocco"
+
+msgid "use ramfs for flashing"
+msgstr "Utilizzare ramfs per installare"
+
+msgid "loop swap over network"
+msgstr "Ciclo di swap sul network"
+
+msgid "keep temporary files"
+msgstr "Mantenere i file temporanei"
+
+msgid "restart enigma2"
+msgstr "Riavviare enigma2"
+
+msgid "include /usr mount in backup"
+msgstr "Includere usr mount nella copia"
+
+msgid ""
+"Root Filesystem\n"
+"\n"
+"total: %s MB\n"
+"used:  %s MB\n"
+"free:  %s"
+msgstr ""
+"Root Filesystem\n"
+"\n"
+"totale: %s MB\n"
+"usato:  %s MB\n"
+"libero:  %s"
+
+msgid ""
+"Memory\n"
+"\n"
+"total: %i MB\n"
+"used: %i MB\n"
+"free: %i MB"
+msgstr ""
+"Memoria\n"
+"\n"
+"totale: %i MB\n"
+"usati: %i MB\n"
+"liberi: %i MB"
+
