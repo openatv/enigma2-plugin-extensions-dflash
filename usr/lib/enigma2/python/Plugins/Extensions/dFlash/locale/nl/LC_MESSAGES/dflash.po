@@ -1,14 +1,16 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: dFlash\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: gutemine <gutemine@unknown.com>\n"
-"Language-Team: \n"
+"Language-Team: ni_hao\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
+"Language: nl_NL\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-SourceCharset: iso-8859-1\n"
 
 msgid "no"
 msgstr "Nee"
@@ -16,8 +18,17 @@ msgstr "Nee"
 msgid "yes"
 msgstr "Ja"
 
-msgid "lzo"
-msgstr "lzo"
+msgid "nfiwrite"
+msgstr "nfiwrite"
+
+msgid "recovery"
+msgstr "recovery"
+
+msgid "rambo"
+msgstr "rambo"
+
+msgid "flodder"
+msgstr "flodder"
 
 msgid "zlib"
 msgstr "zlib"
@@ -25,29 +36,23 @@ msgstr "zlib"
 msgid "none"
 msgstr "geen"
 
-msgid "writenfi"
-msgstr "writenfi"
+msgid "lzo"
+msgstr "lzo"
 
-msgid "nfidump"
-msgstr "nfidump"
-
-msgid "nandwrite"
-msgstr "nandwrite"
-
-msgid "rambo"
-msgstr "rambo"
+msgid "favor_lzo"
+msgstr "favor_lzo"
 
 msgid "mkfs.jffs2"
 msgstr "mkfs.jffs2"
 
-msgid "nanddump"
-msgstr "nanddump"
+msgid "mkfs.ubifs"
+msgstr "mkfs.ubifs"
 
 msgid "Select nfi image for flashing"
 msgstr "Kies nfi image om te flashen"
 
 msgid "Disclaimer"
-msgstr "Ontkenning"
+msgstr "Vrijwaring"
 
 msgid ""
 "This way of flashing your Dreambox is potentially\n"
@@ -62,12 +67,12 @@ msgstr ""
 "gevaarlijk en wordt niet door DMM ondersteund.\n"
 "\n"
 "U gebruikt dflash op EIGEN RISICO!\n"
-"Indien u uw Dreambox velig wilt flashen gebruik dan de webinterface of DreamUP!\n"
+"Indien u uw Dreambox veilig wilt flashen gebruik dan de WebInterface of DreamUP!\n"
 "\n"
 "Moge de Nullmodemkabel u ter zijde staan!"
 
 msgid "direct Flashing Plugin by gutemine Version %s"
-msgstr "direct Flashing Plugin door gutemine versie %s"
+msgstr "direct Flash plugin door gutemine versie %s"
 
 msgid "%i MB Swapspace OK"
 msgstr "%i MB Swapruimte OK"
@@ -84,11 +89,11 @@ msgstr "Instellingen"
 msgid "Checking"
 msgstr "Controle"
 
-msgid "Backup is running..."
-msgstr "Backup is bezig..."
+msgid "dFlash is busy ..."
+msgstr "dFlash is bezig..."
 
 msgid "Enter Backup Imagename"
-msgstr "Geef backup imagenaam op"
+msgstr "Geef naam van de image"
 
 msgid "Enter Backup Path"
 msgstr "Geef backup pad op"
@@ -98,6 +103,9 @@ msgstr "Sorry, momenteel geen ondersteuning voor dit type dreambox"
 
 msgid "Sorry, no correct nfi file selected"
 msgstr "Sorry, onjuist nfi bestand geselecteerd"
+
+msgid "Sorry, no nfi file unzipped"
+msgstr "nfi bestand (zip) is niet uitgepakt!"
 
 msgid "Sorry, bad blocks in %s Flash, better try DreamUP with recover bad sectors"
 msgstr "Sorry, foute blokken in %s flash, je kunt beter DreamUp met 'recover bad sectors' gebruiken"
@@ -109,13 +117,13 @@ msgid "Nothing mounted at %s"
 msgstr "Niets gemount via %s"
 
 msgid "Sorry, use Barry Allen for Backup"
-msgstr "Gebruik Barry Allen voor backup"
+msgstr "Gebruik Barry Allen om backup te maken"
 
 msgid "Sorry, use LowFAT for Backup"
-msgstr "Gebruik LowFAT voor backup"
+msgstr "Gebruik LowFAT om backup te maken"
 
 msgid "Sorry, use Dumbo for Backup"
-msgstr "Gebruik Dumbo voor backup"
+msgstr "Gebruik Dumbo om backup te maken"
 
 msgid "use back button in browser and try again!"
 msgstr "gebruik de TERUG-toets in uw browser en probeer het opnieuw!"
@@ -123,8 +131,23 @@ msgstr "gebruik de TERUG-toets in uw browser en probeer het opnieuw!"
 msgid "Cancel"
 msgstr "Annuleer"
 
+msgid "Are you sure that you want to unzip %s ?"
+msgstr "Weet u zeker dat u %s wilt uitpakken?"
+
+msgid "Sorry, unzip of %s was canceled!"
+msgstr "Sorry, uitpakken van %s is afgebroken!"
+
 msgid "choose rambo device"
-msgstr "Kies Rambo opslagmedium"
+msgstr "Kies rambo opslagmedium"
+
+msgid "choose flodder device"
+msgstr "Kies flodder opslagmedium"
+
+msgid "choose recovery device"
+msgstr "Kies recovery opslagmedium"
+
+msgid "choose raw device"
+msgstr "Kies raw opslagmedium"
 
 msgid "Are you sure that you want to flash now %s ?"
 msgstr "Weet u zeker dat u nu %s wilt flashen ?"
@@ -139,7 +162,7 @@ msgid ""
 "\n"
 "Box will reboot automatically when finished!\n"
 msgstr ""
-"Druk op OK nu om te flashen\n"
+"Druk nu op OK om te flashen\n"
 "\n"
 "%s\n"
 "\n"
@@ -149,24 +172,58 @@ msgid "Sorry, no device choosen"
 msgstr "Sorry, geen opslagmedium gekozen"
 
 msgid "Sorry, no device found"
-msgstr "Sory, geen opslagmedium gevonden"
+msgstr "Sorry, geen opslagmedium gevonden"
+
+msgid "Are you sure that you want to FORMAT recovery device %s now for %s ?"
+msgstr ""
+"Weet u zeker, dat u recovery opslagmedium %s\n"
+"wilt formatteren voor %s ?"
 
 msgid "Sorry, %s device not mounted"
 msgstr "Sorry, %s opslagmedium is niet gemount"
 
 msgid ""
 "Copied %s.nfi to %s,\n"
+"don't forget kernel commandline and now\n"
 "reboot for activating it ?"
 msgstr ""
-"%s nfi gekopieerd naar %s,\n"
-"Herstart om het te activeren?"
+"%s.nfi gekopieerd naar %s,\n"
+"Denk aan de kernel commandoregel; wilt u\n"
+"de ontvanger nu opnieuw starten ?"
+
+msgid ""
+"Copied %s.nfi to %s,\n"
+"don't forget to remove stick\n"
+"if you enabled kernel commandline!\n"
+"Halt now ?"
+msgstr ""
+
+msgid ""
+"Copied %s.nfi to %s,\n"
+"reboot for activating it ?"
+msgstr ""
+"%s.nfi gekopieerd naar %s,\n"
+"Ontvanger opnieuw starten ?"
+
+msgid ""
+"Flash Backup to %s finished with imagename:\n"
+"\n"
+"%s.nfi\n"
+"\n"
+"BUT it has I/O Errors"
+msgstr ""
+"Flash backup is gereed; de imagenaam is:\n"
+"\n"
+"%s.nfi,\n"
+"\n"
+"MAAR met I/O-fouten!!!"
 
 msgid ""
 "Flash Backup to %s finished with imagename:\n"
 "\n"
 "%s.nfi"
 msgstr ""
-"Flash backup naar %s is gereed met als imagenaam:\n"
+"Flash backup is gereed; de imagenaam is:\n"
 "\n"
 "%s.nfi"
 
@@ -196,8 +253,9 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Enigma2 wordt vanwege ontbrekende swapruimte opnieuw gestart\n"
-"Controleer daarna het resultaat via deze plugin via de functie Backup."
+"Enigma2 wordt - vanwege onvoldoene swapruimte - opnieuw gestart\n"
+"Controleer daarna het resultaat met deze plugin via\n"
+"de functie Backup."
 
 msgid ""
 "\n"
@@ -217,18 +275,11 @@ msgstr ""
 "\n"
 "Gebruik beschikbare swapruimte."
 
-msgid ""
-"Press OK for starting backup to\n"
-"\n"
-"%s.nfi\n"
-"\n"
-"Be patient, this takes 3-5min ... "
-msgstr ""
-"Druk op OK om backup te starten. Backup bestandsnaam:\n"
-"\n"
-"%s.nfi\n"
-"\n"
-"Heb geduld, dit duurt ong. 3-5 min ... "
+msgid "Press OK for starting backup to"
+msgstr "Druk op OK om backup te starten naar"
+
+msgid "Be patient, this takes 5-10min ... "
+msgstr "Heb geduld, dit duurt ong. 5-10 min ... "
 
 msgid "not confirmed"
 msgstr "niet bevestigd"
@@ -284,6 +335,9 @@ msgstr "controleer /dev/mtd6 = ongebruikt"
 msgid "check /dev/mtd/6 = unused"
 msgstr "controleer /dev/mtd/6 = ongebruikt"
 
+msgid "ubinfo"
+msgstr "ubinfo"
+
 msgid "checking %s - be patient (up to 1 min)"
 msgstr "Controleren %s - heb geduld (ong. 1 min)"
 
@@ -302,45 +356,75 @@ msgstr ""
 "S Block vol, Summary node\n"
 "Negeer de B aan het einde van de flash"
 
-msgid "Swapsize [MB]"
-msgstr "Swapgrootte [MB]"
-
-msgid "sort alphabetic"
-msgstr "sorteer alfabetisch"
-
-msgid "show in Extensions Menu"
-msgstr "toon in Uitbreidingsmenu"
-
 msgid "Flashtool"
 msgstr "Flash gereedschap"
 
 msgid "Backuptool"
 msgstr "Backup gereedschap"
 
+msgid "jffs2 boot compression"
+msgstr "jffs2 boot compressie"
+
+msgid "jffs2 root compression"
+msgstr "jffs2 root compressie"
+
 msgid "jffs2 erase block summary"
 msgstr "'jffs2 erase block' samenvatting"
 
-msgid "use ramfs for flashing"
-msgstr "gebruik ramfs voor flashen"
+msgid "ubifs root compression"
+msgstr "ubifs root Kompression"
+
+msgid "ubifs data backup"
+msgstr "ubifs data backup"
+
+msgid "ubifs data compression"
+msgstr "ubifs data compressie"
+
+msgid "Root Volume Size [59-%iMB]"
+msgstr "Root Volume Grootte [59-%iMB]"
+
+msgid "Root Volume Size [40-%iMB]"
+msgstr "Root Volume Grootte [40-%iMB]"
+
+msgid "ubifs subpages [Flash="
+msgstr "ubifs subpages [Flash="
+
+msgid ", rambo="
+msgstr ", rambo="
+
+msgid "ubifs debug level"
+msgstr "ubifs debug-niveau"
+
+msgid "Console output"
+msgstr "Ausgabe auf Konsole"
+
+msgid "Fading"
+msgstr "Fading"
+
+msgid "Swapsize [MB]"
+msgstr "Swapsize [MB]"
 
 msgid "loop swap over network"
-msgstr "Swappen over netwerk met een lus"
-
-msgid "keep temporary files"
-msgstr "behoud tijdelijke bestanden"
-
-msgid "restart enigma2"
-msgstr "herstart enigma2"
+msgstr "Swappen over netwerk"
 
 msgid "include /usr mount in backup"
-msgstr "/usr mount in backup meenemen"
+msgstr "/usr mount in backup opnemen"
+
+msgid "include squashfs directories in backup"
+msgstr "squashfs mappen in backup opnemen"
+
+msgid "zip backups"
+msgstr "zip backups"
+
+msgid "show in Extensions Menu"
+msgstr "toon in Uitbreidingsmenu"
 
 msgid ""
 "Root Filesystem\n"
 "\n"
 "total: %s MB\n"
 "used:  %s MB\n"
-"free:  %s"
+"free:  %s MB"
 msgstr ""
 "Root bestandssyteem\n"
 "\n"

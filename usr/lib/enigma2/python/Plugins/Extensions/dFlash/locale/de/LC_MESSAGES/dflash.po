@@ -1,20 +1,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: dFlash\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-03 17:59+0100\n"
-"PO-Revision-Date: 2012-09-23 17:29+0100\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
 "Last-Translator: gutemine <gutemine@unknown.com>\n"
-"Language-Team: blu8@user\n"
+"Language-Team:  <minta@user>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
-"X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\\\\n\\n;\n"
-"X-Poedit-SourceCharset: iso-8859-1\n"
 "Language: de_DE\n"
-"X-Generator: Poedit 1.5.3\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-SourceCharset: iso-8859-1\n"
 
 msgid "no"
 msgstr "Nein"
@@ -22,8 +18,17 @@ msgstr "Nein"
 msgid "yes"
 msgstr "Ja"
 
-msgid "lzo"
-msgstr "lzo"
+msgid "nfiwrite"
+msgstr "nfiwrite"
+
+msgid "recovery"
+msgstr "recovery"
+
+msgid "rambo"
+msgstr "rambo"
+
+msgid "flodder"
+msgstr "flodder"
 
 msgid "zlib"
 msgstr "zlib"
@@ -31,26 +36,20 @@ msgstr "zlib"
 msgid "none"
 msgstr "keine"
 
-msgid "writenfi"
-msgstr "writenfi"
+msgid "lzo"
+msgstr "lzo"
 
-msgid "nfidump"
-msgstr "nfidump"
-
-msgid "nandwrite"
-msgstr "nandwrite"
-
-msgid "rambo"
-msgstr "rambo"
+msgid "favor_lzo"
+msgstr "favor_lzo"
 
 msgid "mkfs.jffs2"
 msgstr "mkfs.jffs2"
 
-msgid "nanddump"
-msgstr "nanddump"
+msgid "mkfs.ubifs"
+msgstr "mkfs.ubifs"
 
 msgid "Select nfi image for flashing"
-msgstr "Wählen Sie eine nfi Image zum Flashen"
+msgstr "Wählen Sie ein NFI-Image zum Flashen"
 
 msgid "Disclaimer"
 msgstr "Haftungsausschluss"
@@ -91,8 +90,8 @@ msgstr "Einstellungen"
 msgid "Checking"
 msgstr "Überprüfen"
 
-msgid "Backup is running..."
-msgstr "Sicherung wird erstellt..."
+msgid "dFlash is busy ..."
+msgstr "dFlash ist beschäftigt ..."
 
 msgid "Enter Backup Imagename"
 msgstr "Name des Sicherungsimages eingeben"
@@ -101,13 +100,16 @@ msgid "Enter Backup Path"
 msgstr "Sicherungspfad eingeben"
 
 msgid "Sorry, currently not supported on this Dreambox type"
-msgstr "Leider, derzeit nicht unterstützt auf diese Dreambox"
+msgstr "Derzeit leider auf dieser Dreambox nicht unterstützt"
 
 msgid "Sorry, no correct nfi file selected"
-msgstr "Leider, kein korrektes nfi File ausgewählt"
+msgstr "Keine korrekte NFI-Datei ausgewählt"
+
+msgid "Sorry, no nfi file unzipped"
+msgstr "NFI-Datei wurde nicht entpackt!"
 
 msgid "Sorry, bad blocks in %s Flash, better try DreamUP with recover bad sectors"
-msgstr "Bad Block in %s Flash, besser Sie nutzen Dreamup mit recovery Bad Sektoren"
+msgstr "Bad Blocks in %s Flash, besser Sie versuchen DreamUP mit recover bad sectors"
 
 msgid "Refresh"
 msgstr "Aktualisieren"
@@ -125,19 +127,38 @@ msgid "Sorry, use Dumbo for Backup"
 msgstr "Benutzen Sie Dumbo zum Sichern"
 
 msgid "use back button in browser and try again!"
-msgstr "Zurück Knopf im Browser benutzen, und noch mal versuchen!"
+msgstr "Zurück Knopf im Browser benutzen, und nochmal versuchen!"
 
 msgid "Cancel"
 msgstr "Abbrechen"
 
+msgid "Are you sure that you want to unzip %s ?"
+msgstr "Sind Sie sicher, dass Sie %s entpacken wollen?"
+
+msgid "Sorry, unzip of %s was canceled!"
+msgstr "Entpacken von %s wurde abgebrochen !"
+
 msgid "choose rambo device"
-msgstr "Wählen Sie das rambo Speichergerät"
+msgstr "Wählen Sie das Rambo Speichergerät"
+
+msgid "choose flodder device"
+msgstr "Wählen Sie das Flodder Speichergerät"
+
+msgid "choose recovery device"
+msgstr "Wählen Sie das Recovery Speichergerät"
+
+msgid "choose raw device"
+msgstr "Wählen Sie das Raw Speichergerät"
 
 msgid "Are you sure that you want to flash now %s ?"
-msgstr "Wollen Sie jetzt wirklich flashen %s ?"
+msgstr ""
+"Wollen Sie jetzt wirklich flashen:\n"
+"%s ?"
 
 msgid "Sorry, Flashing of %s was canceled!"
-msgstr "Das Flashen von %s wurde leider abgebrochen!"
+msgstr ""
+"Das Flashen von %s\n"
+"wurde leider abgebrochen!"
 
 msgid ""
 "Press OK now for flashing\n"
@@ -153,20 +174,56 @@ msgstr ""
 "Ihre Box wird nach Abschluss des Flashvorgangs automatisch neu gestartet!"
 
 msgid "Sorry, no device choosen"
-msgstr "Leider, kein Speichergerät gewählt"
+msgstr "Kein Speichergerät gewählt"
 
 msgid "Sorry, no device found"
-msgstr "Leider, kein Speichergerät gefunden"
+msgstr "Kein Speichergerät gefunden"
+
+msgid "Are you sure that you want to FORMAT recovery device %s now for %s ?"
+msgstr "Recovery Device %s für %s formatieren?"
 
 msgid "Sorry, %s device not mounted"
-msgstr "%s Speichergerät leider nicht gemounted"
+msgstr "%s Speichergerät nicht gemounted"
+
+msgid ""
+"Copied %s.nfi to %s,\n"
+"don't forget kernel commandline and now\n"
+"reboot for activating it ?"
+msgstr ""
+"%s.nfi nach %s kopiert!\n"
+"Kernel Command Line nicht vergessen und jetzt\n"
+"neu starten zum Aktivieren?"
+
+msgid ""
+"Copied %s.nfi to %s,\n"
+"don't forget to remove stick\n"
+"if you enabled kernel commandline!\n"
+"Halt now ?"
+msgstr ""
+"%s.nfi nach %s kopiert! \n"
+"Nicht vergessen, den USB Stick zu entfernen,\n"
+"wenn die Kernel Command Line aktiviert ist!\n"
+"Jetzt herunterfahren?"
 
 msgid ""
 "Copied %s.nfi to %s,\n"
 "reboot for activating it ?"
 msgstr ""
-"Kopiert %s nfi nach %s,\n"
-"Neustarten, damit es aktiviert wird?"
+"%s.nfi nach %s kopiert!\n"
+"neu starten zum Aktivieren?"
+
+msgid ""
+"Flash Backup to %s finished with imagename:\n"
+"\n"
+"%s.nfi\n"
+"\n"
+"BUT it has I/O Errors"
+msgstr ""
+"Flashsicherung nach %s beendet mit Imagenamen:\n"
+"\n"
+"%s.nfi\n"
+"\n"
+"ABER mit ERRORS I/O "
 
 msgid ""
 "Flash Backup to %s finished with imagename:\n"
@@ -175,7 +232,7 @@ msgid ""
 msgstr ""
 "Flashsicherung nach %s beendet mit Imagenamen:\n"
 "\n"
-"%s.nfi"
+"%s .nfi"
 
 msgid "nothing entered"
 msgstr "nichts eingegeben"
@@ -216,7 +273,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Ohne swapspace."
+"Ohne Swapspace."
 
 msgid ""
 "\n"
@@ -227,18 +284,11 @@ msgstr ""
 "\n"
 "Verwende vorhandenen Swapspace."
 
-msgid ""
-"Press OK for starting backup to\n"
-"\n"
-"%s.nfi\n"
-"\n"
-"Be patient, this takes 3-5min ... "
-msgstr ""
-"OK drücken, um die Sicherung zu starten in\n"
-"\n"
-"%s.nfi\n"
-"\n"
-"Bitte um Geduld, der Vorgang dauert 3-5min ... "
+msgid "Press OK for starting backup to"
+msgstr "OK drücken, um die Sicherung zu starten"
+
+msgid "Be patient, this takes 5-10min ... "
+msgstr "Geduld, der Vorgang dauert 5-10 Min ... "
 
 msgid "not confirmed"
 msgstr "nicht bestätigt"
@@ -253,10 +303,10 @@ msgid "About"
 msgstr "Über"
 
 msgid "check /dev/mtd0 = entire Flash"
-msgstr "check /dev/mtd0 = ganzer Flash"
+msgstr "check /dev/mtd0 = gesamter Flash"
 
 msgid "check /dev/mtd/0 = entire Flash"
-msgstr "check /dev/mtd/0 = ganzer Flash"
+msgstr "check /dev/mtd/0 = gesamter Flash"
 
 msgid "check /dev/mtd1 = secondstage loader"
 msgstr "check /dev/mtd1 = Secondstage Loader"
@@ -294,8 +344,11 @@ msgstr "check /dev/mtd6 = unbenutzt"
 msgid "check /dev/mtd/6 = unused"
 msgstr "check /dev/mtd/6 = unbenutzt"
 
+msgid "ubinfo"
+msgstr "ubinfo"
+
 msgid "checking %s - be patient (up to 1 min)"
-msgstr "Prüfung %s - geduldig sein (bis zu 1 min)"
+msgstr "Prüfe %s - bitte warten (bis zu 1 Min)"
 
 msgid ""
 "B Bad block\n"
@@ -305,21 +358,12 @@ msgid ""
 "S Full block, summary node\n"
 "Ignore B at the end of Flash"
 msgstr ""
-"B Bad block\n"
+"B Bad Block\n"
 ". Block leer\n"
 "- Teilweise gefüllter Block\n"
-"= Block voll, kein Summary node\n"
-"S Block voll, Summary node\n"
-"Ignoriere B am Ende der Flashspeichers"
-
-msgid "Swapsize [MB]"
-msgstr "Swapgröße [MB]"
-
-msgid "sort alphabetic"
-msgstr "Alphabetisch sortieren"
-
-msgid "show in Extensions Menu"
-msgstr "zeigen im Erweiterungensmenu"
+"= Block voll, kein Summary Node\n"
+"S Block voll, Summary Node\n"
+"Ignoriere B am Ende des Flashspeichers"
 
 msgid "Flashtool"
 msgstr "Flashwerkzeug"
@@ -327,30 +371,69 @@ msgstr "Flashwerkzeug"
 msgid "Backuptool"
 msgstr "Sicherungswerkzeug"
 
-msgid "jffs2 erase block summary"
-msgstr "jffs2 earse block Zusammenfassung"
+msgid "jffs2 boot compression"
+msgstr "jffs2 boot Kompression"
 
-msgid "use ramfs for flashing"
-msgstr "Benutzen Sie ramfs zum flashen"
+msgid "jffs2 root compression"
+msgstr "jffs2 root Kompression"
+
+msgid "jffs2 erase block summary"
+msgstr "jffs2 erase block Zusammenfassung"
+
+msgid "ubifs root compression"
+msgstr "ubifs root Kompression"
+
+msgid "ubifs data backup"
+msgstr "ubifs data backup"
+
+msgid "ubifs data compression"
+msgstr "ubifs data Kompression"
+
+msgid "Root Volume Size [59-%iMB]"
+msgstr "Root Volume Größe [59-%iMB]"
+
+msgid "Root Volume Size [40-%iMB]"
+msgstr "Root Volume Größe [40-%iMB]"
+
+msgid "ubifs subpages [Flash="
+msgstr "ubifs subpages [Flash="
+
+msgid ", rambo="
+msgstr ", rambo="
+
+msgid "ubifs debug level"
+msgstr "ubifs Debug-Level"
+
+msgid "Console output"
+msgstr "Ausgabe auf Konsole"
+
+msgid "Fading"
+msgstr "Fading"
+
+msgid "Swapsize [MB]"
+msgstr "Swapsize [MB]"
 
 msgid "loop swap over network"
-msgstr "Swappen übers Netzwerk mit loop"
-
-msgid "keep temporary files"
-msgstr "temporäre Files behalten"
-
-msgid "restart enigma2"
-msgstr "Enigma2 neustarten"
+msgstr "Swap Schleife über das Netzwerk"
 
 msgid "include /usr mount in backup"
 msgstr "/usr mount in die Sicherung einbeziehen"
+
+msgid "include squashfs directories in backup"
+msgstr "squashfs Ordner in die Sicherung einbeziehen"
+
+msgid "zip backups"
+msgstr "zip Sicherungen"
+
+msgid "show in Extensions Menu"
+msgstr "im Erweiterungsmenü anzeigen"
 
 msgid ""
 "Root Filesystem\n"
 "\n"
 "total: %s MB\n"
 "used:  %s MB\n"
-"free:  %s"
+"free:  %s MB"
 msgstr ""
 "Root Filesystem\n"
 "\n"
@@ -370,4 +453,7 @@ msgstr ""
 "gesamt: %i MB\n"
 "benutzt: %i MB\n"
 "frei: %i MB"
+
+msgid "switch boxversion for backup"
+msgstr "tausche Boxversion beim Sichern"
 

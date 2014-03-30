@@ -1,20 +1,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: dFlash\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-03 17:59+0100\n"
-"PO-Revision-Date: 2012-09-23 16:53+0100\n"
+"POT-Creation-Date: 2014-01-07 10:12+0100\n"
+"PO-Revision-Date: 2014-01-07 20:39+0100\n"
 "Last-Translator: gutemine <gutemine@unknown.com>\n"
-"Language-Team: blu8@user\n"
+"Language-Team: blu8-ferdi <blu8@user>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"Language: en\n"
+"X-Generator: Poedit 1.6.3\n"
 "X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\\\\n\\n;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: iso-8859-1\n"
-"Language: en_GB\n"
-"X-Generator: Poedit 1.5.3\n"
 
 msgid "no"
 msgstr "no"
@@ -22,8 +20,14 @@ msgstr "no"
 msgid "yes"
 msgstr "yes"
 
-msgid "lzo"
-msgstr "lzo"
+msgid "nfiwrite"
+msgstr "nfiwrite"
+
+msgid "rambo"
+msgstr "rambo"
+
+msgid "flodder"
+msgstr "flodder"
 
 msgid "zlib"
 msgstr "zlib"
@@ -31,23 +35,17 @@ msgstr "zlib"
 msgid "none"
 msgstr "none"
 
-msgid "writenfi"
-msgstr "writenfi"
+msgid "lzo"
+msgstr "lzo"
 
-msgid "nfidump"
-msgstr "nfidump"
-
-msgid "nandwrite"
-msgstr "nandwrite"
-
-msgid "rambo"
-msgstr "rambo"
+msgid "favor_lzo"
+msgstr "favor_lzo"
 
 msgid "mkfs.jffs2"
 msgstr "mkfs.jffs2"
 
-msgid "nanddump"
-msgstr "nanddump"
+msgid "mkfs.ubifs"
+msgstr "mkfs.ubifs"
 
 msgid "Select nfi image for flashing"
 msgstr "Select nfi image for flashing"
@@ -90,8 +88,8 @@ msgstr "Configuring"
 msgid "Checking"
 msgstr "Checking"
 
-msgid "Backup is running..."
-msgstr "Backup is running..."
+msgid "dFlash is busy ..."
+msgstr "dFlash is busy ..."
 
 msgid "Enter Backup Imagename"
 msgstr "Enter Backup Imagename"
@@ -104,6 +102,9 @@ msgstr "Sorry, currently not supported on this Dreambox type"
 
 msgid "Sorry, no correct nfi file selected"
 msgstr "Sorry, no correct nfi file selected"
+
+msgid "Sorry, no nfi file unzipped"
+msgstr "Sorry, no nfi file unzipped"
 
 msgid "Sorry, bad blocks in %s Flash, better try DreamUP with recover bad sectors"
 msgstr "Sorry, bad blocks in %s Flash, better try DreamUP with recover bad sectors"
@@ -129,8 +130,20 @@ msgstr "use back button in browser and try again!"
 msgid "Cancel"
 msgstr "Cancel"
 
+msgid "Are you sure that you want to unzip %s ?"
+msgstr "Are you sure that you want to unzip %s ?"
+
+msgid "Sorry, unzip of %s was canceled!"
+msgstr "Sorry, unzip of %s was canceled!"
+
 msgid "choose rambo device"
 msgstr "choose rambo device"
+
+msgid "choose flodder device"
+msgstr "choose flodder device"
+
+msgid "choose raw device"
+msgstr "choose raw device"
 
 msgid "Are you sure that you want to flash now %s ?"
 msgstr "Are you sure that you want to flash now %s ?"
@@ -166,6 +179,28 @@ msgid ""
 msgstr ""
 "Copied %s.nfi to %s,\n"
 "reboot for activating it ?"
+
+msgid ""
+"Copied %s.nfi to %s,\n"
+"don't forget kernel commandline and now\n"
+"reboot for activating it ?"
+msgstr ""
+"Copied %s.nfi to %s,\n"
+"don't forget kernel commandline and now\n"
+"reboot for activating it ?"
+
+msgid ""
+"Flash Backup to %s finished with imagename:\n"
+"\n"
+"%s.nfi\n"
+"\n"
+"BUT it has I/O Errors"
+msgstr ""
+"Flash Backup to %s finished with imagename:\n"
+"\n"
+"%s.nfi\n"
+"\n"
+"BUT it has I/O Errors"
 
 msgid ""
 "Flash Backup to %s finished with imagename:\n"
@@ -223,18 +258,11 @@ msgstr ""
 "\n"
 "Using existing swapspace."
 
-msgid ""
-"Press OK for starting backup to\n"
-"\n"
-"%s.nfi\n"
-"\n"
-"Be patient, this takes 3-5min ... "
-msgstr ""
-"Press OK for starting backup to\n"
-"\n"
-"%s.nfi\n"
-"\n"
-"Be patient, this takes 3-5min ... "
+msgid "Press OK for starting backup to"
+msgstr "Press OK for starting backup to"
+
+msgid "Be patient, this takes 5-10min ... "
+msgstr "Be patient, this takes 5-10min ... "
 
 msgid "not confirmed"
 msgstr "not confirmed"
@@ -290,7 +318,9 @@ msgstr "check /dev/mtd6 = unused"
 msgid "check /dev/mtd/6 = unused"
 msgstr "check /dev/mtd/6 = unused"
 
-#, python-format
+msgid "ubinfo"
+msgstr "ubinfo"
+
 msgid "checking %s - be patient (up to 1 min)"
 msgstr "checking %s - be patient (up to 1 min)"
 
@@ -309,51 +339,81 @@ msgstr ""
 "S Full block, summary node\n"
 "Ignore B at the end of Flash"
 
-msgid "Swapsize [MB]"
-msgstr "Swapsize [MB]"
-
-msgid "sort alphabetic"
-msgstr "sort alphabetic"
-
-msgid "show in Extensions Menu"
-msgstr "show in Extensions Menu"
-
 msgid "Flashtool"
 msgstr "Flashtool"
 
 msgid "Backuptool"
 msgstr "Backuptool"
 
+msgid "jffs2 boot compression"
+msgstr "jffs2 boot compression"
+
+msgid "jffs2 root compression"
+msgstr "jffs2 root compression"
+
 msgid "jffs2 erase block summary"
 msgstr "jffs2 erase block summary"
 
-msgid "use ramfs for flashing"
-msgstr "use ramfs for flashing"
+msgid "ubifs root compression"
+msgstr "ubifs root compression"
+
+msgid "ubifs data backup"
+msgstr "ubifs data backup"
+
+msgid "ubifs data compression"
+msgstr "ubifs data compression"
+
+msgid "Root Volume Size [59-%iMB]"
+msgstr "Root Volume Size [59-%iMB]"
+
+msgid "Root Volume Size [40-%iMB]"
+msgstr "Root Volume Size [40-%iMB]"
+
+msgid "ubifs subpages [Flash="
+msgstr "ubifs subpages [Flash="
+
+msgid ", rambo="
+msgstr ", rambo="
+
+msgid "ubifs debug level"
+msgstr "ubifs debug level"
+
+msgid "Console output"
+msgstr "Console output"
+
+msgid "Fading"
+msgstr "Fading"
+
+msgid "Swapsize [MB]"
+msgstr "Swapsize [MB]"
 
 msgid "loop swap over network"
 msgstr "loop swap over network"
 
-msgid "keep temporary files"
-msgstr "keep temporary files"
-
-msgid "restart enigma2"
-msgstr "restart enigma2"
-
 msgid "include /usr mount in backup"
 msgstr "include /usr mount in backup"
+
+msgid "include squashfs directories in backup"
+msgstr "include squashfs directories in backup"
+
+msgid "zip backups"
+msgstr "zip backups"
+
+msgid "show in Extensions Menu"
+msgstr "show in Extensions Menu"
 
 msgid ""
 "Root Filesystem\n"
 "\n"
 "total: %s MB\n"
 "used:  %s MB\n"
-"free:  %s"
+"free:  %s MB"
 msgstr ""
 "Root Filesystem\n"
 "\n"
 "total: %s MB\n"
 "used:  %s MB\n"
-"free:  %s"
+"free:  %s MB"
 
 msgid ""
 "Memory\n"
