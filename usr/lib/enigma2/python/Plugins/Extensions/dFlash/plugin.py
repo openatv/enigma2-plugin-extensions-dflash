@@ -2,7 +2,7 @@
 #
 # dFlash Plugin by gutemine
 #
-dflash_version="13.7 MOD for ATV"
+dflash_version="13.8 MOD for ATV"
 #
 from Components.ActionMap import ActionMap
 from Components.Label import Label
@@ -2064,11 +2064,12 @@ class BackupImage(Screen):
 			c +="vol_id=1\n"
 			c +="vol_name=data\n"
 			c +="vol_type=dynamic\n"
-			if config.plugins.dflash.volsize.value > 960:
-				v=int(2048-config.plugins.dflash.volsize.value)
-			else:
-				v=int(971-config.plugins.dflash.volsize.value)
-			c +="vol_size=%dMiB\n" % v
+			#if config.plugins.dflash.volsize.value > 960:
+			#	v=int(2048-config.plugins.dflash.volsize.value)
+			#else:
+			#	v=int(971-config.plugins.dflash.volsize.value)
+			c +="vol_size=1MiB\n"
+			c +="vol_flags=autoresize\n"
 		else:
 			c +="vol_flags=autoresize\n"
 		c +="\n"
@@ -2076,9 +2077,9 @@ class BackupImage(Screen):
 		uc.close()
                         	
 		if config.plugins.dflash.big.value:
-			self.buildoptions="/usr/bin/buildimage -w %s -a %s -e %s -f 0x%s -s %s -b 0x%s:%s/s.bin -d 0x%s:%s/b.img -d 0x%s:%s/r.img > %s/%s.nfi\n" % (self.brcmnand,self.boxtype,self.eraseblocksize,self.flashsize,self.blocksize,self.loadersize,config.plugins.dflash.backuplocation.value,self.bootsize,config.plugins.dflash.backuplocation.value,self.rootsize,config.plugins.dflash.backuplocation.value,config.plugins.dflash.backuplocation.value,self.backupname)
+			self.buildoptions="/usr/bin/buildimage -w %s -a %s -e %s -s %s -b 0x%s:%s/s.bin -d 0x%s:%s/b.img -d 0x%s:%s/r.img > %s/%s.nfi\n" % (self.brcmnand,self.boxtype,self.eraseblocksize,self.blocksize,self.loadersize,config.plugins.dflash.backuplocation.value,self.bootsize,config.plugins.dflash.backuplocation.value,self.rootsize,config.plugins.dflash.backuplocation.value,config.plugins.dflash.backuplocation.value,self.backupname)
 		else:
-			self.buildoptions="/usr/bin/buildimage %s -a %s -e %s -f 0x%s -s %s -b 0x%s:%s/s.bin -d 0x%s:%s/b.img -d 0x%s:%s/r.img > %s/%s.nfi\n" % (self.brcmnand,self.boxtype,self.eraseblocksize,self.flashsize,self.blocksize,self.loadersize,config.plugins.dflash.backuplocation.value,self.bootsize,config.plugins.dflash.backuplocation.value,self.rootsize,config.plugins.dflash.backuplocation.value,config.plugins.dflash.backuplocation.value,self.backupname)
+			self.buildoptions="/usr/bin/buildimage %s -a %s -e %s -s %s -b 0x%s:%s/s.bin -d 0x%s:%s/b.img -d 0x%s:%s/r.img > %s/%s.nfi\n" % (self.brcmnand,self.boxtype,self.eraseblocksize,self.blocksize,self.loadersize,config.plugins.dflash.backuplocation.value,self.bootsize,config.plugins.dflash.backuplocation.value,self.rootsize,config.plugins.dflash.backuplocation.value,config.plugins.dflash.backuplocation.value,self.backupname)
 		
 		print "[dFLASH] buildoptions %s" % self.buildoptions
 		self.jffs2options=" -e %s -n -l" % (self.eraseblocksize)
@@ -2091,7 +2092,7 @@ class BackupImage(Screen):
 		else:
 			self.ubifsrootoptions="-m 2048 -e 126976 -c %d -F" % self.maxlebcountroot
 			self.ubifsdataoptions="-m 2048 -e 126976 -c %d -F" % self.maxlebcountdata
-			self.ubinizeoptions="-m 2048 -p 131072 -s 2048 -O 2048"
+			self.ubinizeoptions="-m 2048 -p 131072 -s 2048"
 			
 		print "[dFLASH] ubifs root options %s" % self.ubifsrootoptions
 		print "[dFLASH] ubifs data options %s" % self.ubifsdataoptions
