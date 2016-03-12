@@ -2088,7 +2088,7 @@ class BackupImage(Screen):
 		if config.plugins.dflash.subpage.value:
 			self.ubifsrootoptions="-m %d -e %d -c %d -F" % (self.minimumiosize,self.lebsize,self.maxlebcountroot)
 			self.ubifsdataoptions="-m %d -e %d -c %d -F" % (self.minimumiosize,self.lebsize,self.maxlebcountdata)
-			self.ubinizeoptions="-m %d -p %d -s %d -O %d" % (self.minimumiosize,self.eraseblocksize,self.subpagesize,self.offset)
+			self.ubinizeoptions="-m %d -p %d -s %d" % (self.minimumiosize,self.eraseblocksize,self.subpagesize)
 		else:
 			self.ubifsrootoptions="-m 2048 -e 126976 -c %d -F" % self.maxlebcountroot
 			self.ubifsdataoptions="-m 2048 -e 126976 -c %d -F" % self.maxlebcountdata
