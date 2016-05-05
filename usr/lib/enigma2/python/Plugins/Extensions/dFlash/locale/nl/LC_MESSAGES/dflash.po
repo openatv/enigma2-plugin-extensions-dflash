@@ -1,65 +1,101 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: dFlash\n"
-"POT-Creation-Date: \n"
+"POT-Creation-Date: 2016-05-05 21:07+0200\n"
 "PO-Revision-Date: \n"
-"Last-Translator: gutemine <gutemine@unknown.com>\n"
-"Language-Team: ni_hao\n"
+"Last-Translator: neoatomic <neoatomic@users.noreply.github.com>\n"
+"Language-Team: ni_hao, neoatomic\n"
+"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nl_NL\n"
-"X-Generator: Poedit 1.6.3\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Poedit-SourceCharset: iso-8859-1\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:68
 msgid "no"
 msgstr "Nee"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:68
 msgid "yes"
 msgstr "Ja"
 
-msgid "nfiwrite"
-msgstr "nfiwrite"
-
-msgid "recovery"
-msgstr "recovery"
-
-msgid "rambo"
-msgstr "rambo"
-
-msgid "flodder"
-msgstr "flodder"
-
-msgid "zlib"
-msgstr "zlib"
-
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:94
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:146
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:152
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:156
 msgid "none"
 msgstr "geen"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:96
+msgid "nfiwrite"
+msgstr "nfiwrite"
+
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:98
+msgid "recovery"
+msgstr "recovery"
+
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:123
+msgid "rambo"
+msgstr "rambo"
+
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:126
+msgid "flodder"
+msgstr "flodder"
+
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:145
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:151
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:159
+msgid "zlib"
+msgstr "zlib"
+
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:157
 msgid "lzo"
 msgstr "lzo"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:158
 msgid "favor_lzo"
 msgstr "favor_lzo"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:174
 msgid "mkfs.jffs2"
 msgstr "mkfs.jffs2"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:180
 msgid "mkfs.ubifs"
 msgstr "mkfs.ubifs"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:192
+msgid "daemon"
+msgstr "daemon"
+
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:193
+msgid "system"
+msgstr "systeem"
+
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:194
+msgid "container"
+msgstr "container"
+
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:197
 msgid "Select nfi image for flashing"
 msgstr "Kies nfi image om te flashen"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:198
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2431
 msgid "Disclaimer"
 msgstr "Vrijwaring"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:199
 msgid ""
 "This way of flashing your Dreambox is potentially\n"
 "dangerous and not supported in any way from DMM.\n"
 "\n"
 "You are using it completely at you own risk!\n"
-"If you want to flash your Dreambox safely use the Webinterface or DreamUP!\n"
+"If you want to flash your Dreambox safely use the Webinterface or "
+"DreamUP!\n"
 "\n"
 "May the Null modem cable be with you!"
 msgstr ""
@@ -67,121 +103,200 @@ msgstr ""
 "gevaarlijk en wordt niet door DMM ondersteund.\n"
 "\n"
 "U gebruikt dflash op EIGEN RISICO!\n"
-"Indien u uw Dreambox veilig wilt flashen gebruik dan de WebInterface of DreamUP!\n"
+"Indien u uw Dreambox veilig wilt flashen gebruik dan de WebInterface of "
+"DreamUP!\n"
 "\n"
 "Moge de Nullmodemkabel u ter zijde staan!"
 
-msgid "direct Flashing Plugin by gutemine Version %s"
-msgstr "direct Flash plugin door gutemine versie %s"
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:201
+#, python-format
+msgid "direct Flash Plugin by gutemine Version %s"
+msgstr "directe Flash Plugin door gutemine Versie %s"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:202
+#, python-format
 msgid "%i MB Swapspace OK"
 msgstr "%i MB Swapruimte OK"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:203
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:264
 msgid "Flashing"
 msgstr "Flashen"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:204
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:263
 msgid "Backup"
 msgstr "Backup"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:205
 msgid "Configuring"
 msgstr "Instellingen"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:206
 msgid "Checking"
 msgstr "Controle"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:207
 msgid "dFlash is busy ..."
 msgstr "dFlash is bezig..."
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:208
 msgid "Enter Backup Imagename"
 msgstr "Geef naam van de image"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:209
 msgid "Enter Backup Path"
 msgstr "Geef backup pad op"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:210
 msgid "Sorry, currently not supported on this Dreambox type"
 msgstr "Sorry, momenteel geen ondersteuning voor dit type dreambox"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:211
 msgid "Sorry, no correct nfi file selected"
 msgstr "Sorry, onjuist nfi bestand geselecteerd"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:212
 msgid "Sorry, no nfi file unzipped"
 msgstr "nfi bestand (zip) is niet uitgepakt!"
 
-msgid "Sorry, bad blocks in %s Flash, better try DreamUP with recover bad sectors"
-msgstr "Sorry, foute blokken in %s flash, je kunt beter DreamUp met 'recover bad sectors' gebruiken"
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:213
+#, python-format
+msgid ""
+"Sorry, bad blocks in %s Flash, better try DreamUP with recover bad sectors"
+msgstr ""
+"Sorry, foute blokken in %s flash, je kunt beter DreamUp met 'recover bad "
+"sectors' gebruiken"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:214
 msgid "Refresh"
 msgstr "Vernieuwen"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:215
+#, python-format
 msgid "Nothing mounted at %s"
 msgstr "Niets gemount via %s"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:216
 msgid "Sorry, use Barry Allen for Backup"
 msgstr "Gebruik Barry Allen om backup te maken"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:217
 msgid "Sorry, use LowFAT for Backup"
 msgstr "Gebruik LowFAT om backup te maken"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:218
 msgid "Sorry, use Dumbo for Backup"
 msgstr "Gebruik Dumbo om backup te maken"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:230
 msgid "use back button in browser and try again!"
 msgstr "gebruik de TERUG-toets in uw browser en probeer het opnieuw!"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:262
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2333
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2428
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2577
 msgid "Cancel"
 msgstr "Annuleer"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:314
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2535
+msgid "Checking tool is not installed"
+msgstr "Controle programma is niet geïnstalleerd"
+
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:360
+msgid "Flashing tool is not installed"
+msgstr "Flash programma is niet geïnstalleerd"
+
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:372
+#, python-format
 msgid "Are you sure that you want to unzip %s ?"
 msgstr "Weet u zeker dat u %s wilt uitpakken?"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:378
+#, python-format
 msgid "Sorry, unzip of %s was canceled!"
 msgstr "Sorry, uitpakken van %s is afgebroken!"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:466
 msgid "choose rambo device"
 msgstr "Kies rambo opslagmedium"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:468
 msgid "choose flodder device"
 msgstr "Kies flodder opslagmedium"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:470
 msgid "choose recovery device"
 msgstr "Kies recovery opslagmedium"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:472
 msgid "choose raw device"
 msgstr "Kies raw opslagmedium"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:474
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:548
+#, python-format
 msgid "Are you sure that you want to flash now %s ?"
 msgstr "Weet u zeker dat u nu %s wilt flashen ?"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:500
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:552
+#, python-format
 msgid "Sorry, Flashing of %s was canceled!"
 msgstr "Sorry, flashen van %s is geannuleerd!"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:502
+#, python-format
 msgid ""
 "Press OK now for flashing\n"
 "\n"
 "%s\n"
 "\n"
-"Box will reboot automatically when finished!\n"
+"Box will reboot automatically when finished!"
 msgstr ""
-"Druk nu op OK om te flashen\n"
+"Druk op OK om nu te Flashen\n"
 "\n"
-"%s\n"
+"%s \n"
 "\n"
-"Ontvanger zal aan het einde automatisch opstarten!\n"
+"Box zal automatisch opnieuw opstarten wanneer klaar!"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:540
 msgid "Sorry, no device choosen"
 msgstr "Sorry, geen opslagmedium gekozen"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:542
 msgid "Sorry, no device found"
 msgstr "Sorry, geen opslagmedium gevonden"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:546
+#, python-format
 msgid "Are you sure that you want to FORMAT recovery device %s now for %s ?"
 msgstr ""
 "Weet u zeker, dat u recovery opslagmedium %s\n"
 "wilt formatteren voor %s ?"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:609
+msgid "umount failed, Sorry!"
+msgstr "umount mislukt, Sorry!"
+
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:657
+#, python-format
+msgid "Sorry, %s device not mounted writeable"
+msgstr "Sorry, %s opslagmedium is niet gemount als schrijfbaar"
+
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:879
+msgid "recovery creation failed, Sorry!"
+msgstr "herstel mogelijkheid mislukt, Sorry!"
+
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:895
+#, python-format
 msgid "Sorry, %s device not mounted"
 msgstr "Sorry, %s opslagmedium is niet gemount"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:1069
+#, python-format
 msgid ""
 "Copied %s.nfi to %s,\n"
 "don't forget kernel commandline and now\n"
@@ -191,13 +306,21 @@ msgstr ""
 "Denk aan de kernel commandoregel; wilt u\n"
 "de ontvanger nu opnieuw starten ?"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:1071
+#, python-format
 msgid ""
 "Copied %s.nfi to %s,\n"
 "don't forget to remove stick\n"
 "if you enabled kernel commandline!\n"
 "Halt now ?"
 msgstr ""
+"%s.nfi gekopieerd naar %s,\n"
+"Vergeet niet de stick te verwijderen\n"
+"als je kernel commandline heb ingeschakeld!\n"
+"Stoppen ?"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:1073
+#, python-format
 msgid ""
 "Copied %s.nfi to %s,\n"
 "reboot for activating it ?"
@@ -205,6 +328,9 @@ msgstr ""
 "%s.nfi gekopieerd naar %s,\n"
 "Ontvanger opnieuw starten ?"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:1146
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:1408
+#, python-format
 msgid ""
 "Flash Backup to %s finished with imagename:\n"
 "\n"
@@ -212,30 +338,40 @@ msgid ""
 "\n"
 "BUT it has I/O Errors"
 msgstr ""
-"Flash backup is gereed; de imagenaam is:\n"
+"Flash Backup naar %s is klaar met bestandsnaam:\n"
 "\n"
-"%s.nfi,\n"
+"%s.nfi\n"
 "\n"
-"MAAR met I/O-fouten!!!"
+"Maar MET I/O Fouten"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:1148
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:1410
+#, python-format
 msgid ""
 "Flash Backup to %s finished with imagename:\n"
 "\n"
 "%s.nfi"
 msgstr ""
-"Flash backup is gereed; de imagenaam is:\n"
+"Flash Backup naar %s is klaar met bestandsnaam:\n"
 "\n"
 "%s.nfi"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:1163
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:1252
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:1749
 msgid "nothing entered"
 msgstr "niets ingevuld"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:1256
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:1731
 msgid "already exists,"
 msgstr "bestaat reeds,"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:1256
 msgid "overwrite ?"
 msgstr "overschrijven ?"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:1279
 msgid ""
 "\n"
 "\n"
@@ -245,6 +381,7 @@ msgstr ""
 "\n"
 "Gebruik tijdelijke swapruimte."
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:1281
 msgid ""
 "\n"
 "\n"
@@ -257,6 +394,7 @@ msgstr ""
 "Controleer daarna het resultaat met deze plugin via\n"
 "de functie Backup."
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:1283
 msgid ""
 "\n"
 "\n"
@@ -266,6 +404,7 @@ msgstr ""
 "\n"
 "Zonder swapruimte."
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:1286
 msgid ""
 "\n"
 "\n"
@@ -275,72 +414,104 @@ msgstr ""
 "\n"
 "Gebruik beschikbare swapruimte."
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:1288
 msgid "Press OK for starting backup to"
 msgstr "Druk op OK om backup te starten naar"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:1288
 msgid "Be patient, this takes 5-10min ... "
 msgstr "Heb geduld, dit duurt ong. 5-10 min ... "
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:1290
 msgid "not confirmed"
 msgstr "niet bevestigd"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:1414
+msgid "Flash Backup finished"
+msgstr "Flash backup klaar"
+
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2334
 msgid "Info"
 msgstr "Info"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2335
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2429
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2578
 msgid "OK"
 msgstr "OK"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2336
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2593
 msgid "About"
 msgstr "Over"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2339
 msgid "check /dev/mtd0 = entire Flash"
 msgstr "controleer /dev/mtd0 = hele Flash"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2341
 msgid "check /dev/mtd/0 = entire Flash"
 msgstr "controleer /dev/mtd/0 = hele Flash"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2343
 msgid "check /dev/mtd1 = secondstage loader"
 msgstr "controleer /dev/mtd1 = Secondstage Lader"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2345
 msgid "check /dev/mtd/1 = secondstage loader"
 msgstr "controleer /dev/mtd/1 = Secondstage Lader"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2347
 msgid "check /dev/mtd2 = boot"
 msgstr "controleer /dev/mtd2 = boot"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2349
 msgid "check /dev/mtd/2 = boot"
 msgstr "controleer /dev/mtd/2 = boot"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2351
 msgid "check /dev/mtd3 = root"
 msgstr "controleer /dev/mtd3 = root"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2353
 msgid "check /dev/mtd/3 = root"
 msgstr "controleer /dev/mtd/3 = root"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2355
 msgid "check /dev/mtd4 = home"
 msgstr "controleer /dev/mtd4 = home"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2357
 msgid "check /dev/mtd/4 = home"
 msgstr "controleer /dev/mtd/4 = home"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2359
 msgid "check /dev/mtd5 = unused"
 msgstr "controleer /dev/mtd5 = ongebruikt"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2361
 msgid "check /dev/mtd/5 = unused"
 msgstr "controleer /dev/mtd/5 = ongebruikt"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2363
 msgid "check /dev/mtd6 = unused"
 msgstr "controleer /dev/mtd6 = ongebruikt"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2365
 msgid "check /dev/mtd/6 = unused"
 msgstr "controleer /dev/mtd/6 = ongebruikt"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2371
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2374
 msgid "ubinfo"
 msgstr "ubinfo"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2390
+#, python-format
 msgid "checking %s - be patient (up to 1 min)"
 msgstr "Controleren %s - heb geduld (ong. 1 min)"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2399
 msgid ""
 "B Bad block\n"
 ". Empty block\n"
@@ -356,69 +527,107 @@ msgstr ""
 "S Block vol, Summary node\n"
 "Negeer de B aan het einde van de flash"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2452
+msgid "create nfo"
+msgstr "Maak nfo"
+
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2453
 msgid "Flashtool"
 msgstr "Flash gereedschap"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2454
 msgid "Backuptool"
 msgstr "Backup gereedschap"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2455
+msgid "Backup bigger then Flash"
+msgstr "Backup groter dan Flash"
+
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2456
+msgid "Extract Loader from Flash"
+msgstr "Haal de Loader uit de Flash"
+
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2457
 msgid "jffs2 boot compression"
 msgstr "jffs2 boot compressie"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2459
 msgid "jffs2 root compression"
 msgstr "jffs2 root compressie"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2463
 msgid "jffs2 erase block summary"
 msgstr "'jffs2 erase block' samenvatting"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2465
 msgid "ubifs root compression"
 msgstr "ubifs root Kompression"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2467
 msgid "ubifs data backup"
 msgstr "ubifs data backup"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2469
 msgid "ubifs data compression"
 msgstr "ubifs data compressie"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2471
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2473
+#, python-format
 msgid "Root Volume Size [59-%iMB]"
 msgstr "Root Volume Grootte [59-%iMB]"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2475
+#, python-format
 msgid "Root Volume Size [40-%iMB]"
 msgstr "Root Volume Grootte [40-%iMB]"
 
-msgid "ubifs subpages [Flash="
-msgstr "ubifs subpages [Flash="
-
-msgid ", rambo="
-msgstr ", rambo="
-
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2478
 msgid "ubifs debug level"
 msgstr "ubifs debug-niveau"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2479
 msgid "Console output"
 msgstr "Ausgabe auf Konsole"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2481
 msgid "Fading"
 msgstr "Fading"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2482
 msgid "Swapsize [MB]"
 msgstr "Swapsize [MB]"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2483
 msgid "loop swap over network"
 msgstr "Swappen over netwerk"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2485
 msgid "include /usr mount in backup"
 msgstr "/usr mount in backup opnemen"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2487
 msgid "include squashfs directories in backup"
 msgstr "squashfs mappen in backup opnemen"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2489
 msgid "zip backups"
 msgstr "zip backups"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2493
+msgid "switch boxversion for backup"
+msgstr "wijzig box versie voor backup"
+
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2494
 msgid "show in Extensions Menu"
 msgstr "toon in Uitbreidingsmenu"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2500
+msgid "execute tool"
+msgstr "hulpprogramma uitvoeren"
+
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2561
+#, python-format
 msgid ""
 "Root Filesystem\n"
 "\n"
@@ -432,6 +641,8 @@ msgstr ""
 "gebruikt: %s MB\n"
 "vrij: %s MB"
 
+#: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2575
+#, python-format
 msgid ""
 "Memory\n"
 "\n"
@@ -443,5 +654,26 @@ msgstr ""
 "\n"
 "totaal: %i MB\n"
 "gebruikt: %i MB\n"
-"vrij: MB"
+"vrij: %i MB"
 
+#~ msgid "direct Flashing Plugin by gutemine Version %s"
+#~ msgstr "direct Flash plugin door gutemine versie %s"
+
+#~ msgid ""
+#~ "Press OK now for flashing\n"
+#~ "\n"
+#~ "%s\n"
+#~ "\n"
+#~ "Box will reboot automatically when finished!\n"
+#~ msgstr ""
+#~ "Druk nu op OK om te flashen\n"
+#~ "\n"
+#~ "%s\n"
+#~ "\n"
+#~ "Ontvanger zal aan het einde automatisch opstarten!\n"
+
+#~ msgid "ubifs subpages [Flash="
+#~ msgstr "ubifs subpages [Flash="
+
+#~ msgid ", rambo="
+#~ msgstr ", rambo="
