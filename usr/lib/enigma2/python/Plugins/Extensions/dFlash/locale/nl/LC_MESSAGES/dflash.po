@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 1.8.8\n"
 "X-Poedit-SourceCharset: iso-8859-1\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
@@ -86,7 +86,7 @@ msgstr "Kies nfi image om te flashen"
 #: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:198
 #: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2431
 msgid "Disclaimer"
-msgstr "Vrijwaring"
+msgstr "Waarschuwing"
 
 #: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:199
 msgid ""
@@ -99,14 +99,14 @@ msgid ""
 "\n"
 "May the Null modem cable be with you!"
 msgstr ""
-"Op deze manier uw Dreambox flashen is mogelijk\n"
+"Op deze wijze uw Dreambox flashen is mogelijk\n"
 "gevaarlijk en wordt niet door DMM ondersteund.\n"
 "\n"
-"U gebruikt dflash op EIGEN RISICO!\n"
+"U gebruikt dflash dus op EIGEN RISICO!\n"
 "Indien u uw Dreambox veilig wilt flashen gebruik dan de WebInterface of "
 "DreamUP!\n"
 "\n"
-"Moge de Nullmodemkabel u ter zijde staan!"
+"Mag de Nullmodemkabel uw redding zijn!"
 
 #: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:201
 #, python-format
@@ -533,11 +533,11 @@ msgstr "Maak nfo"
 
 #: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2453
 msgid "Flashtool"
-msgstr "Flash gereedschap"
+msgstr "Flash programma"
 
 #: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2454
 msgid "Backuptool"
-msgstr "Backup gereedschap"
+msgstr "Backup programma"
 
 #: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2455
 msgid "Backup bigger then Flash"
@@ -588,7 +588,7 @@ msgstr "ubifs debug-niveau"
 
 #: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2479
 msgid "Console output"
-msgstr "Ausgabe auf Konsole"
+msgstr "Console informatie"
 
 #: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2481
 msgid "Fading"
@@ -596,7 +596,7 @@ msgstr "Fading"
 
 #: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2482
 msgid "Swapsize [MB]"
-msgstr "Swapsize [MB]"
+msgstr "Swapruimte [MB]"
 
 #: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2483
 msgid "loop swap over network"
@@ -620,11 +620,11 @@ msgstr "wijzig box versie voor backup"
 
 #: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2494
 msgid "show in Extensions Menu"
-msgstr "toon in Uitbreidingsmenu"
+msgstr "Toon in plugin menu"
 
 #: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2500
 msgid "execute tool"
-msgstr "hulpprogramma uitvoeren"
+msgstr "Hulpprogramma uitvoeren"
 
 #: usr/lib/enigma2/python/Plugins/Extensions/dFlash/plugin.py:2561
 #, python-format
