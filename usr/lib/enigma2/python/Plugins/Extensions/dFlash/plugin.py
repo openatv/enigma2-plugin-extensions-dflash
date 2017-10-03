@@ -2,7 +2,7 @@
 #
 # dFlash Plugin by gutemine
 #
-dflash_version="13.8 MOD for ATV"
+dflash_version="13.9 MOD for ATV"
 #
 from Components.ActionMap import ActionMap
 from Components.Label import Label
@@ -1935,6 +1935,8 @@ class BackupImage(Screen):
 		# backup only as NFI2 if the loader is already NFI2 capable 
 		if (self.boxtype == "dm8000" or self.boxtype == "dm7025") or ((self.boxtype == "dm800" or self.boxtype == "dm800se" or self.boxtype == "dm500hd") and loaderversion < 84):
 			self.brcmnand=""
+		elif self.boxtype == "dm7020hdv2" or self.boxtype == "dm800sev2" or self.boxtype == "dm500hdv2":
+			self.brcmnand="--brcmnand --hw-ecc"
 		else:
 			self.brcmnand="--brcmnand"
 			
