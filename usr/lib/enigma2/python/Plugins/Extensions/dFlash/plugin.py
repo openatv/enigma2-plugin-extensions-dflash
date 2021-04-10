@@ -11,18 +11,18 @@ from Components.ConfigList import ConfigListScreen
 from Plugins.Plugin import PluginDescriptor
 from Components.Pixmap import Pixmap
 from Screens.Screen import Screen
-from Screens.MessageBox import MessageBox 
+from Screens.MessageBox import MessageBox
 from Screens.InputBox import InputBox
 from Components.Input import Input
 from Screens.ChoiceBox import ChoiceBox
 from Components.AVSwitch import AVSwitch
 from Components.SystemInfo import SystemInfo
-from Screens.Console import Console                                                                           
-from Components.MenuList import MenuList       
-from Components.Slider import Slider       
+from Screens.Console import Console
+from Components.MenuList import MenuList
+from Components.Slider import Slider
 from enigma import ePoint, getDesktop, quitMainloop, eConsoleAppContainer, eDVBVolumecontrol, eTimer, eActionMap
 from Tools.LoadPixmap import LoadPixmap
-import Screens.Standby  
+import Screens.Standby
 import sys
 import os
 import struct
@@ -43,8 +43,8 @@ import datetime
 if os.path.exists("/usr/lib/enigma2/python/Plugins/Bp/geminimain/lib/libgeminimain.so"):
 	from Plugins.Bp.geminimain.lib import libgeminimain
 
-dflash_plugindir = "/usr/lib/enigma2/python/Plugins/Extensions/dFlash" 
-dflash_pluginlink = "/tmp/dFlash" 
+dflash_plugindir = "/usr/lib/enigma2/python/Plugins/Extensions/dFlash"
+dflash_pluginlink = "/tmp/dFlash"
 dflash_bin = "/usr/sbin"
 dflash_busy = "/tmp/.dflash"
 dflash_script = "/tmp/dflash.sh"
@@ -57,7 +57,7 @@ rambo_maxflash = 2000
 
 if not os.path.exists(dflash_pluginlink):
 	os.symlink(dflash_plugindir, dflash_pluginlink)
-	
+
 # add local language file
 dflash_sp = config.osd.language.value.split("_")
 dflash_language = dflash_sp[0]
@@ -70,8 +70,8 @@ if os.path.exists("/proc/stb/info/model"):
 	boxtype = f.read()
 	f.close()
 	boxtype = boxtype.replace("\n", "").replace("\l", "")
-	
-yes_no_descriptions = {False: _("no"), True: _("yes")}    
+
+yes_no_descriptions = {False: _("no"), True: _("yes")}
 
 config.plugins.dflash = ConfigSubsection()
 config.plugins.dflash.backuplocation = ConfigText(default="/media/hdd/backup", fixed_size=True, visible_width=20)
@@ -147,18 +147,18 @@ config.plugins.dflash.console = ConfigBoolean(default=True, descriptions=yes_no_
 config.plugins.dflash.subpage = ConfigBoolean(default=True, descriptions=yes_no_descriptions)
 config.plugins.dflash.debug = ConfigInteger(default=0, limits=(0, 3))
 
-bcompression = []                    
+bcompression = []
 bcompression.append(("zlib", _("zlib")))
 bcompression.append(("none", _("none")))
 config.plugins.dflash.jffs2bootcompression = ConfigSelection(default="zlib", choices=bcompression)
 
 
-jcompression = []                    
+jcompression = []
 jcompression.append(("zlib", _("zlib")))
 jcompression.append(("none", _("none")))
 config.plugins.dflash.jffs2rootcompression = ConfigSelection(default="zlib", choices=jcompression)
 
-ucompression = []                    
+ucompression = []
 ucompression.append(("none", _("none")))
 ucompression.append(("lzo", _("lzo")))
 ucompression.append(("favor_lzo", _("favor_lzo")))
@@ -169,17 +169,17 @@ if boxtype == "dm8000" or boxtype.startswith("dm7020hd") or boxtype == "dm800sev
 else:
 	config.plugins.dflash.ubifsrootcompression = ConfigSelection(default="zlib", choices=ucompression)
 	config.plugins.dflash.ubifsdatacompression = ConfigSelection(default="zlib", choices=ucompression)
-	
+
 config.plugins.dflash.databackup = ConfigBoolean(default=False, descriptions=yes_no_descriptions)
 if boxtype != "dm7025":
 	config.plugins.dflash.fade = ConfigBoolean(default=True, descriptions=yes_no_descriptions)
 else:
 	config.plugins.dflash.fade = ConfigBoolean(default=False, descriptions=yes_no_descriptions)
-	
+
 backuptools = []
 backuptools.append(("mkfs.jffs2", _("mkfs.jffs2")))
 kernel = "unknown"
-for name in os.listdir("/lib/modules"):                          
+for name in os.listdir("/lib/modules"):
 	kernel = name
 if boxtype != "dm800" and boxtype != "dm7025" and kernel.find("3.2") is not -1:
 	# no ubifs in OE 1.6 and on old dm7025 and dm800pvr
@@ -206,8 +206,8 @@ disclaimer_string = _("This way of flashing your Dreambox is potentially\ndanger
 disclaimer_wstring = disclaimer_string.replace("\n", "<br>")
 plugin_string = _("direct Flash Plugin by gutemine Version %s") % dflash_version
 waiting_string = _("%i MB Swapspace OK") % config.plugins.dflash.swapsize.value
-flashing_string = _("Flashing") 
-backup_string = _("Backup") 
+flashing_string = _("Flashing")
+backup_string = _("Backup")
 setup_string = _("Configuring")
 checking_string = _("Checking")
 running_string = _("dFlash is busy ...")
@@ -233,7 +233,7 @@ header_string += "</head><body bgcolor=\"black\">"
 header_string += "<font face=\"Tahoma, Arial, Helvetica\" color=\"yellow\">"
 header_string += "<font size=\"3\" color=\"yellow\">"
 
-dflash_backbutton = _("use back button in browser and try again!") 
+dflash_backbutton = _("use back button in browser and try again!")
 dflash_flashing = ""
 dflash_flashing += header_string
 dflash_flashing += "<br>%s ...<br><br>" % flashing_string
@@ -245,7 +245,7 @@ dflash_backuping += "<br>%s<br><br>" % running_string
 dflash_backuping += "<br><img src=\"/web-data/img/ring.png\" alt=\"%s ...\"/><br><br>" % (backup_string)
 dflash_backuping += "<br><form method=\"GET\">"
 dflash_backuping += "<input name=\"command\" type=\"submit\" size=\"100px\" title=\"%s\" value=\"%s\">" % (refresh_string, "Refresh")
-dflash_backuping += "</form>"                        
+dflash_backuping += "</form>"
 
 global dflash_progress
 dflash_progress = 0
@@ -264,7 +264,7 @@ class dFlash(Screen):
 
 	def __init__(self, session, args=0):
 		Screen.__init__(self, session)
-		self.onShown.append(self.setWindowTitle)      
+		self.onShown.append(self.setWindowTitle)
                 self.onLayoutFinish.append(self.byLayoutEnd)
 		self["logo"] = Pixmap()
 		self["buttonred"] = Label(_("Cancel"))
@@ -273,13 +273,13 @@ class dFlash(Screen):
 		self["buttonblue"] = Label(setup_string)
 		self.slider = Slider(0, 100)
 	        self["slider"] = self.slider
-		                         
+
 	       	if not os.path.exists("/usr/bin/zip"):
       			config.plugins.dflash.zip.value = False
-		
+
                 self.dimmed = 30
 		eActionMap.getInstance().bindAction('', -0x7FFFFFFF, self.doUnhide)
-		        
+
 		self["actions"] = ActionMap(["dFlashActions", "ColorActions"],
 			{
 			"green": self.backup,
@@ -291,36 +291,36 @@ class dFlash(Screen):
 			})
 
 	def setWindowTitle(self):
-		if os.path.exists(dflash_busy):                                                                   
+		if os.path.exists(dflash_busy):
        			self["logo"].instance.setPixmapFromFile("%s/ring.png" % dflash_plugindir)
-		else:                                                                            
+		else:
        			self["logo"].instance.setPixmapFromFile("%s/dflash.png" % dflash_plugindir)
 		self.setTitle(flashing_string + " & " + backup_string + " V%s" % dflash_version)
 
         def byLayoutEnd(self):
                 self["logo"].instance.setPixmapFromFile("%s/dflash.png" % dflash_plugindir)
                 self.slider.setValue(0)
-                
+
 	def leaving(self):
 	        if os.path.exists(dflash_busy):
 #			os.remove(dflash_busy)
 			self.session.openWithCallback(self.forcedexit, MessageBox, running_string, MessageBox.TYPE_WARNING)
 		else:
 			self.forcedexit(1)
-			
+
 	def forcedexit(self, status):
 #		print "[dFLASH] status %d\n" % status
 		if status != 0:
-		        self.doUnhide(0, 0)                                  
+		        self.doUnhide(0, 0)
 	          	eActionMap.getInstance().unbindAction('', self.doUnhide)
 			self.close()
 
-        def checking(self):      
+        def checking(self):
         	if os.path.exists("%s/nand_check" % dflash_bin):
 	                self.session.open(dFlashChecking)
 	        else:
 			self.session.open(MessageBox, _("Checking tool is not installed"), MessageBox.TYPE_ERROR)
-	        
+
 	def doHide(self):
 		if config.plugins.dflash.fade.value:
 			print "[dFLASH] hiding"
@@ -339,8 +339,8 @@ class dFlash(Screen):
                 	f.write("%i" % (config.osd.alpha.getValue() * self.dimmed / 30))
                 	f.close()
 			self.DimmingTimer.start(100, True)
-	     	      
-        def doUnhide(self, key, flag):                                                                 
+
+        def doUnhide(self, key, flag):
 		print "[dFLASH] unhiding"
 		if config.plugins.dflash.fade.value:
 	                if self.dimmed < 30:
@@ -378,9 +378,9 @@ class dFlash(Screen):
 			if self.nfifile.endswith(".nfi.zip"):
        	       			self.session.openWithCallback(self.startUnzip, MessageBox, _("Are you sure that you want to unzip %s ?") % (self.nfifile), MessageBox.TYPE_YESNO)
                 	else:
-        	                self.unzipDone(False)                                                                        
-       	       			
-	def startUnzip(self, option):                     
+        	                self.unzipDone(False)
+
+	def startUnzip(self, option):
         	if option is False:
 			self.session.open(MessageBox, _("Sorry, unzip of %s was canceled!") % self.nfifile, MessageBox.TYPE_ERROR)
         	else:
@@ -388,11 +388,11 @@ class dFlash(Screen):
                         open(dflash_busy, 'a').close()
 			command = "unzip -o %s -d %s" % (self.nfifile, self.nfidirectory)
 			print "[dFLASH] unzip command: %s\n" % command
-	                self.container = eConsoleAppContainer()                                                        
-        	        self.container.appClosed.append(self.unzipDone)                                                                        
-                	self.container.execute(command)                                                           
+	                self.container = eConsoleAppContainer()
+        	        self.container.appClosed.append(self.unzipDone)
+                	self.container.execute(command)
 
-	def unzipDone(self, status):                     
+	def unzipDone(self, status):
 		print "[dFLASH] unzip status %d\n" % status
 		if os.path.exists(dflash_busy):
 			os.remove(dflash_busy)
@@ -405,12 +405,12 @@ class dFlash(Screen):
 		else:
 			if os.path.exists(self.nfizipfile):
 				os.remove(self.nfizipfile)
-			nfisize = os.path.getsize(self.nfifile)	
+			nfisize = os.path.getsize(self.nfifile)
  			print "[dFLASH] nfi file size %i" % nfisize
  			f = open(self.nfifile, "r")
- 			header = f.read(32)     
+ 			header = f.read(32)
   			f.close()
-       			machine_type = header[4:4 + header[4:].find("\0")]                        
+       			machine_type = header[4:4 + header[4:].find("\0")]
 			b = open("/proc/stb/info/model", "r")
 			dreambox = b.read().rstrip("\n")
 			b.close()
@@ -418,26 +418,26 @@ class dFlash(Screen):
  				v = open("/var/lib/opkg/status", "r")
  			else:
  				v = open("/usr/lib/opkg/status", "r")
- 			line = v.readline()     
+ 			line = v.readline()
 			found = False
 			loaderversion = 0
-			while (line) and not found:                                                                   
-                        	line = v.readline()                                                
-                        	if line.startswith("Package: dreambox-secondstage"):                                            
-                                	found = True                                                  
-	                        	line = v.readline()                                                
+			while (line) and not found:
+                        	line = v.readline()
+                        	if line.startswith("Package: dreambox-secondstage"):
+                                	found = True
+	                        	line = v.readline()
                                         line = line.replace("Version: ", "")
 					loader = line.split("-")
 					loaderversion = int(loader[0])
   			v.close()
-  			
+
 			self.writesize = "512"
 			if os.path.exists("/sys/devices/virtual/mtd/mtd0/writesize"):
 				w = open("/sys/devices/virtual/mtd/mtd0/writesize", "r")
 				self.writesize = w.read()
 				w.close()
 				self.writesize = self.writesize.replace("\n", "").replace("\l", "")
-			else:	
+			else:
 				flashdev = "/dev/mtd/0"
 			        if os.path.exists("/dev/mtd0"):
 			       		flashdev = "/dev/mtd0"
@@ -448,9 +448,9 @@ class dFlash(Screen):
                 		fd.close()
                 		tuple = unpack('HLLLLLLL', mtd_info)
                 		self.writesize = "%s" % tuple[4]
-			
+
 			print "[dFLASH] %s %s %i %s %s" % (machine_type, dreambox, loaderversion, header[:4], self.writesize)
-			if machine_type.startswith(dreambox) is False and dreambox is not "dm7020":                                        
+			if machine_type.startswith(dreambox) is False and dreambox is not "dm7020":
 				print "[dFLASH] wrong header"
 				self.session.open(MessageBox, nonfi_string, MessageBox.TYPE_ERROR)
 			elif (dreambox == "dm800" or dreambox == "dm800se" or dreambox == "dm500hd" or dreambox == "dm7020hd") and loaderversion < 84 and header[:4] == "NFI2":
@@ -480,52 +480,52 @@ class dFlash(Screen):
 				else:
         	       			self.session.openWithCallback(self.startFlash, MessageBox, _("Are you sure that you want to flash now %s ?") % (self.nfifile), MessageBox.TYPE_YESNO)
 
-        def getImageList(self):                                               
-        	list = []                                                        
-        	for name in os.listdir("/tmp"):                          
+        def getImageList(self):
+        	list = []
+        	for name in os.listdir("/tmp"):
 			if name.endswith(".nfi") or name.endswith(".nfi.zip"):
-        	       		list.append((name.replace(".nfi.zip", "").replace(".nfi", ""), "/tmp/%s" % name))                         
+        	       		list.append((name.replace(".nfi.zip", "").replace(".nfi", ""), "/tmp/%s" % name))
 				if config.plugins.dflash.sort.value:
 					list.sort()
 				return list
 		if not config.plugins.dflash.backuplocation.value.startswith("/media/net") or config.plugins.dflash.ramfs.value:
 			if os.path.exists(config.plugins.dflash.backuplocation.value):
-           			for name in os.listdir(config.plugins.dflash.backuplocation.value):                          
+           			for name in os.listdir(config.plugins.dflash.backuplocation.value):
 					if name.endswith(".nfi") or name.endswith(".nfi.zip"):
-                 				list.append((name.replace(".nfi.zip", "").replace(".nfi", ""), "%s/%s" % (config.plugins.dflash.backuplocation.value, name)))                         
-           	for directory in os.listdir("/media"):                          
+                 				list.append((name.replace(".nfi.zip", "").replace(".nfi", ""), "%s/%s" % (config.plugins.dflash.backuplocation.value, name)))
+           	for directory in os.listdir("/media"):
 			if os.path.exists("/media/%s" % directory) and os.path.isdir("/media/%s" % directory) and directory.endswith("net") is False and directory.endswith("hdd") is False:
-           			for name in os.listdir("/media/%s" % directory):                          
+           			for name in os.listdir("/media/%s" % directory):
 					if name.endswith(".nfi") or name.endswith(".nfi.zip") and not os.path.exists("/media/%s/autoexec_%s.bat" % (directoy, self.boxtype)) and not os.path.exists("/media/%s/autoexec_%s.none" % (directoy, self.boxtype)):
-                 				list.append((name.replace(".nfi.zip", "").replace(".nfi", ""), "/media/%s/%s" % (directory, name)))                         
+                 				list.append((name.replace(".nfi.zip", "").replace(".nfi", ""), "/media/%s/%s" % (directory, name)))
 		if config.plugins.dflash.sort.value:
 			list.sort()
-        	return list                                                
+        	return list
 
 	def startFlash(self, option):
         	if option is False:
 			self.session.open(MessageBox, _("Sorry, Flashing of %s was canceled!") % self.nfifile, MessageBox.TYPE_ERROR)
         	else:
 			self.session.openWithCallback(self.doFlash, MessageBox, _("Press OK now for flashing\n\n%s\n\nBox will reboot automatically when finished!") % self.nfifile, MessageBox.TYPE_INFO)
-				
-	def getDeviceList(self):                                                                                                                     
-                found = False                                                                                                                             
-                s = open("/proc/swaps", "r")                                                                                                          
+
+	def getDeviceList(self):
+                found = False
+                s = open("/proc/swaps", "r")
                 swaps = s.read()
                 s.close()
-                f = open("/proc/partitions", "r")                                                                                                          
-                devlist = []                                                                                                                          
-                line = f.readline()                                                                                                                  
-                line = f.readline()                                                                                                                  
-               	sp = []                                                                                                                
-                while (line):                                                                                                                        
-        		line = f.readline()                                                                                                          
-                        if line.find("sd") is not -1:                                                                                                  
-                                sp = line.split()                                                                                                   
+                f = open("/proc/partitions", "r")
+                devlist = []
+                line = f.readline()
+                line = f.readline()
+               	sp = []
+                while (line):
+        		line = f.readline()
+                        if line.find("sd") is not -1:
+                                sp = line.split()
                                 print sp
-                                devsize = int(sp[2])                                                                                       
-                                mbsize = devsize / 1024                                                                                      
-                                devname = "/dev/%s" % sp[3]                                                                                        
+                                devsize = int(sp[2])
+                                mbsize = devsize / 1024
+                                devname = "/dev/%s" % sp[3]
                                 print devname, devsize
 				devlen = len(devname)
 				if config.plugins.dflash.flashtool.value == "recovery":
@@ -537,50 +537,50 @@ class dFlash(Screen):
 	                        	if devlen > 8 and mbsize > rambo_minpartsize and swaps.find(devname) is -1:
                         			found = True
                                         	devlist.append(("%s %d %s" % (devname, mbsize, "MB"), devname, mbsize))
-                f.close()                                                                                         
-                if not found:                                                                                    
-                	devlist.append(("no device found, shutdown, add device and reboot", "nodev", 0))         
-                return devlist                                                                                    
-                
-	def askForDevice(self, device):                                                                            
-		if device is None:                                                                                
+                f.close()
+                if not found:
+                	devlist.append(("no device found, shutdown, add device and reboot", "nodev", 0))
+                return devlist
+
+	def askForDevice(self, device):
+		if device is None:
 			self.session.open(MessageBox, _("Sorry, no device choosen"), MessageBox.TYPE_ERROR)
-	        elif device[1] == "nodev":                                                                        
+	        elif device[1] == "nodev":
 			self.session.open(MessageBox, _("Sorry, no device found"), MessageBox.TYPE_ERROR)
-	        else:                                                                                             
-	                self.device = device[1]                                                                                                         
+	        else:
+	                self.device = device[1]
 			if config.plugins.dflash.flashtool.value == "recovery":
 				self.session.openWithCallback(self.strangeFlash, MessageBox, _("Are you sure that you want to FORMAT recovery device %s now for %s ?") % (self.device, self.nfifile), MessageBox.TYPE_YESNO)
 			else:
 				self.session.openWithCallback(self.strangeFlash, MessageBox, _("Are you sure that you want to flash now %s ?") % (self.nfifile), MessageBox.TYPE_YESNO)
-	        
-	def strangeFlash(self, option):                                                                            
+
+	def strangeFlash(self, option):
         	if option is False:
 			self.session.open(MessageBox, _("Sorry, Flashing of %s was canceled!") % self.nfifile, MessageBox.TYPE_ERROR)
 		else:
                         open(dflash_busy, 'a').close()
                        	if self.boxtype == "dm800se" or self.boxtype == "dm500hd":
-	                       	os.system("umount /media/union")                                                            
+	                       	os.system("umount /media/union")
                         if not os.path.exists("/tmp/strange"):
 	                        os.mkdir("/tmp/strange")
 	                else:
-                        	os.system("umount /tmp/strange")                                                            
+                        	os.system("umount /tmp/strange")
 			if config.plugins.dflash.flashtool.value == "rawdevice":
-                       		self["logo"].instance.setPixmapFromFile("%s/ring.png" % dflash_plugindir)                      
-                               	command = "%s/nfiwrite -r %s %s" % (dflash_bin, self.device, self.nfifile)                                
+                       		self["logo"].instance.setPixmapFromFile("%s/ring.png" % dflash_plugindir)
+                               	command = "%s/nfiwrite -r %s %s" % (dflash_bin, self.device, self.nfifile)
                         else:
 				if config.plugins.dflash.flashtool.value != "recovery":
-	        	                os.system("mount %s /tmp/strange" % self.device)                                                            
+	        	                os.system("mount %s /tmp/strange" % self.device)
 	               		f = open("/proc/mounts", "r")
-     	  		 	m = f.read()                                                    
+     	  		 	m = f.read()
        			 	f.close()
        		 		if m.find("/tmp/strange") is not -1 or config.plugins.dflash.flashtool.value == "recovery":
-                        		self["logo"].instance.setPixmapFromFile("%s/ring.png" % dflash_plugindir)                      
+                        		self["logo"].instance.setPixmapFromFile("%s/ring.png" % dflash_plugindir)
 					if config.plugins.dflash.flashtool.value == "rambo":
-		                       		for name in os.listdir("/tmp/strange"):                                                          
-			                               	if name.endswith(".nfi"):                                                              
-	        		                               	os.remove("/tmp/strange/%s" % name)                                              
-	                        	        command = "cp %s /tmp/strange/%s.nfi" % (self.nfifile, self.nfiname)                                
+		                       		for name in os.listdir("/tmp/strange"):
+			                               	if name.endswith(".nfi"):
+	        		                               	os.remove("/tmp/strange/%s" % name)
+	                        	        command = "cp %s /tmp/strange/%s.nfi" % (self.nfifile, self.nfiname)
 					elif config.plugins.dflash.flashtool.value == "recovery":
 						if os.path.exists("/usr/lib/enigma2/python/Plugins/Bp/geminimain/lib/libgeminimain.so"):
 							libgeminimain.setHWLock(1)
@@ -597,7 +597,7 @@ class dFlash(Screen):
 						f = open("/proc/mounts", "r")
 						lll = f.readline()
 						mp = []
-						while (lll):                                                                                                                        
+						while (lll):
 							mp = lll.split()
 #							print mp
 							if os.path.islink(mp[0]):
@@ -619,25 +619,25 @@ class dFlash(Screen):
 							return
 						else:
 							self.session.open(MessageBox, running_string, MessageBox.TYPE_INFO, timeout=30)
-						# let's partition and format now as FAT on 
+						# let's partition and format now as FAT on
 						# a single primary partition to be sure that device is ONLY for recovery
 	   					command = "#!/bin/sh\n"
 					   	command += "fdisk %s << EOF\n" % self.device
-						command += "d\n" 
-						command += "1\n" 
-						command += "d\n" 
-						command += "2\n" 
-						command += "d\n" 
-						command += "3\n" 
-						command += "d\n" 
-						command += "n\n" 
-						command += "p\n" 
-						command += "1\n" 
-						command += "\n" 
-						command += "\n" 
-						command += "w\n" 
+						command += "d\n"
+						command += "1\n"
+						command += "d\n"
+						command += "2\n"
+						command += "d\n"
+						command += "3\n"
+						command += "d\n"
+						command += "n\n"
+						command += "p\n"
+						command += "1\n"
+						command += "\n"
+						command += "\n"
+						command += "w\n"
 					   	command += "EOF\n"
-						command += "partprobe %s\n" % self.device  
+						command += "partprobe %s\n" % self.device
 				   		command += "fdisk %s << EOF\n" % self.device
 					  	command += "t\n"
 					  	command += "6\n"
@@ -645,17 +645,17 @@ class dFlash(Screen):
 					  	command += "1\n"
 					  	command += "w\n"
 					   	command += "EOF\n"
-						command += "partprobe %s\n" % self.device  
+						command += "partprobe %s\n" % self.device
 		                        	command += "mkdosfs -n RECOVERY %s1\n" % self.device
 					   	command += "exit 0\n"
-		                        	os.system(command)                                                            
+		                        	os.system(command)
 						if os.path.exists("/usr/lib/enigma2/python/Plugins/Bp/geminimain/lib/libgeminimain.so"):
 							libgeminimain.setHWLock(0)
 		                        	if self.boxtype == "dm800se" or self.boxtype == "dm500hd":
 		                        		modules_ipk = "dreambox-dvb-modules-sqsh-img"
 		                        	else:
 		                        		modules_ipk = "dreambox-dvb-modules"
-		        	                os.system("mount %s1 /tmp/strange" % self.device)                                                            
+		        	                os.system("mount %s1 /tmp/strange" % self.device)
 		        	                # dirty check for read only filesystem
 		       		 		os.system("mkdir /tmp/strange/sbin")
 		       		 		if not os.path.exists("/tmp/strange/sbin"):
@@ -663,9 +663,9 @@ class dFlash(Screen):
 								os.remove(dflash_busy)
 							self.session.open(MessageBox, _("Sorry, %s device not mounted writeable") % self.device, MessageBox.TYPE_ERROR)
 							return
-		                       		for name in os.listdir("/tmp/strange"):                                                          
-			                               	if name.endswith(".nfi"):                                                              
-	        		                               	os.remove("/tmp/strange/%s" % name)                                              
+		                       		for name in os.listdir("/tmp/strange"):
+			                               	if name.endswith(".nfi"):
+	        		                               	os.remove("/tmp/strange/%s" % name)
 		       		 		if not os.path.exists("/tmp/strange/sbin"):
 			       		 		os.mkdir("/tmp/strange/sbin")
 		       		 		if not os.path.exists("/tmp/strange/etc"):
@@ -682,10 +682,10 @@ class dFlash(Screen):
 						os.system("wget -q http://www.oozoon-dreamboxupdate.de/opendreambox/2.0/experimental/%s -O /tmp/out" % self.boxtype)
 						if not os.path.exists("/tmp/out"):
 							# use kernel from flash as we seem to be offline ...
-		                        	        command = "cp %s/nfiwrite /tmp/strange/sbin/nfiwrite; cp /boot/vmlinux*.gz /tmp/strange; cp /boot/bootlogo*elf* /tmp/strange; cp %s/recovery.jpg /tmp/strange; cp %s /tmp/strange/%s.nfi" % (dflash_bin, dflash_plugindir, self.nfifile, self.nfiname)                                
+		                        	        command = "cp %s/nfiwrite /tmp/strange/sbin/nfiwrite; cp /boot/vmlinux*.gz /tmp/strange; cp /boot/bootlogo*elf* /tmp/strange; cp %s/recovery.jpg /tmp/strange; cp %s /tmp/strange/%s.nfi" % (dflash_bin, dflash_plugindir, self.nfifile, self.nfiname)
 						else:
 							# use kernel from OoZooN feed as we seem to be online ...
-		                        	        command = "cp %s/nfiwrite /tmp/strange/sbin/nfiwrite; cp /tmp/boot/vmlinux*.gz /tmp/strange; cp /boot/bootlogo*elf* /tmp/strange; cp %s/recovery.jpg /tmp/strange; cp %s /tmp/strange/%s.nfi" % (dflash_bin, dflash_plugindir, self.nfifile, self.nfiname)                                
+		                        	        command = "cp %s/nfiwrite /tmp/strange/sbin/nfiwrite; cp /tmp/boot/vmlinux*.gz /tmp/strange; cp /boot/bootlogo*elf* /tmp/strange; cp %s/recovery.jpg /tmp/strange; cp %s /tmp/strange/%s.nfi" % (dflash_bin, dflash_plugindir, self.nfifile, self.nfiname)
 					   		f = open("/tmp/out", "r")
 							line = f.readline()
    							sp = []
@@ -892,9 +892,9 @@ class dFlash(Screen):
 			                        	print "Flashing for Flodder by extracting image  ..."
 				                        if os.path.exists("/tmp/strange/removed"):
 				                        	os.system("rm -r /tmp/strange/removed")
-	                        	                os.rename("/tmp/strange/flodder", "/tmp/strange/removed")                                              
+	                        	                os.rename("/tmp/strange/flodder", "/tmp/strange/removed")
 	                        	                os.system("cp /sbin/flodder /tmp/flodder")
-						        self.NfiExtract(self.nfifile, "/tmp/strange/flodder")              
+						        self.NfiExtract(self.nfifile, "/tmp/strange/flodder")
 						        return
 		                else:
 					if os.path.exists(dflash_busy):
@@ -902,20 +902,20 @@ class dFlash(Screen):
 					self.session.open(MessageBox, _("Sorry, %s device not mounted") % self.device, MessageBox.TYPE_ERROR)
 					return
                         print "[dFlash] flash command %s" % command
-                        self.container = eConsoleAppContainer()                                                        
-                        self.container.appClosed.append(self.strangeDone)                                                                        
-                        self.container.execute(command)                                                           
-                        
-	def NfiExtract(self, nfifile, extractdir):                     
-		ubifs = False	
+                        self.container = eConsoleAppContainer()
+                        self.container.appClosed.append(self.strangeDone)
+                        self.container.execute(command)
+
+	def NfiExtract(self, nfifile, extractdir):
+		ubifs = False
 		file = open(nfifile, "r")
 		header = file.read(32)
 		if header[:3] != "NFI":
 			print "Sorry, old NFI format deteced"
 			file.close()
-       	                os.rename("/tmp/strange/removed", extractdir)                                              
-	                self.strangeDone(0)                                                                        
-			return 
+       	                os.rename("/tmp/strange/removed", extractdir)
+	                self.strangeDone(0)
+			return
 		else:
 			machine_type = header[4:4 + header[4:].find("\0")]
 			if header[:4] == "NFI3":
@@ -928,7 +928,7 @@ class dFlash(Screen):
 		block2mtd_dev = "/dev/mtdblock4"
 	        deleteoption = "%s,remove" % loopdev
 		if machine_type == "dm800" or machine_type == "dm500hd" or machine_type == "dm800se":
-		        flashsize = 128  # we may have images larger then Flash 
+		        flashsize = 128  # we may have images larger then Flash
 		        flashoption = "%s,0x4000,0x200" % loopdev
 			vidoff = 512
 			bs = 512
@@ -953,7 +953,7 @@ class dFlash(Screen):
 			bso = 2112
 		(total_size, ) = struct.unpack("!L", file.read(4))
 		print "Total image size: %s Bytes" % total_size
-                os.mkdir(extractdir)                                              
+                os.mkdir(extractdir)
 		tmpmnt = "/tmp/image"
 		if not os.path.exists(tmpmnt):
 			os.mkdir(tmpmnt)
@@ -1021,17 +1021,17 @@ class dFlash(Screen):
 						ubifs = True
 						# live with ubifs is not so easy
 						if not os.path.exists("/usr/sbin/ubiattach"):
-					                self.strangeDone(0)                                                                        
-							return 
+					                self.strangeDone(0)
+							return
 						if not os.path.exists("/usr/sbin/ubidetach"):
-					                self.strangeDone(0)                                                                        
-							return 
+					                self.strangeDone(0)
+							return
 						u = open("/proc/filesystems")
 						fs = u.read()
 						u.close()
 						if fs.find("ubifs") is -1:
-					                self.strangeDone(0)                                                                        
-							return 
+					                self.strangeDone(0)
+							return
 						os.system("ubiattach -m 4 -d 1 -O %s" % vidoff)
 						# wait a few seconds as ubifs has to initialize
 						time.sleep(5)
@@ -1039,8 +1039,8 @@ class dFlash(Screen):
 							print "Mounting UBIFS ..."
 							os.system("mount -t ubifs /dev/ubi1_0 %s" % (tmpmnt))
 						else:
-					                self.strangeDone(0)                                                                        
-							return 
+					                self.strangeDone(0)
+							return
 				m = open("/proc/mounts")
 				mounts = m.read()
 				m.close()
@@ -1054,7 +1054,7 @@ class dFlash(Screen):
 				                os.system("cp /tmp/flodder %s/sbin/flodder" % extractdir)
 					os.system("umount %s > /dev/null 2>&1" % tmpmnt)
 				else:
-			                self.strangeDone(0)                                                                        
+			                self.strangeDone(0)
 					return
 			p = p + 1
 		if ubifs:
@@ -1065,28 +1065,28 @@ class dFlash(Screen):
 		block2mtd.close()
 		os.system("losetup -d %s" % loopdev)
 		print "Extracting %s to %s Finished!" % (nfifile, extractdir)
-                self.strangeDone(1)                                                                        
+                self.strangeDone(1)
 
-	def strangeDone(self, status):                     
+	def strangeDone(self, status):
 		if os.path.exists(dflash_busy):
 			os.remove(dflash_busy)
-               	os.system("umount /tmp/strange")                                                            
+               	os.system("umount /tmp/strange")
 	        self["logo"].instance.setPixmapFromFile("%s/dflash.png" % dflash_plugindir)
 		if config.plugins.dflash.flashtool.value == "rawdevice":
-		 	result = _("Copied %s.nfi to %s,\ndon't forget kernel commandline and now\nreboot for activating it ?") % (self.nfiname, self.device)                                    
+		 	result = _("Copied %s.nfi to %s,\ndon't forget kernel commandline and now\nreboot for activating it ?") % (self.nfiname, self.device)
 		elif config.plugins.dflash.flashtool.value == "recovery":
-		 	result = _("Copied %s.nfi to %s,\ndon't forget to remove stick\nif you enabled kernel commandline!\nHalt now ?") % (self.nfiname, self.device)                                    
+		 	result = _("Copied %s.nfi to %s,\ndon't forget to remove stick\nif you enabled kernel commandline!\nHalt now ?") % (self.nfiname, self.device)
 		else:
-		 	result = _("Copied %s.nfi to %s,\nreboot for activating it ?") % (self.nfiname, self.device)                                    
-	        self.session.openWithCallback(self.doreboot, MessageBox, result, MessageBox.TYPE_YESNO)              
+		 	result = _("Copied %s.nfi to %s,\nreboot for activating it ?") % (self.nfiname, self.device)
+	        self.session.openWithCallback(self.doreboot, MessageBox, result, MessageBox.TYPE_YESNO)
 #		self.session.open(MessageBox, _("Flashing of %s failed") % self.nfiname, MessageBox.TYPE_ERROR)
-	        
-	def doreboot(self, answer):                                                                                                                            
-	        if answer is True:                                                                                                                            
+
+	def doreboot(self, answer):
+	        if answer is True:
 			if config.plugins.dflash.flashtool.value == "recovery":
-				quitMainloop(1)                 
+				quitMainloop(1)
 			else:
-				quitMainloop(2)                 
+				quitMainloop(2)
 
 	def doFlash(self, option):
 		if option:
@@ -1110,8 +1110,8 @@ class dFlash(Screen):
 		if os.path.exists(dflash_backup):
  			print "[dFLASH] found finished backup ..."
 			dflash_progress = 0
-			self.TimerBackup = eTimer()                                       
-			self.TimerBackup.stop()                                           
+			self.TimerBackup = eTimer()
+			self.TimerBackup.stop()
 			if os.path.exists(dflash_busy):
 				os.remove(dflash_busy)
 			if os.path.exists(dflash_backupscript) and not config.plugins.dflash.keep.value:
@@ -1150,9 +1150,9 @@ class dFlash(Screen):
 				l = b.read()
 				b.close()
 			if l.find("Input/output err") is not -1:
-				self.session.open(MessageBox, size + "B " + _("Flash Backup to %s finished with imagename:\n\n%s.nfi\n\nBUT it has I/O Errors") % (path, image), MessageBox.TYPE_ERROR)                 
+				self.session.open(MessageBox, size + "B " + _("Flash Backup to %s finished with imagename:\n\n%s.nfi\n\nBUT it has I/O Errors") % (path, image), MessageBox.TYPE_ERROR)
 			else:
-				self.session.open(MessageBox, size + "B " + _("Flash Backup to %s finished with imagename:\n\n%s.nfi") % (path, image), MessageBox.TYPE_INFO)                 
+				self.session.open(MessageBox, size + "B " + _("Flash Backup to %s finished with imagename:\n\n%s.nfi") % (path, image), MessageBox.TYPE_INFO)
 		else:
 	        	if os.path.exists(dflash_busy):
 				self.session.open(MessageBox, running_string, MessageBox.TYPE_ERROR)
@@ -1167,21 +1167,21 @@ class dFlash(Screen):
 
         def askForBackupPath(self, path):
            	if path is None:
-              		self.session.open(MessageBox, _("nothing entered"), MessageBox.TYPE_ERROR)                 
+              		self.session.open(MessageBox, _("nothing entered"), MessageBox.TYPE_ERROR)
            	else:
 			sp = []
 			sp = path.split("/")
 			print sp
 			if len(sp) > 1:
 				if sp[1] != "media":
- 	             			self.session.open(MessageBox, mounted_string % path, MessageBox.TYPE_ERROR)                 
+ 	             			self.session.open(MessageBox, mounted_string % path, MessageBox.TYPE_ERROR)
 					return
 			mounted = False
 			self.swappable = False
 			sp2 = []
                 	f = open("/proc/mounts", "r")
-       		 	m = f.readline()                                                    
-        		while (m) and not mounted:                                             
+       		 	m = f.readline()
+        		while (m) and not mounted:
 				if m.find("/%s/%s" % (sp[1], sp[2])) is not -1:
 					mounted = True
 					print m
@@ -1190,10 +1190,10 @@ class dFlash(Screen):
 					if sp2[2].startswith("ext") or sp2[2].startswith("xfs") or sp2[2].endswith("fat"):
 						print "[dFLASH] swappable"
 						self.swappable = True
-           			m = f.readline()                                                 
-			f.close()	
+           			m = f.readline()
+			f.close()
 			if not mounted:
- 	             		self.session.open(MessageBox, mounted_string % path, MessageBox.TYPE_ERROR)                 
+ 	             		self.session.open(MessageBox, mounted_string % path, MessageBox.TYPE_ERROR)
 				return
 			path = path.lstrip().rstrip("/").rstrip().replace(" ", "")
 	      		config.plugins.dflash.backuplocation.value = path
@@ -1207,12 +1207,12 @@ class dFlash(Screen):
 			name = "OE"
 			if os.path.exists("/etc/image-version"):
 				f = open("/etc/image-version")
-	 			line = f.readline()                                                    
-        			while (line):                                             
-        				line = f.readline()                                                 
-        				if line.startswith("creator="):                                    
+	 			line = f.readline()
+        			while (line):
+        				line = f.readline()
+        				if line.startswith("creator="):
 						name = line
-        			f.close()                                                              
+        			f.close()
 				name = name.replace("creator=", "")
 				sp = []
 				if len(name) > 0:
@@ -1235,7 +1235,7 @@ class dFlash(Screen):
 				self.writesize = w.read()
 				w.close()
 				self.writesize = self.writesize.replace("\n", "").replace("\l", "")
-			else:	
+			else:
 				flashdev = "/dev/mtd/0"
 			        if os.path.exists("/dev/mtd0"):
 			       		flashdev = "/dev/mtd0"
@@ -1250,13 +1250,13 @@ class dFlash(Screen):
                 		self.boxtype = "dm7020hdv2"
                 	elif (self.boxtype == "dm7020hd") and (self.writesize == "4096") and config.plugins.dflash.switchversion.value:
                 		self.boxtype = "dm7020hdv2"
-                	else:	
+                	else:
                 		pass
                 	self.session.openWithCallback(self.askForBackupName, InputBox, title=backupimage_string, text="%s-%s-%s-%s                        " % (name, self.boxtype, datetime.date.today(), time.strftime("%H-%M")), maxSize=40, type=Input.TEXT)
 
         def askForBackupName(self, name):
            if name is None:
-              self.session.open(MessageBox, _("nothing entered"), MessageBox.TYPE_ERROR)                 
+              self.session.open(MessageBox, _("nothing entered"), MessageBox.TYPE_ERROR)
            else:
 	      self.backupname = name.replace(" ", "").replace("[", "").replace("]", "").replace(">", "").replace("<", "").replace("|", "").rstrip().lstrip()
       	      if os.path.exists("%s/%s.nfi" % (config.plugins.dflash.backuplocation.value, self.backupname)):
@@ -1271,22 +1271,22 @@ class dFlash(Screen):
 	      	 if os.path.exists("%s/%s.nfo" % (config.plugins.dflash.backuplocation.value, self.backupname)):
 	      		os.remove("%s/%s.nfo" % (config.plugins.dflash.backuplocation.value, self.backupname))
 	      	 # check if swapfile too small
-	         fm = open("/proc/meminfo")                                                
-       	         line = fm.readline()                                                    
-       	         swapspace = 0                                                                  
-                 while (line):                                             
-           	    line = fm.readline()                                                 
-           	    if line.startswith("SwapTotal:"):                                    
-              		swapspace = int(line.replace("SwapTotal: ", "").replace("kB", "")) / 1000             
-                 fm.close()                                                              
+	         fm = open("/proc/meminfo")
+       	         line = fm.readline()
+       	         swapspace = 0
+                 while (line):
+           	    line = fm.readline()
+           	    if line.startswith("SwapTotal:"):
+              		swapspace = int(line.replace("SwapTotal: ", "").replace("kB", "")) / 1000
+                 fm.close()
 	         print "[dFLASH] swapspace: %i MB" % swapspace
 		 self.ownswap = False
-	         if swapspace < config.plugins.dflash.swapsize.value: 
+	         if swapspace < config.plugins.dflash.swapsize.value:
 			if self.swappable or config.plugins.dflash.loopswap.value:
 		 		action_string = _("\n\nUsing temporary swapspace.")
 		 	else:
 		 		action_string = _("\n\nEnigma2 will restart due to lack of swapspace,\ncheck result with Backup in Plugin afterwards.")
-	         elif config.plugins.dflash.swapsize.value == 0: 
+	         elif config.plugins.dflash.swapsize.value == 0:
 		 	action_string = _("\n\nWithout swapspace.")
 			self.ownswap = True
 		 else:
@@ -1294,19 +1294,19 @@ class dFlash(Screen):
 			self.ownswap = True
                  self.session.openWithCallback(self.startBackup, MessageBox, _("Press OK for starting backup to") + "\n\n%s.nfi" % self.backupname + "\n\n" + _("Be patient, this takes 5-10min ... ") + action_string, MessageBox.TYPE_INFO)
 	      else:
-              	 self.session.open(MessageBox, _("not confirmed"), MessageBox.TYPE_ERROR)                 
-		
+              	 self.session.open(MessageBox, _("not confirmed"), MessageBox.TYPE_ERROR)
+
         def startBackup(self, answer):
               if answer is True:
 	         print "[dFLASH] is backuping now ..."
                  self["logo"].instance.setPixmapFromFile("%s/ring.png" % dflash_plugindir)
                  self.doHide()
-		 self.TimerBackup = eTimer()                                       
-		 self.TimerBackup.stop()                                           
+		 self.TimerBackup = eTimer()
+		 self.TimerBackup.stop()
 		 self.TimerBackup.timeout.get().append(self.backupFinishedCheck)
-		 self.TimerBackup.start(10000, True)                                 
+		 self.TimerBackup.start(10000, True)
 	         BackupImage(self.backupname, self.imagetype, self.creator, self.swappable, self.ownswap)
-		 
+
         def backupFinishedCheck(self):
 		global dflash_progress
 		if not os.path.exists(dflash_backup):
@@ -1320,7 +1320,7 @@ class dFlash(Screen):
 			rused = 0
 			dused = 0
 			sused = 0
-			
+
 			if os.path.exists("%s/r.ubi" % config.plugins.dflash.backuplocation.value):
 				rsize = os.path.getsize("%s/r.ubi" % config.plugins.dflash.backuplocation.value)
 			if os.path.exists("%s/d.ubi" % config.plugins.dflash.backuplocation.value):
@@ -1334,13 +1334,13 @@ class dFlash(Screen):
 			if os.path.exists("%s/%s.nfi" % (config.plugins.dflash.backuplocation.value, self.backupname)):
 				nsize = os.path.getsize("%s/%s.nfi" % (config.plugins.dflash.backuplocation.value, self.backupname))
 			total_size = ssize + bsize + rsize + dsize
-			st = os.statvfs("/boot")                                                    
-			bused = (st.f_blocks - st.f_bfree) * st.f_frsize        
-			st = os.statvfs("/")                                                    
-			rused = (st.f_blocks - st.f_bfree) * st.f_frsize        
-			if config.plugins.dflash.databackup.value and os.path.exists("/data"):  
-				st = os.statvfs("/data")                                                    
-				dused = (st.f_blocks - st.f_bfree) * st.f_frsize        
+			st = os.statvfs("/boot")
+			bused = (st.f_blocks - st.f_bfree) * st.f_frsize
+			st = os.statvfs("/")
+			rused = (st.f_blocks - st.f_bfree) * st.f_frsize
+			if config.plugins.dflash.databackup.value and os.path.exists("/data"):
+				st = os.statvfs("/data")
+				dused = (st.f_blocks - st.f_bfree) * st.f_frsize
 			s = open("/proc/swaps")
 			swap = s.read()
 			s.close()
@@ -1365,13 +1365,13 @@ class dFlash(Screen):
 				dflash_progress = 95
 			self.slider.setValue(dflash_progress)
  			print "[dFLASH] checked if backup is finished ..."
-			self.TimerBackup.start(5000, True)                                 
+			self.TimerBackup.start(5000, True)
 		else:
  			print "[dFLASH] found finished backup ..."
 			dflash_progress = 0
 	                self.slider.setValue(0)
-			self.TimerBackup = eTimer()                                       
-			self.TimerBackup.stop()                                           
+			self.TimerBackup = eTimer()
+			self.TimerBackup.stop()
 			if os.path.exists(dflash_busy):
 				os.remove(dflash_busy)
 			if os.path.exists(dflash_backupscript) and not config.plugins.dflash.keep.value:
@@ -1412,13 +1412,13 @@ class dFlash(Screen):
 				b.close()
 			try:
 				if l.find("Input/output err") is not -1:
-					self.session.open(MessageBox, "%sB " % (size) + _("Flash Backup to %s finished with imagename:\n\n%s.nfi\n\nBUT it has I/O Errors") % (path, image), MessageBox.TYPE_ERROR)                 
+					self.session.open(MessageBox, "%sB " % (size) + _("Flash Backup to %s finished with imagename:\n\n%s.nfi\n\nBUT it has I/O Errors") % (path, image), MessageBox.TYPE_ERROR)
 				else:
-					self.session.open(MessageBox, "%sB " % (size) + _("Flash Backup to %s finished with imagename:\n\n%s.nfi") % (path, image), MessageBox.TYPE_INFO)                 
+					self.session.open(MessageBox, "%sB " % (size) + _("Flash Backup to %s finished with imagename:\n\n%s.nfi") % (path, image), MessageBox.TYPE_INFO)
 			except:
 				# why crashes even this
-#				self.session.open(MessageBox,_("Flash Backup to %s finished with imagename:\n\n%s.nfi") % (path,image),  MessageBox.TYPE_INFO)                 
-				self.session.open(MessageBox, _("Flash Backup finished"), MessageBox.TYPE_INFO)                 
+#				self.session.open(MessageBox,_("Flash Backup to %s finished with imagename:\n\n%s.nfi") % (path,image),  MessageBox.TYPE_INFO)
+				self.session.open(MessageBox, _("Flash Backup finished"), MessageBox.TYPE_INFO)
 
 	def config(self):
 	        if os.path.exists(dflash_busy):
@@ -1428,23 +1428,23 @@ class dFlash(Screen):
 
 
 def startdFlash(session, **kwargs):
-       	session.open(dFlash)   
+       	session.open(dFlash)
 
 
 def autostart(reason, **kwargs):
-        if kwargs.has_key("session") and reason == 0:           
-		session = kwargs["session"]                       
+        if kwargs.has_key("session") and reason == 0:
+		session = kwargs["session"]
 		print "[dFLASH] autostart"
 		if os.path.exists(dflash_busy):
 			os.remove(dflash_busy)
 
 
-def sessionstart(reason, **kwargs):                                               
-        if reason == 0 and "session" in kwargs:                                                        
+def sessionstart(reason, **kwargs):
+        if reason == 0 and "session" in kwargs:
 		if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/WebInterface/WebChilds/Toplevel.pyo"):
                         from Plugins.Extensions.WebInterface.WebChilds.Toplevel import addExternalChild
-                        addExternalChild(("dflash", wFlash(), "dFlash", "1", True))          
-                else:                                                                                  
+                        addExternalChild(("dflash", wFlash(), "dFlash", "1", True))
+                else:
 			print "[dFLASH] Webif not found"
 
 
@@ -1456,9 +1456,9 @@ def Plugins(**kwargs):
 
 
 def mainconf(menuid):
-    if menuid != "setup":                                                  
-        return []                                                     
-    return [(flashing_string + " & " + backup_string, startdFlash, "dflash", None)]    
+    if menuid != "setup":
+        return []
+    return [(flashing_string + " & " + backup_string, startdFlash, "dflash", None)]
 
 ###############################################################################
 # dFlash Webinterface by gutemine
@@ -1489,40 +1489,40 @@ class wFlash(resource.Resource):
 				dflash_backuping_progress += "<div style=\"background-color:yellow;width:%dpx;height:20px;border:1px solid #000\"></div> " % (dflash_progress)
 			dflash_backuping_progress += "<br><form method=\"GET\">"
 			dflash_backuping_progress += "<input name=\"command\" type=\"submit\" size=\"100px\" title=\"%s\" value=\"%s\">" % (refresh_string, "Refresh")
-			dflash_backuping_progress += "</form>"                        
+			dflash_backuping_progress += "</form>"
 			return header_string + dflash_backuping_progress
 		if command is None or command[0] == "Refresh":
-		        fm = open("/proc/meminfo")                                                
-       		 	line = fm.readline()                                                    
-       		 	swapspace = 0                                                                  
+		        fm = open("/proc/meminfo")
+       		 	line = fm.readline()
+       		 	swapspace = 0
 			line = True
-        		while (line):                                             
-           			line = fm.readline()                                                 
-           			if line.startswith("SwapTotal:"):                                    
-              				swapspace = int(line.replace("SwapTotal: ", "").replace("kB", "")) / 1000             
-        		fm.close()                                                              
+        		while (line):
+           			line = fm.readline()
+           			if line.startswith("SwapTotal:"):
+              				swapspace = int(line.replace("SwapTotal: ", "").replace("kB", "")) / 1000
+        		fm.close()
 			b = open("/proc/stb/info/model", "r")
 			dreambox = b.read().rstrip("\n")
 			b.close()
 			htmlnfi = ""
 			entries = os.listdir("/tmp")
-	 		for name in sorted(entries):                          
+	 		for name in sorted(entries):
 				if name.endswith(".nfi"):
-       			       		name = name.replace(".nfi", "")                        
+       			       		name = name.replace(".nfi", "")
 					htmlnfi += "<option value=\"/tmp/%s.nfi\" class=\"black\">%s</option>\n" % (name, name)
 			if not config.plugins.dflash.backuplocation.value.startswith("/media/net") or config.plugins.dflash.ramfs.value:
 				if os.path.exists(config.plugins.dflash.backuplocation.value):
 					entries = os.listdir(config.plugins.dflash.backuplocation.value)
-       					for name in sorted(entries):                          
+       					for name in sorted(entries):
 						if name.endswith(".nfi"):
-       	 	      					name = name.replace(".nfi", "")                        
+       	 	      					name = name.replace(".nfi", "")
 							htmlnfi += "<option value=\"%s/%s.nfi\" class=\"black\">%s</option>\n" % (config.plugins.dflash.backuplocation.value, name, name)
 			entries = os.listdir("/media")
-       			for directory in sorted(entries):                          
+       			for directory in sorted(entries):
 				if os.path.exists("/media/%s" % directory) and os.path.isdir("/media/%s" % directory) and directory.endswith("net") is False and directory.endswith("hdd") is False:
-       					for name in os.listdir("/media/%s" % directory):                          
+       					for name in os.listdir("/media/%s" % directory):
 						if name.endswith(".nfi"):
-        	 	      				name = name.replace(".nfi", "")                        
+        	 	      				name = name.replace(".nfi", "")
 							htmlnfi += "<option value=\"%s/%s.nfi\" class=\"black\">%s</option>\n" % (directory, name, name)
   			f = open("/proc/stb/info/model")
   			self.boxtype = f.read()
@@ -1531,12 +1531,12 @@ class wFlash(resource.Resource):
 			name = "OE"
 			if os.path.exists("/etc/image-version"):
 				f = open("/etc/image-version")
-	 			line = f.readline()                                                    
-        			while (line):                                             
-        				line = f.readline()                                                 
-        				if line.startswith("creator="):                                    
+	 			line = f.readline()
+        			while (line):
+        				line = f.readline()
+        				if line.startswith("creator="):
 						name = line
-        			f.close()                                                              
+        			f.close()
 				name = name.replace("creator=", "")
 				sp = []
 				if len(name) > 0:
@@ -1559,7 +1559,7 @@ class wFlash(resource.Resource):
 				self.writesize = w.read()
 				w.close()
 				self.writesize = self.writesize.replace("\n", "").replace("\l", "")
-			else:	
+			else:
 				flashdev = "/dev/mtd/0"
 			        if os.path.exists("/dev/mtd0"):
 			       		flashdev = "/dev/mtd0"
@@ -1574,7 +1574,7 @@ class wFlash(resource.Resource):
                 		self.boxtype = "dm7020hdv2"
                 	elif (self.boxtype == "dm7020hd") and (self.writesize == "4096") and config.plugins.dflash.switchversion.value:
                 		self.boxtype = "dm7020hdv2"
-                	else:	
+                	else:
                 		pass
 		 	return """
 				<html>
@@ -1585,20 +1585,20 @@ class wFlash(resource.Resource):
 				%s @ Dreambox<br>
 				<form method="GET">
                 	       	<select name="file">%s
-                                <input type="reset" size="100px"> 
-                		<input name="command" type="submit" size=="100px" title=\"%s\" value="%s"> 
+                                <input type="reset" size="100px">
+                		<input name="command" type="submit" size=="100px" title=\"%s\" value="%s">
 				</select>
-                               	</form>                             
+                               	</form>
 				<img src="/web-data/img/dflash.png" alt="%s ..."/><br><br>
                                	<hr>
 				%s & %s @ Dreambox<br>
 				<form method="GET">
  				<input name="directory" type="text" size="48" maxlength="48" value="%s">
  				<input name="file" type="text" size="48" maxlength="48" value="%s-%s-%s-%s">
-                                <input type="reset" size="100px"> 
-                		<input name="command" type="submit" size=="100px" title=\"%s\" value="%s"> 
+                                <input type="reset" size="100px">
+                		<input name="command" type="submit" size=="100px" title=\"%s\" value="%s">
 				</select>
-                               	</form>                             
+                               	</form>
 				<img src="/web-data/img/ring.png" alt="%s ..."/><br><br>
                                	<hr>
     			""" % (header_string, plugin_string, disclaimer_header, disclaimer_wstring, fileupload_string, htmlnfi, flashing_string, "Flashing", flashing_string, backupdirectory_string, backupimage_string, config.plugins.dflash.backuplocation.value, name, self.boxtype, datetime.date.today(), time.strftime("%H-%M"), backup_string, "Backup", backup_string)
@@ -1609,9 +1609,9 @@ class wFlash(resource.Resource):
 			if os.path.exists(self.nfifile):
 		 		if self.nfifile.endswith(".nfi"):
  					f = open(self.nfifile, "r")
-	 				header = f.read(32)     
+	 				header = f.read(32)
   					f.close()
-       					machine_type = header[4:4 + header[4:].find("\0")]                        
+       					machine_type = header[4:4 + header[4:].find("\0")]
 					b = open("/proc/stb/info/model", "r")
 					dreambox = b.read().rstrip("\n")
 					b.close()
@@ -1619,19 +1619,19 @@ class wFlash(resource.Resource):
  						v = open("/var/lib/opkg/status", "r")
  					else:
  						v = open("/usr/lib/opkg/status", "r")
- 					line = v.readline()     
+ 					line = v.readline()
 					found = False
 					loaderversion = 0
-					while (line) and not found:                                                                   
-                		        	line = v.readline()                                                
-                        			if line.startswith("Package: dreambox-secondstage"):                                            
-                           			     	found = True                                                  
-	                    			    	line = v.readline()                                                
+					while (line) and not found:
+                		        	line = v.readline()
+                        			if line.startswith("Package: dreambox-secondstage"):
+                           			     	found = True
+	                    			    	line = v.readline()
                                     			line = line.replace("Version: ", "")
 							loader = line.split("-")
 							loaderversion = int(loader[0])
   					v.close()
-  					
+
 					self.writesize = "512"
 					if os.path.exists("/sys/devices/virtual/mtd/mtd0/writesize"):
 						w = open("/sys/devices/virtual/mtd/mtd0/writesize", "r")
@@ -1651,7 +1651,7 @@ class wFlash(resource.Resource):
                 				self.writesize = "%s" % tuple[4]
 					print "[dFLASH] %s %s %i %s %s" % (machine_type, dreambox, loaderversion, header[:4], self.writesize)
 
-					if machine_type.startswith(dreambox) is False and dreambox is not "dm7020":                                        
+					if machine_type.startswith(dreambox) is False and dreambox is not "dm7020":
 						print "[dFLASH] wrong header"
 						return header_string + nonfi_string
 					elif (dreambox == "dm800" or dreambox == "dm800se" or dreambox == "dm500hd" or dreambox == "dm7020hd") and loaderversion < 84 and header[:4] == "NFI2":
@@ -1705,23 +1705,23 @@ class wFlash(resource.Resource):
 					return header_string + " " + mounted_string % path + ", " + dflash_backbutton
 			mounted = False
 		      	# check if swapfile too small
-		        fm = open("/proc/meminfo")                                                
-       	        	line = fm.readline()                                                    
-       	         	swapspace = 0                                                                  
-                 	while (line):                                             
-           	    		line = fm.readline()                                                 
-           	    		if line.startswith("SwapTotal:"):                                    
-              				swapspace = int(line.replace("SwapTotal: ", "").replace("kB", "")) / 1000             
-                    	fm.close()                                                              
+		        fm = open("/proc/meminfo")
+       	        	line = fm.readline()
+       	         	swapspace = 0
+                 	while (line):
+           	    		line = fm.readline()
+           	    		if line.startswith("SwapTotal:"):
+              				swapspace = int(line.replace("SwapTotal: ", "").replace("kB", "")) / 1000
+                    	fm.close()
 	         	print "[dFLASH] swapspace: %i MB" % swapspace
 		 	self.ownswap = True
-	         	if swapspace < config.plugins.dflash.swapsize.value: 
+	         	if swapspace < config.plugins.dflash.swapsize.value:
 		 		self.ownswap = False
 			self.swappable = False
 			sp2 = []
                 	f = open("/proc/mounts", "r")
-       		 	m = f.readline()                                                    
-        		while (m) and not mounted:                                             
+       		 	m = f.readline()
+        		while (m) and not mounted:
 				if m.find("/%s/%s" % (sp[1], sp[2])) is not -1:
 					mounted = True
 					print m
@@ -1730,8 +1730,8 @@ class wFlash(resource.Resource):
 					if sp2[2].startswith("ext") or sp2[2].startswith("xfs") or sp2[2].endswith("fat"):
 						print "[dFLASH] swappable"
 						self.swappable = True
-           			m = f.readline()                                                 
-			f.close()	
+           			m = f.readline()
+			f.close()
 			if not mounted:
 				return header_string + " " + mounted_string % path + ", " + dflash_backbutton
 			path = path.lstrip().rstrip("/").rstrip().replace(" ", "")
@@ -1751,15 +1751,15 @@ class wFlash(resource.Resource):
  					return header_string + nonfi_string + ", " + dflash_backbutton
 				else:
 					# backupfile request
-					self.TimerBackup = eTimer()                                       
-					self.TimerBackup.stop()                                           
+					self.TimerBackup = eTimer()
+					self.TimerBackup.stop()
 					self.TimerBackup.timeout.get().append(self.backupFinishedCheck)
-					self.TimerBackup.start(10000, True)                                 
+					self.TimerBackup.start(10000, True)
                  			BackupImage(self.backupname, self.imagetype, self.creator, self.swappable, self.ownswap)
 					return header_string + dflash_backuping
 		   else:
 			print "[dFLASH] unknown command"
-              		return header_string + _("nothing entered")                 
+              		return header_string + _("nothing entered")
 
         def backupFinishedCheck(self):
 		global dflash_progress
@@ -1774,7 +1774,7 @@ class wFlash(resource.Resource):
 			rused = 0
 			dused = 0
 			sused = 0
-			
+
 			if os.path.exists("%s/r.ubi" % config.plugins.dflash.backuplocation.value):
 				rsize = os.path.getsize("%s/r.ubi" % config.plugins.dflash.backuplocation.value)
 			if os.path.exists("%s/d.ubi" % config.plugins.dflash.backuplocation.value):
@@ -1788,13 +1788,13 @@ class wFlash(resource.Resource):
 			if os.path.exists("%s/%s.nfi" % (config.plugins.dflash.backuplocation.value, self.backupname)):
 				nsize = os.path.getsize("%s/%s.nfi" % (config.plugins.dflash.backuplocation.value, self.backupname))
 			total_size = ssize + bsize + rsize + dsize + nsize
-			st = os.statvfs("/boot")                                                    
-			bused = (st.f_blocks - st.f_bfree) * st.f_frsize        
-			st = os.statvfs("/")                                                    
-			rused = (st.f_blocks - st.f_bfree) * st.f_frsize        
-			if config.plugins.dflash.databackup.value and os.path.exists("/data"):  
-				st = os.statvfs("/data")                                                    
-				dused = (st.f_blocks - st.f_bfree) * st.f_frsize        
+			st = os.statvfs("/boot")
+			bused = (st.f_blocks - st.f_bfree) * st.f_frsize
+			st = os.statvfs("/")
+			rused = (st.f_blocks - st.f_bfree) * st.f_frsize
+			if config.plugins.dflash.databackup.value and os.path.exists("/data"):
+				st = os.statvfs("/data")
+				dused = (st.f_blocks - st.f_bfree) * st.f_frsize
 			s = open("/proc/swaps")
 			swap = s.read()
 			s.close()
@@ -1818,12 +1818,12 @@ class wFlash(resource.Resource):
                         if os.path.exists("%s/%s.nfi" % (config.plugins.dflash.backuplocation.value, self.backupname)):
 				dflash_progress = 95
  			print "[dFLASH] checked if backup is finished ..."
-			self.TimerBackup.start(5000, True)                                 
+			self.TimerBackup.start(5000, True)
 		else:
  			print "[dFLASH] found finished backup ..."
 			dflash_progress = 0
-			self.TimerBackup = eTimer()                                       
-			self.TimerBackup.stop()                                           
+			self.TimerBackup = eTimer()
+			self.TimerBackup.stop()
 			if os.path.exists(dflash_busy):
 				os.remove(dflash_busy)
 			if os.path.exists(dflash_backupscript) and not config.plugins.dflash.keep.value:
@@ -1852,10 +1852,10 @@ class wFlash(resource.Resource):
 					image = image.rstrip().lstrip()
 			print "[dFLASH] found backup %s" % line
 			print "[dFLASH] finished webif backup"
-			
 
-class FlashingImage(Screen):                                                      
-        def __init__(self, flashimage):            
+
+class FlashingImage(Screen):
+        def __init__(self, flashimage):
         	print "[dFLASH] does flashing"
                 open(dflash_busy, 'a').close()
 		b = open("/proc/stb/info/model", "r")
@@ -1866,7 +1866,7 @@ class FlashingImage(Screen):
 		command += "init 4\n"
 		command += "sleep 3\n"
 		if dreambox.startswith("dm500hd"):
-			command += "echo FFFFFFFF > /proc/stb/fp/led0_pattern\n" 
+			command += "echo FFFFFFFF > /proc/stb/fp/led0_pattern\n"
 		else:
 			command += "echo 50 > /proc/progress\n"
 		if config.plugins.dflash.ramfs.value:
@@ -1895,27 +1895,27 @@ class FlashingImage(Screen):
 		os.system("start-stop-daemon -S -b -n dflash.sh -x %s" % dflash_script)
 
 
-class BackupImage(Screen):                                                      
-        def __init__(self, backupname, imagetype, creator, swappable, ownswap):            
+class BackupImage(Screen):
+        def __init__(self, backupname, imagetype, creator, swappable, ownswap):
         	print "[dFLASH] does backup"
                 open(dflash_busy, 'a').close()
-        	self.backupname = backupname               
-        	self.imagetype = imagetype                                        
-        	self.creator = creator                 
-        	self.swappable = swappable                 
-        	self.ownswap = ownswap                
+        	self.backupname = backupname
+        	self.imagetype = imagetype
+        	self.creator = creator
+        	self.swappable = swappable
+        	self.ownswap = ownswap
 		f = open("/proc/stb/info/model")
 		self.boxtype = f.read()
 		f.close()
 		self.boxtype = self.boxtype.replace("\n", "").replace("\l", "")
 		self.kernel = "3.2-%s" % boxtype
-        	for name in os.listdir("/lib/modules"):                          
+        	for name in os.listdir("/lib/modules"):
 			self.kernel = name
 		self.kernel = self.kernel.replace("\n", "").replace("\l", "").replace("\0", "")
 		if not os.path.exists("/boot/autoexec.bat"):
 			os.system("mount -t jffs2 /dev/mtdblock2 /boot")
 		print "[dFLASH] boxtype %s kernel %s" % (self.boxtype, self.kernel)
-		
+
 		if os.path.exists("%s/r.ubi" % config.plugins.dflash.backuplocation.value):
 			os.remove("%s/r.ubi" % config.plugins.dflash.backuplocation.value)
 		if os.path.exists("%s/d.ubi" % config.plugins.dflash.backuplocation.value):
@@ -1928,45 +1928,45 @@ class BackupImage(Screen):
 			os.remove("%s/s.bin" % config.plugins.dflash.backuplocation.value)
 		if self.boxtype.startswith("dm7020hd") and not os.path.exists("/data"):
 			os.mkdir("/data")
-			
+
 		if os.path.exists("/var/lib/opkg/status"):
 			v = open("/var/lib/opkg/status", "r")
 		else:
 			v = open("/usr/lib/opkg/status", "r")
-		line = v.readline()     
+		line = v.readline()
 		found = False
 		loaderversion = 0
-		while (line) and not found:                                                                   
-                       	line = v.readline()                                                
-                       	if line.startswith("Package: dreambox-secondstage"):                                            
-                               	found = True                                                  
-                        	line = v.readline()                                                
+		while (line) and not found:
+                       	line = v.readline()
+                       	if line.startswith("Package: dreambox-secondstage"):
+                               	found = True
+                        	line = v.readline()
                                 line = line.replace("Version: ", "")
 				loader = line.split("-")
 				loaderversion = int(loader[0])
 		v.close()
-	        print "[dFLASH] loaderversion: %i" % (loaderversion) 
-		
-		# backup only as NFI2 if the loader is already NFI2 capable 
+	        print "[dFLASH] loaderversion: %i" % (loaderversion)
+
+		# backup only as NFI2 if the loader is already NFI2 capable
 		if (self.boxtype == "dm8000" or self.boxtype == "dm7025") or ((self.boxtype == "dm800" or self.boxtype == "dm800se" or self.boxtype == "dm500hd") and loaderversion < 84):
 			self.brcmnand = ""
 		elif self.boxtype == "dm7020hdv2" or self.boxtype == "dm800sev2" or self.boxtype == "dm500hdv2":
 			self.brcmnand = "--brcmnand --hw-ecc"
 		else:
 			self.brcmnand = "--brcmnand"
-			
+
 		self.flashsize = "4000000"
 		self.loadersize = "40000"
 		self.bootsize = "3C0000"
 		self.rootsize = "3C00000"
-	     	self.eraseblocksize = 16384         
-		self.minimumiosize = 512      
+	     	self.eraseblocksize = 16384
+		self.minimumiosize = 512
 		self.subpagesize = 512
 		self.lebsize = 15360
                 self.offset = 512
                 self.blocksize = 512
-                
-		self.writesize = "512"	
+
+		self.writesize = "512"
 		if os.path.exists("/sys/devices/virtual/mtd/mtd0/writesize"):
 			w = open("/sys/devices/virtual/mtd/mtd0/writesize", "r")
 			self.writesize = w.read()
@@ -1985,8 +1985,8 @@ class BackupImage(Screen):
                 	self.writesize = "%s" % tuple[4]
 		if self.boxtype == "dm8000":
 			self.subpagesize = 512
-		     	self.eraseblocksize = 131072        
-		        self.minimumiosize = 2048       
+		     	self.eraseblocksize = 131072
+		        self.minimumiosize = 2048
 		        self.lebsize = 129024
 			self.flashsize = "10000000"
 			self.loadersize = "100000"
@@ -1995,8 +1995,8 @@ class BackupImage(Screen):
 	                self.blocksize = 2048
 		elif self.boxtype == "dm800sev2":
 			self.subpagesize = 2048
-		     	self.eraseblocksize = 131072        
-		        self.minimumiosize = 2048       
+		     	self.eraseblocksize = 131072
+		        self.minimumiosize = 2048
 			self.lebsize = 126976
 			self.flashsize = "40000000"
 			self.loadersize = "100000"
@@ -2006,8 +2006,8 @@ class BackupImage(Screen):
 	                self.blocksize = 2048
 		elif self.boxtype == "dm500hdv2":
 			self.subpagesize = 2048
-		     	self.eraseblocksize = 131072        
-		        self.minimumiosize = 2048       
+		     	self.eraseblocksize = 131072
+		        self.minimumiosize = 2048
 			self.lebsize = 126976
 			self.flashsize = "40000000"
 			self.loadersize = "100000"
@@ -2017,33 +2017,33 @@ class BackupImage(Screen):
 	                self.blocksize = 2048
 		elif self.boxtype == "dm7020hd":
 			if self.writesize == "4096":
-				if not config.plugins.dflash.switchversion.value:  
+				if not config.plugins.dflash.switchversion.value:
 					self.subpagesize = 4096
-					self.eraseblocksize = 262144       
+					self.eraseblocksize = 262144
 				        self.lebsize = 253952
-				        self.minimumiosize = 4096      
+				        self.minimumiosize = 4096
 				        self.offset = 4096
 			                self.blocksize = 4096
 			        else:
 					self.subpagesize = 2048
-				     	self.eraseblocksize = 131072  
+				     	self.eraseblocksize = 131072
 					self.lebsize = 126976
-					self.minimumiosize = 2048       
+					self.minimumiosize = 2048
 				        self.offset = 2048
 	        	 	    	self.blocksize = 2048
 		        else:
-				if not config.plugins.dflash.switchversion.value:  
+				if not config.plugins.dflash.switchversion.value:
 					self.subpagesize = 2048
-				     	self.eraseblocksize = 131072  
+				     	self.eraseblocksize = 131072
 					self.lebsize = 126976
-					self.minimumiosize = 2048       
+					self.minimumiosize = 2048
 			        	self.offset = 2048
 		        	        self.blocksize = 2048
 		        	else:
 					self.subpagesize = 4096
-					self.eraseblocksize = 262144       
+					self.eraseblocksize = 262144
 				        self.lebsize = 253952
-				        self.minimumiosize = 4096      
+				        self.minimumiosize = 4096
 				        self.offset = 4096
 			                self.blocksize = 4096
 			self.flashsize = "10000000"
@@ -2053,17 +2053,17 @@ class BackupImage(Screen):
 			# ubifs uses full flash on dm7020hd
 		      	if config.plugins.dflash.backuptool.value == "mkfs.ubifs":
 				self.flashsize = "40000000"
-                        	self.rootsize = "3F800000"                     			
+                        	self.rootsize = "3F800000"
 		elif (self.boxtype == "dm7025"):
 			self.flashsize = "2000000"
 			self.rootsize = "1C00000"
-			
+
 		self.maxlebcountroot = config.plugins.dflash.volsize.value * 1024 * 1024 / self.lebsize
 		if config.plugins.dflash.volsize.value > 960:
 			self.maxlebcountdata = (2048 - config.plugins.dflash.volsize.value) * 1024 * 1024 / self.lebsize
 		else:
 			self.maxlebcountdata = (971 - config.plugins.dflash.volsize.value) * 1024 * 1024 / self.lebsize
-		
+
 		uc = open("/tmp/ubinize.cfg", "w")
 		c = "[rootfs]\n"
 		c += "mode=ubi\n"
@@ -2076,7 +2076,7 @@ class BackupImage(Screen):
 			c += "vol_size=%dMiB\n" % v
 			c += "[data]\n"
 			c += "mode=ubi\n"
-			if config.plugins.dflash.databackup.value:  
+			if config.plugins.dflash.databackup.value:
 				c += "image=%s/d.ubi\n" % config.plugins.dflash.backuplocation.value.rstrip("/")
 			c += "vol_id=1\n"
 			c += "vol_name=data\n"
@@ -2092,16 +2092,16 @@ class BackupImage(Screen):
 		c += "\n"
 		uc.write(c)
 		uc.close()
-                        	
+
 		if config.plugins.dflash.big.value:
 			self.buildoptions = "/usr/bin/buildimage -w %s -a %s -e %s -s %s -b 0x%s:%s/s.bin -d 0x%s:%s/b.img -d 0x%s:%s/r.img > %s/%s.nfi\n" % (self.brcmnand, self.boxtype, self.eraseblocksize, self.blocksize, self.loadersize, config.plugins.dflash.backuplocation.value, self.bootsize, config.plugins.dflash.backuplocation.value, self.rootsize, config.plugins.dflash.backuplocation.value, config.plugins.dflash.backuplocation.value, self.backupname)
 		else:
 			self.buildoptions = "/usr/bin/buildimage %s -a %s -e %s -s %s -b 0x%s:%s/s.bin -d 0x%s:%s/b.img -d 0x%s:%s/r.img > %s/%s.nfi\n" % (self.brcmnand, self.boxtype, self.eraseblocksize, self.blocksize, self.loadersize, config.plugins.dflash.backuplocation.value, self.bootsize, config.plugins.dflash.backuplocation.value, self.rootsize, config.plugins.dflash.backuplocation.value, config.plugins.dflash.backuplocation.value, self.backupname)
-		
+
 		print "[dFLASH] buildoptions %s" % self.buildoptions
 		self.jffs2options = " -e %s -n -l" % (self.eraseblocksize)
 		print "[dFLASH] jffs2options %s" % self.jffs2options
-	        # ubifs stuff 	
+	        # ubifs stuff
 		if config.plugins.dflash.subpage.value:
 			self.ubifsrootoptions = "-m %d -e %d -c %d -F" % (self.minimumiosize, self.lebsize, self.maxlebcountroot)
 			self.ubifsdataoptions = "-m %d -e %d -c %d -F" % (self.minimumiosize, self.lebsize, self.maxlebcountdata)
@@ -2110,18 +2110,18 @@ class BackupImage(Screen):
 			self.ubifsrootoptions = "-m 2048 -e 126976 -c %d -F" % self.maxlebcountroot
 			self.ubifsdataoptions = "-m 2048 -e 126976 -c %d -F" % self.maxlebcountdata
 			self.ubinizeoptions = "-m 2048 -p 131072 -s 2048"
-			
+
 		print "[dFLASH] ubifs root options %s" % self.ubifsrootoptions
 		print "[dFLASH] ubifs data options %s" % self.ubifsdataoptions
 		print "[dFLASH] ubinize options %s" % self.ubinizeoptions
-		
+
 		if os.path.exists("/dev/mtd/1"):
 			mtdev = "/dev/mtd/1"
 		else:
 			mtdev = "/dev/mtd1"
 
 		# here comes the fun ...
-		
+
 		command = "#!/bin/sh -x\n"
 		command += "exec > %s 2>&1\n" % dflash_backuplog
 		command += "cat %s\n" % dflash_backupscript
@@ -2133,24 +2133,24 @@ class BackupImage(Screen):
                 		command += "swapoff /dev/loop8\n"
                 		command += "losetup -d /dev/loop8\n"
 			else:
-                		command += "swapoff %s/swapfile\n" % config.plugins.dflash.backuplocation.value                        
-                	command += "rm %s/swapfile\n" % config.plugins.dflash.backuplocation.value                        
+                		command += "swapoff %s/swapfile\n" % config.plugins.dflash.backuplocation.value
+                	command += "rm %s/swapfile\n" % config.plugins.dflash.backuplocation.value
                 	command += "dd if=/dev/zero of=%s/swapfile bs=1024 count=%i\n" % (config.plugins.dflash.backuplocation.value, int(config.plugins.dflash.swapsize.value * 1024))
-                	command += "mkswap %s/swapfile\n" % config.plugins.dflash.backuplocation.value                                
+                	command += "mkswap %s/swapfile\n" % config.plugins.dflash.backuplocation.value
 			if config.plugins.dflash.loopswap.value is True:
-	                	command += "modprobe loop\n"                                 
-	                	command += "losetup /dev/loop8 %s/swapfile\n" % config.plugins.dflash.backuplocation.value                                
-	                	command += "swapon /dev/loop8\n"                                 
+	                	command += "modprobe loop\n"
+	                	command += "losetup /dev/loop8 %s/swapfile\n" % config.plugins.dflash.backuplocation.value
+	                	command += "swapon /dev/loop8\n"
 			else:
-                		command += "swapon %s/swapfile\n" % config.plugins.dflash.backuplocation.value                                 
+                		command += "swapon %s/swapfile\n" % config.plugins.dflash.backuplocation.value
 		if os.path.exists("/etc/init.d/openvpn"):
 			command += "/etc/init.d/openvpn stop\n"
-		#		
+		#
 		# secondstage loader ...
-		#		
+		#
 		if os.path.exists("/usr/share/dreambox-secondstage/secondstage-%s.bin" % self.boxtype) and not config.plugins.dflash.loader.value:
 			os.system("cp /usr/share/dreambox-secondstage/secondstage-%s.bin %s/s.bin" % (self.boxtype, config.plugins.dflash.backuplocation.value))
-		else:	
+		else:
 			command += "%s/nanddump --noecc --omitoob --bb=skipbad --truncate --file %s/s.bin %s\n" % (dflash_bin, config.plugins.dflash.backuplocation.value, mtdev)
 		if config.plugins.dflash.backuptool.value != "nanddump":
 			command += "umount /tmp/boot\n"
@@ -2175,22 +2175,22 @@ class BackupImage(Screen):
 					command += "sed -ie s!\"quiet\"!\"\"!g /tmp/boot/autoexec*.bat\n"
 				else:
 					command += "sed -ie s!\"console=ttyS0,115200\"!\"console=null\"!g /tmp/boot/autoexec*.bat\n"
-				
+
 			# make boot filesystem ...
                         if config.plugins.dflash.jffs2bootcompression.value == "none":
 				command += "%s/mkfs.jffs2 --root=/tmp/boot --disable-compressor=lzo --compression-mode=none --output=%s/b.img %s\n" % (dflash_bin, config.plugins.dflash.backuplocation.value, self.jffs2options)
 			else:
 				command += "%s/mkfs.jffs2 --root=/tmp/boot --disable-compressor=lzo --compression-mode=size --output=%s/b.img %s\n" % (dflash_bin, config.plugins.dflash.backuplocation.value, self.jffs2options)
-				
+
 			if config.plugins.dflash.summary.value is True:
 				command += "%s/sumtool --input=%s/b.img --output=%s/bs.img %s\n" % (dflash_bin, config.plugins.dflash.backuplocation.value, config.plugins.dflash.backuplocation.value, self.jffs2options)
 				command += "cp %s/bs.img %s/b.img\n" % (config.plugins.dflash.backuplocation.value, config.plugins.dflash.backuplocation.value)
 				command += "rm %s/bs.img\n" % (config.plugins.dflash.backuplocation.value)
 			command += "umount /tmp/boot\n"
 			command += "rm -r /tmp/boot\n"
-			
+
 			# make root filesystem ...
-			
+
 			command += "umount /tmp/root\n"
 			command += "rm -r /tmp/root\n"
 			command += "mkdir /tmp/root\n"
@@ -2204,7 +2204,7 @@ class BackupImage(Screen):
 			if config.plugins.dflash.usr.value:
 				command += "mount -o bind /usr /tmp/root/usr\n"
 			if config.plugins.dflash.squashfs.value:
-		        	for name in os.listdir("/media/squashfs-images"):                          
+		        	for name in os.listdir("/media/squashfs-images"):
 					if name.endswith("-img"):
 						command += "mkdir /tmp/root/media/squashfs-images/%s\n" % (name)
 						command += "mount -o bind /media/squashfs-images/%s /tmp/root/media/squashfs-images/%s\n" % (name, name)
@@ -2212,7 +2212,7 @@ class BackupImage(Screen):
 				command += "wget http://localhost/web/powerstate?newstate=3\n"
 				command += "sleep 3\n"
 				command += "init 4\n"
-				
+
                         if config.plugins.dflash.backuptool.value == "mkfs.jffs2":
 	                        if config.plugins.dflash.jffs2rootcompression.value == "none":
 					command += "%s/mkfs.jffs2 --root=/tmp/root --disable-compressor=lzo --disable-compressor=zlib --compression-mode=none --output=%s/r.img %s\n" % (dflash_bin, config.plugins.dflash.backuplocation.value, self.jffs2options)
@@ -2230,8 +2230,8 @@ class BackupImage(Screen):
 				if not os.path.exists("/tmp/root/data") and self.boxtype.startswith("dm7020hd"):
 					command += "mkdir /tmp/root/data\n"
 				command += "%s/mkfs.ubifs %s -x %s -v --debug=%d -r /tmp/root -o %s/r.ubi\n" % (dflash_bin, self.ubifsrootoptions, config.plugins.dflash.ubifsrootcompression.value, config.plugins.dflash.debug.value, config.plugins.dflash.backuplocation.value)
-		
-				if config.plugins.dflash.databackup.value and (self.boxtype.startswith("dm7020hd") or self.boxtype == "dm500hdv2" or self.boxtype == "dm800sev2"):  
+
+				if config.plugins.dflash.databackup.value and (self.boxtype.startswith("dm7020hd") or self.boxtype == "dm500hdv2" or self.boxtype == "dm800sev2"):
 					# make data filesystem ...
 					command += "umount /tmp/data\n"
 					command += "mkdir /tmp/data\n"
@@ -2243,14 +2243,14 @@ class BackupImage(Screen):
 					command += "%s/mkfs.ubifs %s -x %s -v --debug=%d -r /tmp/data -o %s/d.ubi\n" % (dflash_bin, self.ubifsdataoptions, config.plugins.dflash.ubifsdatacompression.value, config.plugins.dflash.debug.value, config.plugins.dflash.backuplocation.value)
 					command += "umount /tmp/data\n"
 					command += "rmdir /tmp/data\n"
-		
+
 				command += "cat /tmp/ubinize.cfg\n"
 				command += "%s/ubinize -o %s/r.img %s /tmp/ubinize.cfg\n" % (dflash_bin, config.plugins.dflash.backuplocation.value, self.ubinizeoptions)
-					
+
 			if config.plugins.dflash.usr.value:
 				command += "umount /tmp/root/usr\n"
 			if config.plugins.dflash.squashfs.value:
-		        	for name in os.listdir("/media/squashfs-images"):                          
+		        	for name in os.listdir("/media/squashfs-images"):
 					if name.endswith("-img"):
 						command += "umount /tmp/root/media/squashfs-images/%s\n" % (name)
 			command += "umount /tmp/root\n"
@@ -2264,7 +2264,7 @@ class BackupImage(Screen):
 				command += "%s/nanddump --noecc --omitoob --bb=skipbad --quiet --file %s/r.img /dev/mtd/3\n" % (dflash_bin, config.plugins.dflash.backuplocation.value)
 		if os.path.exists("/etc/init.d/openvpn"):
 			command += "/etc/init.d/openvpn start\n"
-			
+
 		command += "chmod 777 %s/s.bin\n" % config.plugins.dflash.backuplocation.value
 		command += "chmod 777 %s/b.img\n" % config.plugins.dflash.backuplocation.value
 		command += "chmod 777 %s/r.img\n" % config.plugins.dflash.backuplocation.value
@@ -2274,16 +2274,16 @@ class BackupImage(Screen):
 			command += "rm %s/b.img\n" % config.plugins.dflash.backuplocation.value
 			command += "rm %s/r.img\n" % config.plugins.dflash.backuplocation.value
 			command += "rm %s/r.ubi\n" % config.plugins.dflash.backuplocation.value
-			if config.plugins.dflash.databackup.value:  
+			if config.plugins.dflash.databackup.value:
 				command += "rm %s/d.ubi\n" % config.plugins.dflash.backuplocation.value
 		command += "chmod 777 %s/%s.nfi\n" % (config.plugins.dflash.backuplocation.value, self.backupname)
 		if not self.ownswap and not config.plugins.dflash.keep.value:
 			if config.plugins.dflash.loopswap.value is True:
                 		command += "swapoff /dev/loop8\n"
-                		command += "losetup -d /dev/loop8\n"                        
+                		command += "losetup -d /dev/loop8\n"
 			else:
-                		command += "swapoff %s/swapfile\n" % config.plugins.dflash.backuplocation.value                        
-                	command += "rm %s/swapfile\n" % config.plugins.dflash.backuplocation.value                        
+                		command += "swapoff %s/swapfile\n" % config.plugins.dflash.backuplocation.value
+                	command += "rm %s/swapfile\n" % config.plugins.dflash.backuplocation.value
 		if config.plugins.dflash.restart.value is True or (self.swappable is False and self.ownswap is False):
 			command += "init 3\n"
 		if config.plugins.dflash.nfo.value:
@@ -2313,17 +2313,17 @@ class BackupImage(Screen):
 		b.write(command)
 		b.close()
 		os_chmod(dflash_backupscript, 0777)
-                self.container = eConsoleAppContainer()                                                        
+                self.container = eConsoleAppContainer()
 		start_cmd = "start-stop-daemon -K -n dbackup.sh -s 9; start-stop-daemon -S -b -n dbackup.sh -x %s" % (dflash_backupscript)
 		if config.plugins.dflash.exectool.value == "daemon":
 			print "[dFlash] daemon %s" % dflash_backupscript
-	               	self.container.execute(dflash_backupscript)                                                           
+	               	self.container.execute(dflash_backupscript)
 		elif config.plugins.dflash.exectool.value == "system":
 			print "[dFlash] system %s" % start_cmd
 			os.system(start_cmd)
 		if config.plugins.dflash.exectool.value == "container":
 			print "[dFlash] container %s" % start_cmd
-	               	self.container.execute(start_cmd)                                                           
+	               	self.container.execute(start_cmd)
 
 ###############################################################################
 # dFlash Check by gutemine
@@ -2340,7 +2340,7 @@ class dFlashChecking(Screen):
 	<widget name="buttonyellow" position="400,10" size="130,40" backgroundColor="yellow" valign="center" halign="center" zPosition="2"  foregroundColor="white" font="Regular;18"/>
 	<widget name="buttonblue" position="540,10" size="130,40" backgroundColor="blue" valign="center" halign="center" zPosition="2"  foregroundColor="white" font="Regular;18"/>
         </screen>"""
-        
+
     def __init__(self, session, args=0):
         self.skin = dFlashChecking.skin
         self.session = session
@@ -2400,7 +2400,7 @@ class dFlashChecking(Screen):
 		"blue": self.about,
 		"cancel": self.close,
 		})
-        
+
     def go(self):
         returnValue = self["menu"].l.getCurrentSelection()[1]
         if returnValue is not None:
@@ -2438,10 +2438,10 @@ class dFlashConfiguration(Screen, ConfigListScreen):
         self.onShown.append(self.setWindowTitle)
         # explizit check on every entry
 	self.onChangedEntry = []
-	
-        self.list = []                                                  
+
+        self.list = []
        	ConfigListScreen.__init__(self, self.list, session=self.session, on_change=self.changedEntry)
-       	self.createSetup()       
+       	self.createSetup()
 
 	self["logo"] = Pixmap()
        	self["buttonred"] = Label(_("Cancel"))
@@ -2458,8 +2458,8 @@ class dFlashConfiguration(Screen, ConfigListScreen):
             	"cancel": self.cancel,
             	"ok": self.save,
        	})
-       	
-    def createSetup(self):                                                  
+
+    def createSetup(self):
 	f = open("/proc/stb/info/model")
 	self.boxtype = f.read()
 	f.close()
@@ -2474,17 +2474,17 @@ class dFlashConfiguration(Screen, ConfigListScreen):
 	self.list.append(getConfigListEntry(_("Backup bigger then Flash"), config.plugins.dflash.big))
 	self.list.append(getConfigListEntry(_("Extract Loader from Flash"), config.plugins.dflash.loader))
      	self.list.append(getConfigListEntry(_("jffs2 boot compression"), config.plugins.dflash.jffs2bootcompression))
-	if config.plugins.dflash.backuptool.value == "mkfs.jffs2": 
+	if config.plugins.dflash.backuptool.value == "mkfs.jffs2":
 	     	self.list.append(getConfigListEntry(_("jffs2 root compression"), config.plugins.dflash.jffs2rootcompression))
 	if self.boxtype != "dm7025" and self.boxtype != "dm800":
-		if config.plugins.dflash.backuptool.value == "mkfs.jffs2": 
+		if config.plugins.dflash.backuptool.value == "mkfs.jffs2":
 			if self.boxtype == "dm7020hd" or self.boxtype == "dm8000":
 				self.list.append(getConfigListEntry(_("jffs2 erase block summary"), config.plugins.dflash.summary))
 		else:
 		     	self.list.append(getConfigListEntry(_("ubifs root compression"), config.plugins.dflash.ubifsrootcompression))
 			if self.boxtype.startswith("dm7020hd") or self.boxtype == "dm500hdv2" or self.boxtype == "dm800sev2":
 			      	self.list.append(getConfigListEntry(_("ubifs data backup"), config.plugins.dflash.databackup))
-				if config.plugins.dflash.databackup.value: 
+				if config.plugins.dflash.databackup.value:
 				     	self.list.append(getConfigListEntry(_("ubifs data compression"), config.plugins.dflash.ubifsdatacompression))
 			if self.boxtype == "dm8000":
 				self.list.append(getConfigListEntry(_("Root Volume Size [59-%iMB]") % rambo_maxflash, config.plugins.dflash.volsize))
@@ -2518,12 +2518,12 @@ class dFlashConfiguration(Screen, ConfigListScreen):
 #      	self.list.append(getConfigListEntry(_("sort alphabetic"), config.plugins.dflash.sort))
       	self.list.append(getConfigListEntry(_("execute tool"), config.plugins.dflash.exectool))
 
-        self["config"].list = self.list                                 
-        self["config"].l.setList(self.list)         
-       	
-    def changedEntry(self):                                                 
-       	self.createSetup()       
-		
+        self["config"].list = self.list
+        self["config"].l.setList(self.list)
+
+    def changedEntry(self):
+       	self.createSetup()
+
     def setWindowTitle(self):
 	self["logo"].instance.setPixmapFromFile("%s/dflash.png" % dflash_plugindir)
 	f = open("/proc/mounts", "r")
@@ -2536,8 +2536,8 @@ class dFlashConfiguration(Screen, ConfigListScreen):
 	self.setTitle(flashing_string + " & " + backup_string + " V%s " % dflash_version + setup_string + ": %s" % flashfs)
 
     def save(self):
-	if config.plugins.dflash.backuptool.value != "nanddump" and config.plugins.dflash.swapsize.value < 128: 
-		config.plugins.dflash.swapsize.value = 128 
+	if config.plugins.dflash.backuptool.value != "nanddump" and config.plugins.dflash.swapsize.value < 128:
+		config.plugins.dflash.swapsize.value = 128
         for x in self["config"].list:
            x[1].save()
         self.close(True)
@@ -2547,7 +2547,7 @@ class dFlashConfiguration(Screen, ConfigListScreen):
            x[1].cancel()
         self.close(False)
 
-    def checking(self):      
+    def checking(self):
         if os.path.exists("%s/nand_check" % dflash_bin):
 		self.session.open(dFlashChecking)
 	else:
@@ -2563,7 +2563,7 @@ class dFlashConfiguration(Screen, ConfigListScreen):
 class dFlashAbout(Screen):
     skin = """
         <screen position="center,80" size="680,440" title="About dFlash" >
-        <ePixmap position="290,10" size="100,100" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/dFlash/g3icon_dflash.png" transparent="1" alphatest="on" />                                              
+        <ePixmap position="290,10" size="100,100" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/dFlash/g3icon_dflash.png" transparent="1" alphatest="on" />
         <widget name="buttonred" position="10,10" size="130,40" backgroundColor="red" valign="center" halign="center" zPosition="2"  foregroundColor="white" font="Regular;18"/>
         <widget name="buttongreen" position="540,10" size="130,40" backgroundColor="green" valign="center" halign="center" zPosition="2"  foregroundColor="white" font="Regular;18"/>
         <widget name="aboutdflash" position="10,120" size="660,100" valign="center" halign="center" zPosition="2"  foregroundColor="white" font="Regular;24"/>
@@ -2574,11 +2574,11 @@ class dFlashAbout(Screen):
     def __init__(self, session, args=0):
 	Screen.__init__(self, session)
         self.onShown.append(self.setWindowTitle)
-        st = os.statvfs("/")                                                                           
-        free = st.f_bavail * st.f_frsize / 1024 / 1024                                                               
-        total = st.f_blocks * st.f_frsize / 1024 / 1024                                                
-        used = (st.f_blocks - st.f_bfree) * st.f_frsize / 1024 / 1024 
-	freefilesystem = _("Root Filesystem\n\ntotal: %s MB\nused:  %s MB\nfree:  %s MB") % (total, used, free)		
+        st = os.statvfs("/")
+        free = st.f_bavail * st.f_frsize / 1024 / 1024
+        total = st.f_blocks * st.f_frsize / 1024 / 1024
+        used = (st.f_blocks - st.f_bfree) * st.f_frsize / 1024 / 1024
+	freefilesystem = _("Root Filesystem\n\ntotal: %s MB\nused:  %s MB\nfree:  %s MB") % (total, used, free)
 
       	memfree = 0
       	memtotal = 0
@@ -2592,7 +2592,7 @@ class dFlashAbout(Screen):
       	memfree = int(sp[1]) / 1024
 	fm.close()
 	memused = memtotal - memfree
-	freememory = _("Memory\n\ntotal: %i MB\nused: %i MB\nfree: %i MB") % (memtotal, memused, memfree)		
+	freememory = _("Memory\n\ntotal: %i MB\nused: %i MB\nfree: %i MB") % (memtotal, memused, memfree)
 
        	self["buttonred"] = Label(_("Cancel"))
        	self["buttongreen"] = Label(_("OK"))
@@ -2615,4 +2615,3 @@ class dFlashAbout(Screen):
 
     def cancel(self):
         self.close(False)
-
