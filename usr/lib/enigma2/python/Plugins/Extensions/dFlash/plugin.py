@@ -250,6 +250,7 @@ dflash_backuping += "</form>"
 global dflash_progress
 dflash_progress = 0
 
+
 class dFlash(Screen):
 	skin = """
 		<screen position="center,80" size="680,70" title="Flashing" >
@@ -260,6 +261,7 @@ class dFlash(Screen):
 		<widget name="buttonblue" position="540,10" size="130,40" backgroundColor="blue" valign="center" halign="center" zPosition="2"  foregroundColor="white" font="Regular;18"/>
 		<widget name="slider" position="10,55" size="660,5"/>
 	</screen>"""
+
 	def __init__(self, session, args=0):
 		Screen.__init__(self, session)
 		self.onShown.append(self.setWindowTitle)      
@@ -319,7 +321,6 @@ class dFlash(Screen):
 	        else:
 			self.session.open(MessageBox, _("Checking tool is not installed"), MessageBox.TYPE_ERROR)
 	        
-                
 	def doHide(self):
 		if config.plugins.dflash.fade.value:
 			print "[dFLASH] hiding"
@@ -1425,8 +1426,10 @@ class dFlash(Screen):
 		else:
         	 	self.session.open(dFlashConfiguration)
 
+
 def startdFlash(session, **kwargs):
        	session.open(dFlash)   
+
 
 def autostart(reason, **kwargs):
         if kwargs.has_key("session") and reason == 0:           
@@ -1434,6 +1437,7 @@ def autostart(reason, **kwargs):
 		print "[dFLASH] autostart"
 		if os.path.exists(dflash_busy):
 			os.remove(dflash_busy)
+
 
 def sessionstart(reason, **kwargs):                                               
         if reason == 0 and "session" in kwargs:                                                        
@@ -1443,11 +1447,13 @@ def sessionstart(reason, **kwargs):
                 else:                                                                                  
 			print "[dFLASH] Webif not found"
 
+
 def Plugins(**kwargs):
 	return [PluginDescriptor(where=[PluginDescriptor.WHERE_SESSIONSTART, PluginDescriptor.WHERE_AUTOSTART], fnc=autostart),
 			PluginDescriptor(name=flashing_string, description=flashing_string + " & " + backup_string, where=PluginDescriptor.WHERE_PLUGINMENU, icon="dflash.png", fnc=startdFlash),
             PluginDescriptor(where=PluginDescriptor.WHERE_SESSIONSTART, fnc=sessionstart, needsRestart=False)
 			]
+
 
 def mainconf(menuid):
     if menuid != "setup":                                                  
@@ -1457,6 +1463,7 @@ def mainconf(menuid):
 ###############################################################################
 # dFlash Webinterface by gutemine
 ###############################################################################
+
 
 class wFlash(resource.Resource):
 
@@ -1846,6 +1853,7 @@ class wFlash(resource.Resource):
 			print "[dFLASH] found backup %s" % line
 			print "[dFLASH] finished webif backup"
 			
+
 class FlashingImage(Screen):                                                      
         def __init__(self, flashimage):            
         	print "[dFLASH] does flashing"
@@ -1885,6 +1893,7 @@ class FlashingImage(Screen):
 		os.system("chmod 755 %s" % dflash_script)
 		print "[dFLASH] %s created and now flashing %s\n" % (dflash_script, flashimage)
 		os.system("start-stop-daemon -S -b -n dflash.sh -x %s" % dflash_script)
+
 
 class BackupImage(Screen):                                                      
         def __init__(self, backupname, imagetype, creator, swappable, ownswap):            
@@ -2320,6 +2329,7 @@ class BackupImage(Screen):
 # dFlash Check by gutemine
 ###############################################################################
 
+
 class dFlashChecking(Screen):
     skin = """
         <screen position="center,80" size="680,440" title="choose NAND Flash Check" >
@@ -2409,6 +2419,7 @@ class dFlashChecking(Screen):
 
     def about(self):
        	self.session.open(dFlashAbout)
+
 
 class dFlashConfiguration(Screen, ConfigListScreen):
     skin = """
@@ -2548,6 +2559,7 @@ class dFlashConfiguration(Screen, ConfigListScreen):
     def about(self, answer):
        	self.session.open(dFlashAbout)
 
+
 class dFlashAbout(Screen):
     skin = """
         <screen position="center,80" size="680,440" title="About dFlash" >
@@ -2597,6 +2609,7 @@ class dFlashAbout(Screen):
             	"cancel": self.cancel,
             	"ok": self.cancel,
        	})
+
     def setWindowTitle(self):
         self.setTitle(_("About") + " dFlash")
 
