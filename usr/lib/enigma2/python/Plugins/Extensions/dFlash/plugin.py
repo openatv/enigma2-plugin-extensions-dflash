@@ -966,7 +966,7 @@ class dFlash(Screen):
 				file.seek(size, 1)
 			else:
 				print "Extracting %s with %d blocksize ..." % (output_names[p],bs)
-				output_filename =  config.plugins.dflash.backuplocation.value + "/" + output_names[p];
+				output_filename =  config.plugins.dflash.backuplocation.value + "/" + output_names[p]
 				if os.path.exists(output_filename):
 					os.remove(output_filename)
 				output = open(output_filename, "wb")
