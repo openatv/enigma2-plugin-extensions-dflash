@@ -75,28 +75,28 @@ if os.path.exists("/proc/stb/info/model"):
 yes_no_descriptions = {False: _("no"), True: _("yes")}
 
 config.plugins.dflash = ConfigSubsection()
-config.plugins.dflash.backuplocation = ConfigText(default = "/media/hdd/backup", fixed_size=True, visible_width=20)
-config.plugins.dflash.sort = ConfigBoolean(default = True, descriptions=yes_no_descriptions)
-config.plugins.dflash.keep = ConfigBoolean(default = False, descriptions=yes_no_descriptions)
-config.plugins.dflash.restart = ConfigBoolean(default = False, descriptions=yes_no_descriptions)
-config.plugins.dflash.loopswap = ConfigBoolean(default = False, descriptions=yes_no_descriptions)
-config.plugins.dflash.swapsize = ConfigInteger(default = 250, limits = (0, 2047))
-config.plugins.dflash.ramfs = ConfigBoolean(default = False, descriptions=yes_no_descriptions)
-config.plugins.dflash.usr = ConfigBoolean(default = False, descriptions=yes_no_descriptions)
-config.plugins.dflash.squashfs = ConfigBoolean(default = False, descriptions=yes_no_descriptions)
-config.plugins.dflash.summary = ConfigBoolean(default = True, descriptions=yes_no_descriptions)
-config.plugins.dflash.zip = ConfigBoolean(default = False, descriptions=yes_no_descriptions)
-config.plugins.dflash.switchversion = ConfigBoolean(default = False, descriptions=yes_no_descriptions)
-config.plugins.dflash.nfo = ConfigBoolean(default = False, descriptions=yes_no_descriptions)
+config.plugins.dflash.backuplocation = ConfigText(default="/media/hdd/backup", fixed_size=True, visible_width=20)
+config.plugins.dflash.sort = ConfigBoolean(default=True, descriptions=yes_no_descriptions)
+config.plugins.dflash.keep = ConfigBoolean(default=False, descriptions=yes_no_descriptions)
+config.plugins.dflash.restart = ConfigBoolean(default=False, descriptions=yes_no_descriptions)
+config.plugins.dflash.loopswap = ConfigBoolean(default=False, descriptions=yes_no_descriptions)
+config.plugins.dflash.swapsize = ConfigInteger(default=250, limits=(0, 2047))
+config.plugins.dflash.ramfs = ConfigBoolean(default=False, descriptions=yes_no_descriptions)
+config.plugins.dflash.usr = ConfigBoolean(default=False, descriptions=yes_no_descriptions)
+config.plugins.dflash.squashfs = ConfigBoolean(default=False, descriptions=yes_no_descriptions)
+config.plugins.dflash.summary = ConfigBoolean(default=True, descriptions=yes_no_descriptions)
+config.plugins.dflash.zip = ConfigBoolean(default=False, descriptions=yes_no_descriptions)
+config.plugins.dflash.switchversion = ConfigBoolean(default=False, descriptions=yes_no_descriptions)
+config.plugins.dflash.nfo = ConfigBoolean(default=False, descriptions=yes_no_descriptions)
 if os.path.exists("/sbin/rambo") or os.path.exists("/sbin/flodder"):
-    config.plugins.dflash.big = ConfigBoolean(default = True, descriptions=yes_no_descriptions)
+    config.plugins.dflash.big = ConfigBoolean(default=True, descriptions=yes_no_descriptions)
 else:
-    config.plugins.dflash.big = ConfigBoolean(default = False, descriptions=yes_no_descriptions)
-config.plugins.dflash.loader = ConfigBoolean(default = False, descriptions=yes_no_descriptions)
+    config.plugins.dflash.big = ConfigBoolean(default=False, descriptions=yes_no_descriptions)
+config.plugins.dflash.loader = ConfigBoolean(default=False, descriptions=yes_no_descriptions)
 if boxtype != "dm8000" and boxtype != "dm7020hd":
     config.plugins.dflash.summary.value = False
 compression=[]
-config.plugins.dflash.extension = ConfigBoolean(default = False, descriptions=yes_no_descriptions)
+config.plugins.dflash.extension = ConfigBoolean(default=False, descriptions=yes_no_descriptions)
 flashtools=[]
 flashtools.append(( "none", _("none") ))
 if os.path.exists("%s/nfiwrite" % dflash_bin):
@@ -128,36 +128,36 @@ else:
 
 if os.path.exists("/sbin/rambo"):
     flashtools.append(( "rambo", _("rambo") ))
-    config.plugins.dflash.flashtool = ConfigSelection(default = "rambo", choices = flashtools)
+    config.plugins.dflash.flashtool = ConfigSelection(default="rambo", choices=flashtools)
 elif os.path.exists("/sbin/flodder") and os.path.exists(b2m): # nfiextract works only on OE 2.0 Images with block2mtd driver in kernel
     flashtools.append(( "flodder", _("flodder") ))
-    config.plugins.dflash.flashtool = ConfigSelection(default = "flodder", choices = flashtools)
+    config.plugins.dflash.flashtool = ConfigSelection(default="flodder", choices=flashtools)
 elif os.path.exists("%s/nfiwrite" % dflash_bin):
-    config.plugins.dflash.flashtool = ConfigSelection(default = "nfiwrite", choices = flashtools)
+    config.plugins.dflash.flashtool = ConfigSelection(default="nfiwrite", choices=flashtools)
 else:
-    config.plugins.dflash.flashtool = ConfigSelection(default = "none", choices = flashtools)
+    config.plugins.dflash.flashtool = ConfigSelection(default="none", choices=flashtools)
 if boxtype == "dm8000":
-    config.plugins.dflash.volsize = ConfigInteger(default = 248, limits = (59, rambo_maxflash))
+    config.plugins.dflash.volsize = ConfigInteger(default=248, limits=(59, rambo_maxflash))
 elif boxtype == "dm7020hd" and writesize=="4096" and not config.plugins.dflash.switchversion.value:
-    config.plugins.dflash.volsize = ConfigInteger(default = 397, limits = (59, rambo_maxflash))
+    config.plugins.dflash.volsize = ConfigInteger(default=397, limits=(59, rambo_maxflash))
 elif (boxtype == "dm7020hd" and writesize=="2048") or boxtype == "dm800sev2" or boxtype == "dm500hdv2":
-    config.plugins.dflash.volsize = ConfigInteger(default = 402, limits = (59, rambo_maxflash))
+    config.plugins.dflash.volsize = ConfigInteger(default=402, limits=(59, rambo_maxflash))
 else:
-    config.plugins.dflash.volsize = ConfigInteger(default = 59, limits = (40, rambo_maxflash))
-config.plugins.dflash.console = ConfigBoolean(default = True, descriptions=yes_no_descriptions)
-config.plugins.dflash.subpage = ConfigBoolean(default = True, descriptions=yes_no_descriptions)
-config.plugins.dflash.debug = ConfigInteger(default = 0, limits = (0, 3))
+    config.plugins.dflash.volsize = ConfigInteger(default=59, limits=(40, rambo_maxflash))
+config.plugins.dflash.console = ConfigBoolean(default=True, descriptions=yes_no_descriptions)
+config.plugins.dflash.subpage = ConfigBoolean(default=True, descriptions=yes_no_descriptions)
+config.plugins.dflash.debug = ConfigInteger(default=0, limits=(0, 3))
 
 bcompression=[]
 bcompression.append(( "zlib", _("zlib") ))
 bcompression.append(( "none", _("none") ))
-config.plugins.dflash.jffs2bootcompression = ConfigSelection(default = "zlib", choices = bcompression)
+config.plugins.dflash.jffs2bootcompression = ConfigSelection(default="zlib", choices=bcompression)
 
 
 jcompression=[]
 jcompression.append(( "zlib", _("zlib") ))
 jcompression.append(( "none", _("none") ))
-config.plugins.dflash.jffs2rootcompression = ConfigSelection(default = "zlib", choices = jcompression)
+config.plugins.dflash.jffs2rootcompression = ConfigSelection(default="zlib", choices=jcompression)
 
 ucompression=[]
 ucompression.append(( "none", _("none") ))
@@ -165,17 +165,17 @@ ucompression.append(( "lzo", _("lzo") ))
 ucompression.append(( "favor_lzo", _("favor_lzo") ))
 ucompression.append(( "zlib", _("zlib") ))
 if boxtype == "dm8000" or boxtype.startswith("dm7020hd") or boxtype == "dm800sev2" or boxtype == "dm500hdv2":
-    config.plugins.dflash.ubifsrootcompression = ConfigSelection(default = "favor_lzo", choices = ucompression)
-    config.plugins.dflash.ubifsdatacompression = ConfigSelection(default = "favor_lzo", choices = ucompression)
+    config.plugins.dflash.ubifsrootcompression = ConfigSelection(default="favor_lzo", choices=ucompression)
+    config.plugins.dflash.ubifsdatacompression = ConfigSelection(default="favor_lzo", choices=ucompression)
 else:
-    config.plugins.dflash.ubifsrootcompression = ConfigSelection(default = "zlib", choices = ucompression)
-    config.plugins.dflash.ubifsdatacompression = ConfigSelection(default = "zlib", choices = ucompression)
+    config.plugins.dflash.ubifsrootcompression = ConfigSelection(default="zlib", choices=ucompression)
+    config.plugins.dflash.ubifsdatacompression = ConfigSelection(default="zlib", choices=ucompression)
 
-config.plugins.dflash.databackup = ConfigBoolean(default = False, descriptions=yes_no_descriptions)
+config.plugins.dflash.databackup = ConfigBoolean(default=False, descriptions=yes_no_descriptions)
 if boxtype != "dm7025":
-    config.plugins.dflash.fade = ConfigBoolean(default = True, descriptions=yes_no_descriptions)
+    config.plugins.dflash.fade = ConfigBoolean(default=True, descriptions=yes_no_descriptions)
 else:
-    config.plugins.dflash.fade = ConfigBoolean(default = False, descriptions=yes_no_descriptions)
+    config.plugins.dflash.fade = ConfigBoolean(default=False, descriptions=yes_no_descriptions)
 
 backuptools=[]
 backuptools.append(( "mkfs.jffs2", _("mkfs.jffs2") ))
@@ -190,16 +190,16 @@ f=open("/proc/mounts", "r")
 mm=f.read()
 f.close()
 if mm.find("/ ubifs") != -1 and boxtype != "dm800" and boxtype != "dm7025":
-    config.plugins.dflash.backuptool = ConfigSelection(default = "mkfs.ubifs", choices = backuptools)
+    config.plugins.dflash.backuptool = ConfigSelection(default="mkfs.ubifs", choices=backuptools)
 else:
-    config.plugins.dflash.backuptool = ConfigSelection(default = "mkfs.jffs2", choices = backuptools)
-config.plugins.dflash.overwrite = ConfigBoolean(default = False, descriptions=yes_no_descriptions)
+    config.plugins.dflash.backuptool = ConfigSelection(default="mkfs.jffs2", choices=backuptools)
+config.plugins.dflash.overwrite = ConfigBoolean(default=False, descriptions=yes_no_descriptions)
 
 exectools=[]
 exectools.append(( "daemon", _("daemon") ))
 exectools.append(( "system", _("system") ))
 exectools.append(( "container", _("container") ))
-config.plugins.dflash.exectool = ConfigSelection(default = "system", choices = exectools)
+config.plugins.dflash.exectool = ConfigSelection(default="system", choices=exectools)
 
 fileupload_string=_("Select nfi image for flashing")
 disclaimer_header=_("Disclaimer")
@@ -261,7 +261,7 @@ class dFlash(Screen):
             <widget name="buttonblue" position="540,10" size="130,40" backgroundColor="blue" valign="center" halign="center" zPosition="2"  foregroundColor="white" font="Regular;18"/>
             <widget name="slider" position="10,55" size="660,5"/>
     </screen>"""
-    def __init__(self, session, args = 0):
+    def __init__(self, session, args=0):
         Screen.__init__(self, session)
         self.onShown.append(self.setWindowTitle)
         self.onLayoutFinish.append(self.byLayoutEnd)
@@ -1445,8 +1445,8 @@ def sessionstart(reason, **kwargs):
             print("[dFLASH] Webif not found")
 
 def Plugins(**kwargs):
-    return [PluginDescriptor(where = [PluginDescriptor.WHERE_SESSIONSTART, PluginDescriptor.WHERE_AUTOSTART], fnc = autostart),
-                    PluginDescriptor(name=flashing_string, description=flashing_string+" & "+backup_string, where = PluginDescriptor.WHERE_PLUGINMENU, icon="dflash.png", fnc=startdFlash),
+    return [PluginDescriptor(where=[PluginDescriptor.WHERE_SESSIONSTART, PluginDescriptor.WHERE_AUTOSTART], fnc=autostart),
+                    PluginDescriptor(name=flashing_string, description=flashing_string+" & "+backup_string, where=PluginDescriptor.WHERE_PLUGINMENU, icon="dflash.png", fnc=startdFlash),
         PluginDescriptor(where=PluginDescriptor.WHERE_SESSIONSTART, fnc=sessionstart, needsRestart=False)
                     ]
 
@@ -2332,7 +2332,7 @@ class dFlashChecking(Screen):
         <widget name="buttonblue" position="540,10" size="130,40" backgroundColor="blue" valign="center" halign="center" zPosition="2"  foregroundColor="white" font="Regular;18"/>
         </screen>"""
 
-    def __init__(self, session, args = 0):
+    def __init__(self, session, args=0):
         self.skin = dFlashChecking.skin
         self.session = session
         Screen.__init__(self, session)
@@ -2422,7 +2422,7 @@ class dFlashConfiguration(Screen, ConfigListScreen):
         <widget name="buttonblue" position="540,10" size="130,40" backgroundColor="blue" valign="center" halign="center" zPosition="2"  foregroundColor="white" font="Regular;12"/>
         </screen>"""
 
-    def __init__(self, session, args = 0):
+    def __init__(self, session, args=0):
         Screen.__init__(self, session)
 
         self.onShown.append(self.setWindowTitle)
@@ -2430,7 +2430,7 @@ class dFlashConfiguration(Screen, ConfigListScreen):
         self.onChangedEntry = []
 
         self.list = []
-        ConfigListScreen.__init__(self, self.list, session = self.session, on_change = self.changedEntry)
+        ConfigListScreen.__init__(self, self.list, session=self.session, on_change=self.changedEntry)
         self.createSetup()
 
         self["logo"] = Pixmap()
@@ -2560,7 +2560,7 @@ class dFlashAbout(Screen):
         <widget name="freememory" position="380,230" size="180,200" valign="center" halign="center" zPosition="2"  foregroundColor="white" font="Regular;24"/>
         </screen>"""
 
-    def __init__(self, session, args = 0):
+    def __init__(self, session, args=0):
         Screen.__init__(self, session)
         self.onShown.append(self.setWindowTitle)
         st = os.statvfs("/")
