@@ -1429,7 +1429,7 @@ class dFlash(Screen):
 def startdFlash(session, **kwargs):
     session.open(dFlash)
 
-def autostart(reason,**kwargs):
+def autostart(reason, **kwargs):
     if "session" in kwargs and reason == 0:
         session = kwargs["session"]
         print("[dFLASH] autostart")
