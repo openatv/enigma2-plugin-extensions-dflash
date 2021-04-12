@@ -98,11 +98,11 @@ if boxtype != "dm8000" and boxtype != "dm7020hd":
 compression=[]
 config.plugins.dflash.extension = ConfigBoolean(default=False, descriptions=yes_no_descriptions)
 flashtools=[]
-flashtools.append(( "none", _("none") ))
+flashtools.append(("none", _("none")))
 if os.path.exists("%s/nfiwrite" % dflash_bin):
-    flashtools.append(( "nfiwrite", _("nfiwrite") ))
+    flashtools.append(("nfiwrite", _("nfiwrite")))
     if boxtype != "dm800":
-        flashtools.append(( "recovery", _("recovery") ))
+        flashtools.append(("recovery", _("recovery")))
 #flashtools.append(( "writenfi", _("writenfi") ))
 #flashtools.append(( "nandwrite", _("nandwrite") ))
 #flashtools.append(( "rawdevice", _("rawdevice") ))
@@ -127,10 +127,10 @@ else:
     print("[dFlash] %s" % writesize)
 
 if os.path.exists("/sbin/rambo"):
-    flashtools.append(( "rambo", _("rambo") ))
+    flashtools.append(("rambo", _("rambo")))
     config.plugins.dflash.flashtool = ConfigSelection(default="rambo", choices=flashtools)
 elif os.path.exists("/sbin/flodder") and os.path.exists(b2m): # nfiextract works only on OE 2.0 Images with block2mtd driver in kernel
-    flashtools.append(( "flodder", _("flodder") ))
+    flashtools.append(("flodder", _("flodder")))
     config.plugins.dflash.flashtool = ConfigSelection(default="flodder", choices=flashtools)
 elif os.path.exists("%s/nfiwrite" % dflash_bin):
     config.plugins.dflash.flashtool = ConfigSelection(default="nfiwrite", choices=flashtools)
@@ -149,21 +149,21 @@ config.plugins.dflash.subpage = ConfigBoolean(default=True, descriptions=yes_no_
 config.plugins.dflash.debug = ConfigInteger(default=0, limits=(0, 3))
 
 bcompression=[]
-bcompression.append(( "zlib", _("zlib") ))
-bcompression.append(( "none", _("none") ))
+bcompression.append(("zlib", _("zlib")))
+bcompression.append(("none", _("none")))
 config.plugins.dflash.jffs2bootcompression = ConfigSelection(default="zlib", choices=bcompression)
 
 
 jcompression=[]
-jcompression.append(( "zlib", _("zlib") ))
-jcompression.append(( "none", _("none") ))
+jcompression.append(("zlib", _("zlib")))
+jcompression.append(("none", _("none")))
 config.plugins.dflash.jffs2rootcompression = ConfigSelection(default="zlib", choices=jcompression)
 
 ucompression=[]
-ucompression.append(( "none", _("none") ))
-ucompression.append(( "lzo", _("lzo") ))
-ucompression.append(( "favor_lzo", _("favor_lzo") ))
-ucompression.append(( "zlib", _("zlib") ))
+ucompression.append(("none", _("none")))
+ucompression.append(("lzo", _("lzo")))
+ucompression.append(("favor_lzo", _("favor_lzo")))
+ucompression.append(("zlib", _("zlib")))
 if boxtype == "dm8000" or boxtype.startswith("dm7020hd") or boxtype == "dm800sev2" or boxtype == "dm500hdv2":
     config.plugins.dflash.ubifsrootcompression = ConfigSelection(default="favor_lzo", choices=ucompression)
     config.plugins.dflash.ubifsdatacompression = ConfigSelection(default="favor_lzo", choices=ucompression)
@@ -178,13 +178,13 @@ else:
     config.plugins.dflash.fade = ConfigBoolean(default=False, descriptions=yes_no_descriptions)
 
 backuptools=[]
-backuptools.append(( "mkfs.jffs2", _("mkfs.jffs2") ))
+backuptools.append(("mkfs.jffs2", _("mkfs.jffs2")))
 kernel="unknown"
 for name in os.listdir("/lib/modules"):
     kernel = name
 if boxtype != "dm800" and boxtype != "dm7025" and kernel.find("3.2") != -1:
     # no ubifs in OE 1.6 and on old dm7025 and dm800pvr
-    backuptools.append(( "mkfs.ubifs", _("mkfs.ubifs") ))
+    backuptools.append(("mkfs.ubifs", _("mkfs.ubifs")))
 #backuptools.append(( "nanddump", _("nanddump") ))
 f=open("/proc/mounts", "r")
 mm=f.read()
@@ -196,9 +196,9 @@ else:
 config.plugins.dflash.overwrite = ConfigBoolean(default=False, descriptions=yes_no_descriptions)
 
 exectools=[]
-exectools.append(( "daemon", _("daemon") ))
-exectools.append(( "system", _("system") ))
-exectools.append(( "container", _("container") ))
+exectools.append(("daemon", _("daemon")))
+exectools.append(("system", _("system")))
+exectools.append(("container", _("container")))
 config.plugins.dflash.exectool = ConfigSelection(default="system", choices=exectools)
 
 fileupload_string=_("Select nfi image for flashing")
@@ -279,7 +279,7 @@ class dFlash(Screen):
         self.dimmed=30
         eActionMap.getInstance().bindAction('', -0x7FFFFFFF, self.doUnhide)
 
-        self["actions"] = ActionMap([ "dFlashActions", "ColorActions" ],
+        self["actions"] = ActionMap(["dFlashActions", "ColorActions"],
                 {
                 "green": self.backup,
                 "red": self.leaving,
@@ -484,7 +484,7 @@ class dFlash(Screen):
         list = []
         for name in os.listdir("/tmp"):
             if name.endswith(".nfi") or name.endswith(".nfi.zip"):
-                list.append(( name.replace(".nfi.zip", "").replace(".nfi", ""), "/tmp/%s" % name ))
+                list.append((name.replace(".nfi.zip", "").replace(".nfi", ""), "/tmp/%s" % name))
                 if config.plugins.dflash.sort.value:
                     list.sort()
                 return list
@@ -492,12 +492,12 @@ class dFlash(Screen):
             if os.path.exists(config.plugins.dflash.backuplocation.value):
                 for name in os.listdir(config.plugins.dflash.backuplocation.value):
                     if name.endswith(".nfi") or name.endswith(".nfi.zip"):
-                        list.append(( name.replace(".nfi.zip", "").replace(".nfi", ""), "%s/%s" % (config.plugins.dflash.backuplocation.value, name)))
+                        list.append((name.replace(".nfi.zip", "").replace(".nfi", ""), "%s/%s" % (config.plugins.dflash.backuplocation.value, name)))
         for directory in os.listdir("/media"):
             if os.path.exists("/media/%s" % directory) and os.path.isdir("/media/%s" % directory) and directory.endswith("net") is False and directory.endswith("hdd") is False:
                 for name in os.listdir("/media/%s" % directory):
                     if name.endswith(".nfi") or name.endswith(".nfi.zip") and not os.path.exists("/media/%s/autoexec_%s.bat" % (directoy, self.boxtype)) and not os.path.exists("/media/%s/autoexec_%s.none" % (directoy, self.boxtype)):
-                        list.append(( name.replace(".nfi.zip", "").replace(".nfi", ""), "/media/%s/%s" % (directory, name) ))
+                        list.append((name.replace(".nfi.zip", "").replace(".nfi", ""), "/media/%s/%s" % (directory, name)))
         if config.plugins.dflash.sort.value:
             list.sort()
         return list
@@ -1045,7 +1045,7 @@ class dFlash(Screen):
                 mounts=m.read()
                 m.close()
                 if mounts.find(tmpmnt) != -1:
-                    print ("Extracting files from %s ..." % output_names[p])
+                    print("Extracting files from %s ..." % output_names[p])
                     if p == 2: # boot
                         os.system("mount -o rw,remount /boot")
                         os.system("cp -P %s/* /boot" % tmpmnt)
@@ -1440,7 +1440,7 @@ def sessionstart(reason, **kwargs):
     if reason == 0 and "session" in kwargs:
         if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/WebInterface/WebChilds/Toplevel.pyo"):
             from Plugins.Extensions.WebInterface.WebChilds.Toplevel import addExternalChild
-            addExternalChild( ("dflash", wFlash(), "dFlash", "1", True) )
+            addExternalChild(("dflash", wFlash(), "dFlash", "1", True))
         else:
             print("[dFLASH] Webif not found")
 
@@ -1452,7 +1452,7 @@ def Plugins(**kwargs):
 
 def mainconf(menuid):
     if menuid != "setup":
-        return [ ]
+        return []
     return [(flashing_string+" & "+backup_string, startdFlash, "dflash", None)]
 
 ###############################################################################
@@ -2140,7 +2140,7 @@ class BackupImage(Screen):
         #
         # secondstage loader ...
         #
-        if os.path.exists("/usr/share/dreambox-secondstage/secondstage-%s.bin" % self.boxtype) and not config.plugins.dflash.loader.value :
+        if os.path.exists("/usr/share/dreambox-secondstage/secondstage-%s.bin" % self.boxtype) and not config.plugins.dflash.loader.value:
             os.system("cp /usr/share/dreambox-secondstage/secondstage-%s.bin %s/s.bin" % (self.boxtype, config.plugins.dflash.backuplocation.value))
         else:
             command +="%s/nanddump --noecc --omitoob --bb=skipbad --truncate --file %s/s.bin %s\n" % (dflash_bin, config.plugins.dflash.backuplocation.value, mtdev)
@@ -2382,7 +2382,7 @@ class dFlashChecking(Screen):
             if os.path.exists("/usr/sbin/mtdinfo"):
                 flashchecklist.append((_("ubinfo"), "mtdinfo -a"))
         self["menu"] = MenuList(flashchecklist)
-        self["actions"] = ActionMap([ "ColorActions", "dFlashActions" ],
+        self["actions"] = ActionMap(["ColorActions", "dFlashActions"],
                 {
                 "ok": self.go,
                 "green": self.go,
@@ -2396,7 +2396,7 @@ class dFlashChecking(Screen):
         returnValue = self["menu"].l.getCurrentSelection()[1]
         if returnValue is not None:
             if returnValue.startswith("/dev"):
-                self.session.open(Console, _("checking %s - be patient (up to 1 min)") % returnValue, ["%s/nand_check %s\n" % (dflash_bin, returnValue) ])
+                self.session.open(Console, _("checking %s - be patient (up to 1 min)") % returnValue, ["%s/nand_check %s\n" % (dflash_bin, returnValue)])
             else:
                 self.session.open(Console, returnValue, [returnValue])
 
@@ -2438,7 +2438,7 @@ class dFlashConfiguration(Screen, ConfigListScreen):
         self["buttongreen"] = Label(_("OK"))
         self["buttonyellow"] = Label(checking_string)
         self["buttonblue"] = Label(_("Disclaimer"))
-        self["actions"] = ActionMap([ "ColorActions", "dFlashActions" ],
+        self["actions"] = ActionMap(["ColorActions", "dFlashActions"],
         {
                 "green": self.save,
                 "red": self.cancel,
@@ -2599,7 +2599,7 @@ class dFlashAbout(Screen):
                 "ok": self.cancel,
         })
     def setWindowTitle(self):
-        self.setTitle( _("About")+" dFlash")
+        self.setTitle(_("About")+" dFlash")
 
     def cancel(self):
         self.close(False)
