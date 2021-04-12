@@ -24,7 +24,12 @@ from Components.Slider import Slider
 from enigma import  ePoint, getDesktop, quitMainloop, eConsoleAppContainer, eDVBVolumecontrol, eTimer, eActionMap
 from Tools.LoadPixmap import LoadPixmap
 import Screens.Standby
-import sys, os, struct, stat, shutil, time
+import sys
+import os
+import struct
+import stat
+import shutil
+import time
 
 from fcntl import ioctl
 from struct import unpack
@@ -33,7 +38,8 @@ from array import array
 from os import statvfs, path as os_path, chmod as os_chmod, write as os_write, open as os_open,\
                 close as os_close, unlink as os_unlink
 from twisted.web import resource, http
-import gettext, datetime
+import gettext
+import datetime
 
 if os.path.exists("/usr/lib/enigma2/python/Plugins/Bp/geminimain/lib/libgeminimain.so"):
     from Plugins.Bp.geminimain.lib import libgeminimain
